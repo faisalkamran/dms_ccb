@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<odoo>
+	<record id="dms_ccb_page_rej_reasons_form_view" model="ir.ui.view">
+		<field name="name">Page Rejection Reasons Form</field>
+		<field name="model">dms_ccb.page_rej_reasons</field>
+		<field name="arch" type="xml">
+			<form string="Page Rejection Reason">
+				<header>
+					<!-- Buttons will go here -->
+				</header>
+				<sheet>
+					<!-- Content will go here -->
+					<group name="top_group">
+						<group name="left_group">
+							<field name="rej_reason_name"></field>
+						</group>
+						<group name="right_group">
+							<field name="rej_reason_description"></field>
+						</group>
+					</group>
+				</sheet>
+			</form>			
+		</field>		
+	</record>
+
+	<record id="dms_ccb_page_rej_reasons_list_view" model="ir.ui.view">
+		<field name="name">Page Rejection Reasons List</field>
+		<field name="model">dms_ccb.page_rej_reasons</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="rej_reason_name"></field>
+				<field name="rej_reason_description"></field>							
+			</tree>
+		</field>		
+	</record>
+
+</odoo>

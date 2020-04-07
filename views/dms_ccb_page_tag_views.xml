@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<odoo>
+	<record id="dms_ccb_page_tags_form_view" model="ir.ui.view">
+		<field name="name">Page Tags Form</field>
+		<field name="model">dms_ccb.page_tags</field>
+		<field name="arch" type="xml">
+			<form string="Page Tag">
+				<header>
+					<!-- Buttons will go here -->
+				</header>
+				<sheet>
+					<!-- Content will go here -->
+					<group name="top_group">
+						<group name="left_group">
+							<field name="tag_name"></field>
+						</group>
+						<group name="right_group">
+							<field name="tag_description"></field>
+						</group>
+					</group>
+				</sheet>
+			</form>			
+		</field>		
+	</record>
+
+	<record id="dms_ccb_page_tags_list_view" model="ir.ui.view">
+		<field name="name">Page Tags List</field>
+		<field name="model">dms_ccb.page_tags</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="tag_name"></field>
+				<field name="tag_description"></field>							
+			</tree>
+		</field>		
+	</record>
+
+</odoo>

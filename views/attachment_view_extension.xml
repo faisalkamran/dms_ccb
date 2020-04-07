@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<odoo>
+	<record id="view_attachment_form_extension" model="ir.ui.view">
+		<field name="name">Attachment Form View Extension</field>
+		<field name="model">ir.attachment</field>
+		<field name="inherit_id" ref="base.view_attachment_form"></field>
+		<field name="arch" type="xml">
+
+			<!-- Change attribute of 'datas' field -->
+			<field name="datas" position="attributes">
+				<attribute name="widget">image</attribute>
+				<attribute name="invisible">1</attribute>
+			</field>
+
+			<field name="type" position="attributes">
+				<attribute name="invisible">1</attribute>
+			</field>
+
+			<field name="name" position="attributes">
+				<attribute name="readonly">1</attribute>
+			</field>
+
+			<h1 position="after">
+				<group>
+					<field name="dms_ccb_page_tags" widget="many2many_tags"></field>
+					<field name="dms_ccb_page_rej_reasons" widget="many2many_tags"></field>
+				</group>
+				<field name="datas" filename="datas_fname" widget="image">
+				</field>
+			</h1>	
+
+
+		</field>
+	</record>
+
+	<record id="view_attachment_list_extension" model="ir.ui.view">
+		<field name="name">Attachment List View Extension</field>
+		<field name="model">ir.attachment</field>
+		<field name="inherit_id" ref="base.view_attachment_tree"></field>
+		<field name="arch" type="xml">
+			<field name="datas_fname" position="after">
+				<field name="dms_ccb_page_tags" widget="many2many_tags"></field>
+				<field name="dms_ccb_page_rej_reasons" widget="many2many_tags"></field>
+			</field>
+		</field>
+	</record>
+</odoo>

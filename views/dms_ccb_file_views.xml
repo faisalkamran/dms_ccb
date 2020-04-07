@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+
+<odoo>
+	<record id="dms_ccb_files_form_view" model="ir.ui.view">
+		<field name="name">File Form</field>
+		<field name="model">dms_ccb.file</field>
+		<field name="arch" type="xml">
+			<form string="File">
+				<header>
+					<!-- File QC Review Workflow declaration -->
+					<!-- <field name="file_qc_workflow_state"
+						widget="statusbar"
+						statusbar_visible="draft,qc_review,approved"></field> -->
+
+					<!-- Buttons will go here -->
+					<!-- Button declaration to open new window for managing page attachments -->
+					<button name="dms_manage_pages"
+							type="object"
+							string="Manage Pages"
+							class="oe_highlight"></button>
+
+					<!-- Workflow button declarations -->
+					<button name="file_for_review_state"
+							type="object"
+							string="For QC Review"
+							states="draft,rejected"></button>
+
+					<button name="file_for_approved_state"
+							type="object"
+							string="QC Approved"
+							states="qc_review"></button>
+
+					<button name="file_for_rejected_state"
+							type="object"
+							string="QC Rejected"
+							states="qc_review"></button>
+
+					<!-- File QC Review Workflow declaration -->
+					<field name="state"
+						widget="statusbar"
+						statusbar_visible="draft,qc_review,approved"></field>
+				</header>
+
+				<sheet>
+					<!-- Content goes here -->
+					<group name="group_1">
+						<group name="group_left" string="Basic">
+							<field name="file_barcode" readonly="1"></field>
+							<field name="file_no"></field>
+							<field name="file_subject"></field>
+							<field name="file_record_type"></field>
+						</group>
+
+						<group name="group_right" string="Metadata">
+							<field name="file_area"></field>
+							<field name="file_category"></field>
+							<field name="file_status"></field>
+							<field name="file_branch"></field>
+						</group>
+
+					</group>
+					<!-- <group_2>
+						<field name="message_main_attachment_id" widget="many2many_kanban"></field>
+					</group_2> -->
+					<notebook>
+						<page string="Further Information">
+							<group>
+								<field name="file_remarks"></field>
+							</group>							
+						</page>
+						<page string="Optional">
+							<group>
+								<field name="file_attributes"></field>
+								<!-- <field name="file_attachments" widget="many2many_binary"></field> -->
+								<!-- <field name="file_attachments"></field> -->
+								<!-- <field name="file_attachments" widget="many2many_kanban"></field> -->
+							</group>							
+						</page>
+					</notebook>
+				</sheet>
+
+				<!-- <div class="oe_chatter" default_order="display_name asc"> -->
+				<div class="oe_chatter">
+					<field name="message_follower_ids" widget="mail_followers"/>
+					<field name="activity_ids" widget="mail_activity"></field>
+					<field name="message_ids" widget="mail_thread"/>
+				</div>
+
+			</form>			
+		</field>		
+	</record>
+
+	<record id="dms_ccb_files_list_view" model="ir.ui.view">
+		<field name="name">File List</field>
+		<field name="model">dms_ccb.file</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="file_no"></field>
+				<field name="file_subject"></field>
+				<field name="file_barcode"></field>
+				<field name="file_record_type"></field>
+				<field name="file_area"></field>
+				<field name="file_category"></field>
+				<field name="file_status"></field>
+				<field name="file_branch"></field>
+			</tree>
+		</field>		
+	</record>
+
+	<record id="dms_ccb_file_graph_view" model="ir.ui.view">
+		<field name="name">Files Graph View</field>
+		<field name="model">dms_ccb.file</field>
+		<field name="arch" type="xml">
+			<graph string="Files by Area">
+				<field name="file_area"></field>				
+				<field name="file_record_type"></field>				
+			</graph>			
+		</field>
+		
+	</record>
+
+
+</odoo>

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<odoo>
+	<record id="dms_ccb_branch_form_view" model="ir.ui.view">
+		<field name="name">Branch Form</field>
+		<field name="model">dms_ccb.file_branch</field>
+		<field name="arch" type="xml">
+			<form string="Branch">
+				<header>
+					<!-- Buttons will go here -->
+				</header>
+				<sheet>
+					<!-- Content will go here -->
+					<group name="top_group">
+						<group name="left_group">
+							<field name="file_branch"></field>
+						</group>
+						<group name="right_group">
+							<field name="file_branch_description"></field>
+						</group>
+					</group>
+				</sheet>
+			</form>			
+		</field>		
+	</record>
+
+	<record id="dms_ccb_branch_list_view" model="ir.ui.view">
+		<field name="name">Branch List</field>
+		<field name="model">dms_ccb.file_branch</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="file_branch"></field>
+				<field name="file_branch_description"></field>							
+			</tree>
+		</field>		
+	</record>
+
+</odoo>

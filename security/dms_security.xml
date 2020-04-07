@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<odoo>
+
+	<!-- Define category for our app here -->
+	<record id="dms_ccb_category" model="ir.module.category">
+		<field name="name">DMS CCB</field>
+	</record>
+
+	<!-- DMS CCB User Group definition here -->
+	<record id="dms_ccb_user_group" model="res.groups">
+		<field name="name">User</field>
+		<field name="category_id" ref="dms_ccb_category"></field>
+		<field name="implied_ids"
+				eval="[(4, ref('base.group_user'))]"></field>
+	</record>
+
+	<!-- DMS CCB Manager Group definition here -->
+	<record id="dms_ccb_manager_group" model="res.groups">
+		<field name="name">Manager</field>
+		<field name="category_id" ref="dms_ccb_category"></field>
+		<field name="implied_ids"
+				eval="[(4, ref('dms_ccb_user_group'))]"></field>
+		<field name="users"
+				eval= "[(4,ref('base.user_root')),
+						(4,ref('base.user_admin'))]"></field>
+	</record>
+
+
+</odoo>

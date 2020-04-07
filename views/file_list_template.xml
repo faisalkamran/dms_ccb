@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+	<template id="file_list_template" name="DMS File List">
+		<div id="wrap" class="container">
+			<h1>DMS Files</h1>
+
+			<t t-foreach="dms_files" t-as="dms_file">
+				<div class="row">
+					<table>
+						<tr>
+							<th>File No.</th>
+							<th>File Subject</th>
+						</tr>
+						<tr>
+							<td>
+								<span t-field="dms_file.file_no"></span>
+							</td>
+							<td>
+								<span t-field="dms_file.file_subject"></span>								
+							</td>
+						</tr>
+					</table>
+					<!-- <span t-field="dms_file.file_no"></span>
+					<span t-field="dms_file.file_subject"></span> -->
+					<!-- <span t-field="file.file_type"></span>
+					<span t-field="file.division"></span>
+					<span t-field="file.pharma_company"></span> -->
+					<!-- <span t-field=""></span>
+					<span t-field=""></span> -->
+				</div>
+			</t>
+		</div>
+	</template>
+	
+
+
+</odoo>

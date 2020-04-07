@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+	<report id="dms_file_card"
+			string="Print File Card"
+			model="dms_ccb.file"
+			report_type="qweb-pdf"
+			name="dms_ccb.file_card"
+			file="dms_ccb.file_card">		
+	</report>
+
+	<report id="dms_file_barcode"
+			string="Print File Barcode"
+			model="dms_ccb.file"
+			report_type="qweb-pdf"
+			name="dms_ccb.file_barcode"
+			file="dms_ccb.file_barcode">		
+	</report>
+	
+
+</odoo>

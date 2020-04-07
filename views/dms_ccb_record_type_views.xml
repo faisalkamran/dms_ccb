@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<odoo>
+	<record id="dms_ccb_record_type_form_view" model="ir.ui.view">
+		<field name="name">Record Type Form</field>
+		<field name="model">dms_ccb.file_record_type</field>
+		<field name="arch" type="xml">
+			<form string="Record Type">
+				<header>
+					<!-- Buttons will go here -->
+				</header>
+				<sheet>
+					<!-- Content will go here -->
+					<group name="top_group">
+						<group name="left_group">
+							<field name="file_record_type"></field>
+						</group>
+						<group name="right_group">
+							<field name="file_record_type_description"></field>
+						</group>
+					</group>
+				</sheet>
+			</form>			
+		</field>		
+	</record>
+
+	<record id="dms_ccb_record_type_list_view" model="ir.ui.view">
+		<field name="name">Record Type List</field>
+		<field name="model">dms_ccb.file_record_type</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="file_record_type"></field>
+				<field name="file_record_type_description"></field>							
+			</tree>
+		</field>		
+	</record>
+
+</odoo>

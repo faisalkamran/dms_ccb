@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+	<record id="dms_ccb_dashboard_form_view" model="ir.ui.view">
+		<field name="name">DMS CCB Dashboard Form</field>		
+		<field name="model">board.board</field>		
+		<field name="type">form</field>		
+		<field name="arch" type="xml">
+			<form string="Dashboard">
+				<board style="1-2">
+					<column>
+						
+					</column>
+					<column>
+						
+					</column>
+				</board>				
+			</form>
+		</field>		
+	</record>
+	
+</odoo>

@@ -1,0 +1,17 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+dms_file_user,DMS CCB User,model_dms_ccb_file,dms_ccb_user_group,1,0,0,0
+dms_file_manager,DMS CCB Manager,model_dms_ccb_file,dms_ccb_manager_group,1,1,1,1
+dms_file_record_user,DMS CCB User,model_dms_ccb_file_record_type,dms_ccb_user_group,1,0,0,0
+dms_file_record_manager,DMS CCB Manager,model_dms_ccb_file_record_type,dms_ccb_manager_group,1,1,1,1
+dms_file_area_user,DMS CCB User,model_dms_ccb_file_area,dms_ccb_user_group,1,0,0,0
+dms_file_area_manager,DMS CCB Manager,model_dms_ccb_file_area,dms_ccb_manager_group,1,1,1,1
+dms_file_category_user,DMS CCB User,model_dms_ccb_file_category,dms_ccb_user_group,1,0,0,0
+dms_file_category_manager,DMS CCB Manager,model_dms_ccb_file_category,dms_ccb_manager_group,1,1,1,1
+dms_file_status_user,DMS CCB User,model_dms_ccb_file_status,dms_ccb_user_group,1,0,0,0
+dms_file_status_manager,DMS CCB Manager,model_dms_ccb_file_status,dms_ccb_manager_group,1,1,1,1
+dms_file_branch_user,DMS CCB User,model_dms_ccb_file_branch,dms_ccb_user_group,1,0,0,0
+dms_file_branch_manager,DMS CCB Manager,model_dms_ccb_file_branch,dms_ccb_manager_group,1,1,1,1
+dms_file_attribute_user,DMS CCB User,model_dms_ccb_file_attribute,dms_ccb_user_group,1,0,0,0
+dms_file_attribute_manager,DMS CCB Manager,model_dms_ccb_file_attribute,dms_ccb_manager_group,1,1,1,1
+dms_page_tags_user,DMS CCB User,model_dms_ccb_page_tags,dms_ccb_user_group,1,0,0,0
+dms_page_tags_manager,DMS CCB Manager,model_dms_ccb_page_tags,dms_ccb_manager_group,1,1,1,1

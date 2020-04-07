@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+	<data noupdate="1">
+		<!-- Sequence for File Barcode field -->
+		<record id="seq_dms_ccb_file_barcode" model="ir.sequence">
+			<field name="name">DMS CCB File Barcode Sequence</field>
+			<field name="code">dms.ccb.file.barcode.sequence</field>
+			<field name="prefix">DMS.CCB.</field>
+			<field name="padding">6</field>
+			<!-- <field name="company_id" eval="False"></field> -->
+		</record>
+	</data>
+	
+
+</odoo>
