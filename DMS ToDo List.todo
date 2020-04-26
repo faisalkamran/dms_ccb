@@ -1,0 +1,63 @@
+
+DMS (Chaklala Cantonment Board) Task List:
+
+  Access Control Changes:
+
+    ☐ **User rights** will be based on **Screen Access**
+
+    ☐ Mapping of **Functions** to **Roles**
+        Possible functions are
+              1. _File Create_
+              2. _File Update_
+              3. _Page Tagging_
+              4. QC Workflow State Changes - _Approved_, _Rejected_, _Verified_ etc.
+
+    ☐ Admin can only assign roles/user to current office in which he is logged in but **CANNOT** assign rights to itself
+
+    ☐ Super admin can access any office & content
+        ☐ Give/revoke rights to any user
+
+    ☐ QC workflow states to be changed on the basis of user access control
+        Possible QC states are
+              1. Draft
+              2. QC Review
+              3. Rejected
+              4. Approved
+
+  Changes to Data Model(s):
+
+    File object:
+
+      ☐ Change **lookup values** in field **Record Type**
+            New values are the following
+                  **Land**
+                  **Revenue**
+                  **HR**
+                  **Accounts**
+
+      ☐ Change field name **Area** to **Colony**
+
+      ☐ Change field name **Category** to **Type of Land**
+
+      ☐ Change field name **Status** to **Purpose**
+
+      ☐ Add field **Address**
+
+      ☐ Add field **Record ID** (to be used for integration with ML&C ERP)
+
+      ☐ Add field **Plot No / CB No / Khasra No**
+
+    Attachment object:
+
+      ☐ Change field name **Rejection Reason** to **Rejection / Approval Reason**
+
+      ☐ Add field **Document Date**
+            This is a date field with a date selection control in the UI
+
+      ☐ Add field **Status**
+            Lookup values for this field are **Approved** and **Rejected**
+
+            After user makes selection in this field he should be allowed to provide Rejection / Approval Reason
+
+      ☐ Zoom tool for image in Page Image Viewer
+
