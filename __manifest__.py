@@ -29,7 +29,8 @@
 		'views/attachment_view_extension.xml',
 		# 'views/dashboard.xml',
 		'reports/report.xml',
-		'reports/dms_file_card.xml',
+		# 'reports/dms_file_card.xml',
 		# 'views/file_list_template.xml',
+		'data/demo_data_record_type.xml',
 	],
 }

@@ -67,6 +67,7 @@ class dms_ccb_file(models.Model):
 							('approved', 'Approved'),],
 							string="QC Status",
 							readonly=True,default='draft')
+	is_public = fields.Boolean(default=False)
 	
 	# file_attachments = fields.Many2many('ir.attachment', string='File Attachments')
 	# message_attachment_count = fields.Integer(readonly=False, track_visibility="onchange")

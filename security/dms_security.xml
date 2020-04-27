@@ -7,7 +7,7 @@
 
 	<!-- Category definition for File object -->
 	<record id="dms_ccb_file_obj_category" model="ir.module.category">
-		<field name="name">CCB File Obj</field>
+		<field name="name">CCB: File</field>
 	</record>
 
 	<!-- DMS CCB User Group definition here for File object -->
@@ -33,7 +33,7 @@
 
 	<!-- Category definition for Attachment (scanned page) object -->
 	<record id="dms_ccb_attachment_obj_category" model="ir.module.category">
-		<field name="name">CCB Attachment Obj</field>
+		<field name="name">CCB: Page</field>
 	</record>
 
 	<!-- DMS CCB User Group definition here for Attachment object -->
@@ -59,7 +59,7 @@
 
 	<!-- Category definition for Area object -->
 	<record id="dms_ccb_area_obj_category" model="ir.module.category">
-		<field name="name">CCB Area Obj</field>
+		<field name="name">CCB: Area</field>
 	</record>
 
 	<!-- DMS CCB User Group definition here for Area object -->
@@ -85,7 +85,7 @@
 
 	<!-- Category definition for Branch object -->
 	<record id="dms_ccb_branch_obj_category" model="ir.module.category">
-		<field name="name">CCB Branch Obj</field>
+		<field name="name">CCB: Branch</field>
 	</record>
 
 	<!-- DMS CCB User Group definition here for Branch object -->
@@ -111,7 +111,7 @@
 
 	<!-- Category definition for Category object -->
 	<record id="dms_ccb_category_obj_category" model="ir.module.category">
-		<field name="name">CCB Category Obj</field>
+		<field name="name">CCB: Category</field>
 	</record>
 
 	<!-- DMS CCB User Group definition here for Category object -->
@@ -137,7 +137,7 @@
 
 	<!-- Category definition for Page Tags object -->
 	<record id="dms_ccb_page_tag_obj_category" model="ir.module.category">
-		<field name="name">CCB Page Tag Obj</field>
+		<field name="name">CCB: Page Tags</field>
 	</record>
 
 	<!-- DMS CCB User Group definition here for Page Tags object -->
@@ -163,7 +163,7 @@
 
 	<!-- Category definition for Record Type object -->
 	<record id="dms_ccb_record_obj_category" model="ir.module.category">
-		<field name="name">CCB Record Type Obj</field>
+		<field name="name">CCB: Record Type</field>
 	</record>
 
 	<!-- DMS CCB User Group definition here for Record Type object -->
@@ -189,7 +189,7 @@
 
 	<!-- Category definition for File Status object -->
 	<record id="dms_ccb_status_obj_category" model="ir.module.category">
-		<field name="name">CCB File Status Obj</field>
+		<field name="name">CCB: Status</field>
 	</record>
 
 	<!-- DMS CCB User Group definition here for File Status object -->
@@ -215,7 +215,7 @@
 
 	<!-- Category definition for Rejection Reasons object -->
 	<record id="dms_ccb_rej_reasons_obj_category" model="ir.module.category">
-		<field name="name">CCB QC Reason Obj</field>
+		<field name="name">CCB: QC Reason</field>
 	</record>
 
 	<!-- DMS CCB User Group definition here for Rejection Reasons object -->
@@ -238,6 +238,46 @@
 	</record>
 
 	<!-- ****** -->
+
+	<!-- Category definition for integration with Smile Audit app -->
+	<record id="dms_ccb_audit_trail_category" model="ir.module.category">
+		<field name="name">CCB: Audit Trail</field>
+	</record>
+
+	<!-- DMS CCB Group definition here for integration with Smile Audit app -->
+	<record id="dms_ccb_audit_trail_group" model="res.groups">
+		<field name="name">Audit Access Enabled</field>
+		<field name="category_id" ref="dms_ccb_audit_trail_category"></field>
+		<field name="implied_ids" eval="[(4, ref('base.group_user'))]"></field>
+		<field name="users" eval="[(4, ref('base.user_admin'))]"></field>
+	</record>
+
+	<!-- ****** -->
+
+	<!-- Add Record Rules definitions here -->
+
+	<!-- Definition for record rule that does NOT allow user with ERP Manager role to be created -->
+	<record model="ir.rule" id="dms_poc_disable_creation_of_user_with_admin_priv">
+		<field name="name">DMS: Disable Creation of User with Administration Priveleges</field>
+		<field name="model_id" ref="base.model_res_users"/>
+		<!-- <field name="groups" eval="[(4, ref('base.group_erp_manager'))]"/> -->
+		<field name="domain_force">[["groups_id","not in",["3"]]]</field>
+	</record>
+
+
+	<record model="ir.rule" id="dms_poc_admin_settings_no_access_rule">
+		<field name="name">DMS CCB: see no docs</field>
+		<field name="model_id" ref="model_dms_ccb_file"/>
+		<field name="groups" eval="[(4, ref('base.group_system'))]"/>
+		<field name="domain_force">[('is_public', '=', True)]</field>
+	</record>
+
+	<record model="ir.rule" id="dms_poc_admin_access_rights_no_access_rule">
+		<field name="name">DMS CCB: see no docs</field>
+		<field name="model_id" ref="model_dms_ccb_file"/>
+		<field name="groups" eval="[(4, ref('base.group_erp_manager'))]"/>
+		<field name="domain_force">[('is_public', '=', True)]</field>
+	</record>
 
 
 
