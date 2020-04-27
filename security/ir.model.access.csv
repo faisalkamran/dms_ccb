@@ -3,8 +3,8 @@ dms_file_user,DMS CCB User,model_dms_ccb_file,dms_ccb_file_obj_user_group,1,0,0,
 dms_file_manager,DMS CCB Manager,model_dms_ccb_file,dms_ccb_file_obj_manager_group,1,1,1,1
 dms_file_record_user,DMS CCB User,model_dms_ccb_file_record_type,dms_ccb_record_obj_user_group,1,0,0,0
 dms_file_record_manager,DMS CCB Manager,model_dms_ccb_file_record_type,dms_ccb_record_obj_manager_group,1,1,1,1
-dms_file_area_user,DMS CCB User,model_dms_ccb_file_area,dms_ccb_area_obj_user_group,1,0,0,0
-dms_file_area_manager,DMS CCB Manager,model_dms_ccb_file_area,dms_ccb_area_obj_manager_group,1,1,1,1
+dms_file_colony_user,DMS CCB User,model_dms_ccb_file_colony,dms_ccb_colony_obj_user_group,1,0,0,0
+dms_file_colony_manager,DMS CCB Manager,model_dms_ccb_file_colony,dms_ccb_colony_obj_manager_group,1,1,1,1
 dms_file_category_user,DMS CCB User,model_dms_ccb_file_category,dms_ccb_category_obj_user_group,1,0,0,0
 dms_file_category_manager,DMS CCB Manager,model_dms_ccb_file_category,dms_ccb_category_obj_manager_group,1,1,1,1
 dms_file_status_user,DMS CCB User,model_dms_ccb_file_status,dms_ccb_status_obj_user_group,1,0,0,0

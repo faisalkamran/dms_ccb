@@ -53,7 +53,7 @@
 						</group>
 
 						<group name="group_right" string="Metadata">
-							<field name="file_area"></field>
+							<field name="file_colony"></field>
 							<field name="file_category"></field>
 							<field name="file_status"></field>
 							<field name="file_branch"></field>
@@ -100,7 +100,7 @@
 				<field name="file_subject"></field>
 				<field name="file_barcode"></field>
 				<field name="file_record_type"></field>
-				<field name="file_area"></field>
+				<field name="file_colony"></field>
 				<field name="file_category"></field>
 				<field name="file_status"></field>
 				<field name="file_branch"></field>
@@ -112,8 +112,8 @@
 		<field name="name">Files Graph View</field>
 		<field name="model">dms_ccb.file</field>
 		<field name="arch" type="xml">
-			<graph string="Files by Area">
-				<field name="file_area"></field>				
+			<graph string="Files by Colony">
+				<field name="file_colony"></field>				
 				<field name="file_record_type"></field>				
 			</graph>			
 		</field>

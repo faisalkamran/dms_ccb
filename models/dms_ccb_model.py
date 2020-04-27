@@ -7,12 +7,19 @@ class dms_ccb_file_record_type(models.Model):
 	file_record_type = fields.Char('Name')
 	file_record_type_description = fields.Char('Description')
 
-class dms_ccb_file_area(models.Model):
-	_name = 'dms_ccb.file_area'
-	_description = 'DMS CCB File Area'
-	_rec_name = 'file_area'
-	file_area = fields.Char('Name')
-	file_area_description = fields.Char('Description')
+# class dms_ccb_file_area(models.Model):
+# 	_name = 'dms_ccb.file_area'
+# 	_description = 'DMS CCB File Area'
+# 	_rec_name = 'file_area'
+# 	file_area = fields.Char('Name')
+# 	file_area_description = fields.Char('Description')
+
+class dms_ccb_file_colony(models.Model):
+	_name = 'dms_ccb.file_colony'
+	_description = 'DMS CCB File Colony'
+	_rec_name = 'file_colony'
+	file_colony = fields.Char('Name')
+	file_colony_description = fields.Char('Description')
 
 class dms_ccb_file_category(models.Model):
 	_name = 'dms_ccb.file_category'
@@ -55,7 +62,8 @@ class dms_ccb_file(models.Model):
 							readonly=True, index= True, default=lambda self: _('New'))
 
 	file_record_type = fields.Many2one('dms_ccb.file_record_type', string='Record Type', track_visibility="always")
-	file_area = fields.Many2one('dms_ccb.file_area', string='Area', track_visibility="always")
+	# file_area = fields.Many2one('dms_ccb.file_area', string='Area', track_visibility="always")
+	file_colony = fields.Many2one('dms_ccb.file_colony', string='Colony', track_visibility="always")
 	file_category = fields.Many2one('dms_ccb.file_category', string='Category', track_visibility="always")
 	file_status = fields.Many2one('dms_ccb.file_status', string='Status', track_visibility="always")
 	file_branch = fields.Many2one('dms_ccb.file_branch', string='Branch', track_visibility="always")

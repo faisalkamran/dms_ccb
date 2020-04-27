@@ -44,9 +44,15 @@
 				view_mode="tree,form">		
 	</act_window>
 
-	<act_window id="action_dms_ccb_file_area"
+	<!-- <act_window id="action_dms_ccb_file_area"
 				name="Area"
 				res_model="dms_ccb.file_area"
+				view_mode="tree,form">		
+	</act_window> -->
+
+	<act_window id="action_dms_ccb_file_colony"
+				name="Colony"
+				res_model="dms_ccb.file_colony"
 				view_mode="tree,form">		
 	</act_window>
 
@@ -90,11 +96,17 @@
 	</menuitem>
 
 	<!-- Child menu items of "configuration" menu here -->
-	<menuitem id="dms_ccb_area_menu"
+	<!-- <menuitem id="dms_ccb_area_menu"
 			  name="Area"
 			  parent="dms_ccb_configuration_menu"
 			  sequence="1"
 			  action="action_dms_ccb_file_area">		
+	</menuitem> -->
+	<menuitem id="dms_ccb_colony_menu"
+			  name="Colony"
+			  parent="dms_ccb_configuration_menu"
+			  sequence="1"
+			  action="action_dms_ccb_file_colony">		
 	</menuitem>
 	<!-- <menuitem id="dms_ccb_attribute_menu"
 			  name="Attributes"

@@ -18,7 +18,7 @@
 		'data/sequence.xml',
 		'views/dms_ccb_menu.xml',
 		'views/dms_ccb_record_type_views.xml',
-		'views/dms_ccb_area_views.xml',
+		'views/dms_ccb_colony_views.xml',
 		'views/dms_ccb_category_views.xml',		
 		'views/dms_ccb_status_views.xml',		
 		'views/dms_ccb_branch_views.xml',		
@@ -32,5 +32,6 @@
 		# 'reports/dms_file_card.xml',
 		# 'views/file_list_template.xml',
 		'data/demo_data_record_type.xml',
+		'data/demo_data_colony.xml',
 	],
 }

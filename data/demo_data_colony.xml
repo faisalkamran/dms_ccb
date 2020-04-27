@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+	<data>
+		<record id="1" model="dms_ccb.file_colony">
+			<field name="file_colony">ADAM JEE ROAD</field>
+		</record>
+		<record id="2" model="dms_ccb.file_colony">
+			<field name="file_colony">ADYALA ROAD</field>
+		</record>
+		<record id="3" model="dms_ccb.file_colony">
+			<field name="file_colony">AIRPORT ROAD</field>
+		</record>
+		<record id="4" model="dms_ccb.file_colony">
+			<field name="file_colony">AL MUMTAZ COLONY</field>
+		</record>
+		<record id="5" model="dms_ccb.file_colony">
+			<field name="file_colony">ASKARI ROAD</field>
+		</record>
+		<record id="6" model="dms_ccb.file_colony">
+			<field name="file_colony">ASKARI VILLAS</field>
+		</record>
+		<record id="7" model="dms_ccb.file_colony">
+			<field name="file_colony">ASKARI-I</field>
+		</record>
+		<record id="8" model="dms_ccb.file_colony">
+			<field name="file_colony">ASKARI-II</field>
+		</record>
+		<record id="9" model="dms_ccb.file_colony">
+			<field name="file_colony">ASKARI-III</field>
+		</record>
+		<record id="10" model="dms_ccb.file_colony">
+			<field name="file_colony">ASKARI-IV</field>
+		</record>
+		<record id="11" model="dms_ccb.file_colony">
+			<field name="file_colony">ASKARI-V</field>
+		</record>
+		<record id="12" model="dms_ccb.file_colony">
+			<field name="file_colony">ASKARI-VI</field>
+		</record>
+		<record id="13" model="dms_ccb.file_colony">
+			<field name="file_colony">ASKARI-VII</field>
+		</record>
+		<record id="14" model="dms_ccb.file_colony">
+			<field name="file_colony">ASKARI-VIII</field>
+		</record>
+		<record id="15" model="dms_ccb.file_colony">
+			<field name="file_colony">ASKARI-IX</field>
+		</record>
+		<record id="16" model="dms_ccb.file_colony">
+			<field name="file_colony">ASKARI-X</field>
+		</record>
+		<record id="17" model="dms_ccb.file_colony">
+			<field name="file_colony">ASKARI-XII</field>
+		</record>
+		<record id="18" model="dms_ccb.file_colony">
+			<field name="file_colony">ASKARI-XIII</field>
+		</record>
+		<record id="19" model="dms_ccb.file_colony">
+			<field name="file_colony">AZIZ BHATTI ROAD</field>
+		</record>
+		<record id="20" model="dms_ccb.file_colony">
+			<field name="file_colony">BANK ROAD</field>
+		</record>
+		<record id="21" model="dms_ccb.file_colony">
+			<field name="file_colony">BOSTAN KHAN ROAD</field>
+		</record>
+		<record id="22" model="dms_ccb.file_colony">
+			<field name="file_colony">DHERI HASSAN ABAD</field>
+		</record>
+		<record id="23" model="dms_ccb.file_colony">
+			<field name="file_colony">DHOKE CHIRAGH DIN</field>
+		</record>
+		<record id="24" model="dms_ccb.file_colony">
+			<field name="file_colony">DHOKE JUMA</field>
+		</record>
+		<record id="25" model="dms_ccb.file_colony">
+			<field name="file_colony">DHOKE KALHOOR</field>
+		</record>
+		<record id="26" model="dms_ccb.file_colony">
+			<field name="file_colony">DHOKE KASHMIRIAN</field>
+		</record>
+		<record id="27" model="dms_ccb.file_colony">
+			<field name="file_colony">DHOKE PEERAN FAQEERAN</field>
+		</record>
+		<record id="28" model="dms_ccb.file_colony">
+			<field name="file_colony">FAISAL ALVI ROAD</field>
+		</record>
+		<record id="29" model="dms_ccb.file_colony">
+			<field name="file_colony">FALCON COMPLEX LEHTHRAR ROAD</field>
+		</record>
+		<record id="30" model="dms_ccb.file_colony">
+			<field name="file_colony">FIRDOUSI ROAD</field>
+		</record>
+		<record id="31" model="dms_ccb.file_colony">
+			<field name="file_colony">GHAZI COLONY</field>
+		</record>
+		<record id="32" model="dms_ccb.file_colony">
+			<field name="file_colony">GOLF COURSE ROAD</field>
+		</record>
+		<record id="33" model="dms_ccb.file_colony">
+			<field name="file_colony">GULISTAN APPARTMENTS</field>
+		</record>
+		<record id="34" model="dms_ccb.file_colony">
+			<field name="file_colony">GULISTAN COLONY</field>
+		</record>
+		<record id="35" model="dms_ccb.file_colony">
+			<field name="file_colony">GULSHAN-E-SHAFI</field>
+		</record>
+		<record id="36" model="dms_ccb.file_colony">
+			<field name="file_colony">HARLEY STREET</field>
+		</record>
+		<record id="37" model="dms_ccb.file_colony">
+			<field name="file_colony">IFTIKHAR JANJUA ROAD</field>
+		</record>
+		<record id="38" model="dms_ccb.file_colony">
+			<field name="file_colony">JHANGIR ROAD</field>
+		</record>
+		<record id="39" model="dms_ccb.file_colony">
+			<field name="file_colony">JHANDA CHICHI</field>
+		</record>
+		<record id="40" model="dms_ccb.file_colony">
+			<field name="file_colony">JHAWARA</field>
+		</record>
+		<record id="41" model="dms_ccb.file_colony">
+			<field name="file_colony">JHELUM ROAD</field>
+		</record>
+		<record id="42" model="dms_ccb.file_colony">
+			<field name="file_colony">KHADIM HUSSAIN ROAD</field>
+		</record>
+		<record id="43" model="dms_ccb.file_colony">
+			<field name="file_colony">KHAN AVENUE</field>
+		</record>
+		<record id="44" model="dms_ccb.file_colony">
+			<field name="file_colony">LALAZAR</field>
+		</record>
+		<record id="45" model="dms_ccb.file_colony">
+			<field name="file_colony">MARRIR HASSAN</field>
+		</record>
+		<record id="46" model="dms_ccb.file_colony">
+			<field name="file_colony">MURREE ROAD</field>
+		</record>
+		<record id="47" model="dms_ccb.file_colony">
+			<field name="file_colony">MUSLIM ABAD</field>
+		</record>
+		<record id="48" model="dms_ccb.file_colony">
+			<field name="file_colony">NATIONAL PARK ROAD</field>
+		</record>
+		<record id="49" model="dms_ccb.file_colony">
+			<field name="file_colony">NEW LALAZAR</field>
+		</record>
+		<record id="50" model="dms_ccb.file_colony">
+			<field name="file_colony">OP-22</field>
+		</record>
+		<record id="51" model="dms_ccb.file_colony">
+			<field name="file_colony">ORDINANCE ROAD</field>
+		</record>
+		<record id="52" model="dms_ccb.file_colony">
+			<field name="file_colony">QAISAR PLAZA DHOKE CHIRAGH DIN</field>
+		</record>
+		<record id="53" model="dms_ccb.file_colony">
+			<field name="file_colony">RAHIM ABAD</field>
+		</record>
+		<record id="54" model="dms_ccb.file_colony">
+			<field name="file_colony">RAILWAY SCHEME IV</field>
+		</record>
+		<record id="55" model="dms_ccb.file_colony">
+			<field name="file_colony">RASHID MINHAS ROAD</field>
+		</record>
+		<record id="56" model="dms_ccb.file_colony">
+			<field name="file_colony">RAWAL ROAD</field>
+		</record>
+		<record id="57" model="dms_ccb.file_colony">
+			<field name="file_colony">RAILWAY SCHEME III</field>
+		</record>
+		<record id="58" model="dms_ccb.file_colony">
+			<field name="file_colony">SARWAR ROAD</field>
+		</record>
+		<record id="59" model="dms_ccb.file_colony">
+			<field name="file_colony">SCHEME-I</field>
+		</record>
+		<record id="60" model="dms_ccb.file_colony">
+			<field name="file_colony">SCHEME-II</field>
+		</record>
+		<record id="61" model="dms_ccb.file_colony">
+			<field name="file_colony">SCHEME-III</field>
+		</record>
+		<record id="62" model="dms_ccb.file_colony">
+			<field name="file_colony">SD HOUSES SABZAZAR</field>
+		</record>
+		<record id="63" model="dms_ccb.file_colony">
+			<field name="file_colony">SHAHEED COLONY</field>
+		</record>
+		<record id="64" model="dms_ccb.file_colony">
+			<field name="file_colony">SIR SYED ROAD</field>
+		</record>
+		<record id="65" model="dms_ccb.file_colony">
+			<field name="file_colony">STREET 17-A</field>
+		</record>
+		<record id="66" model="dms_ccb.file_colony">
+			<field name="file_colony">STREET 20-A</field>
+		</record>
+		<record id="67" model="dms_ccb.file_colony">
+			<field name="file_colony">STREET 21</field>
+		</record>
+		<record id="68" model="dms_ccb.file_colony">
+			<field name="file_colony">STREET 22</field>
+		</record>
+		<record id="69" model="dms_ccb.file_colony">
+			<field name="file_colony">THALI MOHRI</field>
+		</record>
+		<record id="70" model="dms_ccb.file_colony">
+			<field name="file_colony">TAMEEZ UD DIN ROAD</field>
+		</record>
+		<record id="71" model="dms_ccb.file_colony">
+			<field name="file_colony">TARIQ ABAD LALKURTI</field>
+		</record>
+		<record id="72" model="dms_ccb.file_colony">
+			<field name="file_colony">TEHMASAB ABAD</field>
+		</record>
+		<record id="73" model="dms_ccb.file_colony">
+			<field name="file_colony">THE MALL ROAD</field>
+		</record>
+		<record id="74" model="dms_ccb.file_colony">
+			<field name="file_colony">TIPU ROAD</field>
+		</record>
+		<record id="75" model="dms_ccb.file_colony">
+			<field name="file_colony">TUFAIL ROAD</field>
+		</record>
+		<record id="76" model="dms_ccb.file_colony">
+			<field name="file_colony">WALAYAT COLONY</field>
+		</record>
+		<record id="77" model="dms_ccb.file_colony">
+			<field name="file_colony">WALAYAT HOMES</field>
+		</record>
+		<record id="78" model="dms_ccb.file_colony">
+			<field name="file_colony">ZEE LANE</field>
+		</record>
+		<record id="79" model="dms_ccb.file_colony">
+			<field name="file_colony">ZEESHAN STREET</field>
+		</record>
+		<record id="80" model="dms_ccb.file_colony">
+			<field name="file_colony">MAYO ROAD</field>
+		</record>
+		<record id="81" model="dms_ccb.file_colony">
+			<field name="file_colony">HUMAYUN ROAD</field>
+		</record>
+		<record id="82" model="dms_ccb.file_colony">
+			<field name="file_colony">HABIB-ULLAH-KHAN ROAD</field>
+		</record>
+	</data>
+</odoo>

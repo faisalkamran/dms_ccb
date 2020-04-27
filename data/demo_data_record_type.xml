@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+	<data>
+		<record id="1" model="dms_ccb.file_record_type">
+			<field name="file_record_type">Land</field>
+		</record>
+
+		<record id="2" model="dms_ccb.file_record_type">
+			<field name="file_record_type">Revenue</field>
+		</record>
+
+		<record id="3" model="dms_ccb.file_record_type">
+			<field name="file_record_type">HR</field>
+		</record>
+
+		<record id="4" model="dms_ccb.file_record_type">
+			<field name="file_record_type">Accounts</field>
+		</record>
+	</data>
+</odoo>
