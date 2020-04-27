@@ -21,19 +21,19 @@ class dms_ccb_file_colony(models.Model):
 	file_colony = fields.Char('Name')
 	file_colony_description = fields.Char('Description')
 
-class dms_ccb_file_category(models.Model):
-	_name = 'dms_ccb.file_category'
-	_description = 'DMS CCB File Category'
-	_rec_name = 'file_category'
-	file_category = fields.Char('Name')
-	file_category_description = fields.Char('Description')
+class dms_ccb_file_type_of_land(models.Model):
+	_name = 'dms_ccb.file_type_of_land'
+	_description = 'DMS CCB File Type of Land'
+	_rec_name = 'file_type_of_land'
+	file_type_of_land = fields.Char('Name')
+	file_type_of_land_description = fields.Char('Description')
 
-class dms_ccb_file_status(models.Model):
-	_name = 'dms_ccb.file_status'
-	_description = 'DMS CCB File Status'
-	_rec_name = 'file_status'
-	file_status = fields.Char('Name')
-	file_status_description = fields.Char('Description')
+class dms_ccb_file_purpose(models.Model):
+	_name = 'dms_ccb.file_purpose'
+	_description = 'DMS CCB File Purpose'
+	_rec_name = 'file_purpose'
+	file_purpose = fields.Char('Name')
+	file_purpose_description = fields.Char('Description')
 
 class dms_ccb_file_branch(models.Model):
 	_name = 'dms_ccb.file_branch'
@@ -64,8 +64,8 @@ class dms_ccb_file(models.Model):
 	file_record_type = fields.Many2one('dms_ccb.file_record_type', string='Record Type', track_visibility="always")
 	# file_area = fields.Many2one('dms_ccb.file_area', string='Area', track_visibility="always")
 	file_colony = fields.Many2one('dms_ccb.file_colony', string='Colony', track_visibility="always")
-	file_category = fields.Many2one('dms_ccb.file_category', string='Category', track_visibility="always")
-	file_status = fields.Many2one('dms_ccb.file_status', string='Status', track_visibility="always")
+	file_type_of_land = fields.Many2one('dms_ccb.file_type_of_land', string='Type of Land', track_visibility="always")
+	file_purpose = fields.Many2one('dms_ccb.file_purpose', string='Purpose', track_visibility="always")
 	file_branch = fields.Many2one('dms_ccb.file_branch', string='Branch', track_visibility="always")
 	file_remarks = fields.Text('Remarks')
 	file_attributes = fields.Many2many('dms_ccb.file_attribute', string='Attributes')

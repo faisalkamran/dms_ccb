@@ -54,8 +54,8 @@
 
 						<group name="group_right" string="Metadata">
 							<field name="file_colony"></field>
-							<field name="file_category"></field>
-							<field name="file_status"></field>
+							<field name="file_type_of_land"></field>
+							<field name="file_purpose"></field>
 							<field name="file_branch"></field>
 						</group>
 
@@ -101,8 +101,8 @@
 				<field name="file_barcode"></field>
 				<field name="file_record_type"></field>
 				<field name="file_colony"></field>
-				<field name="file_category"></field>
-				<field name="file_status"></field>
+				<field name="file_type_of_land"></field>
+				<field name="file_purpose"></field>
 				<field name="file_branch"></field>
 			</tree>
 		</field>		

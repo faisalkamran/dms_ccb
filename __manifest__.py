@@ -19,8 +19,8 @@
 		'views/dms_ccb_menu.xml',
 		'views/dms_ccb_record_type_views.xml',
 		'views/dms_ccb_colony_views.xml',
-		'views/dms_ccb_category_views.xml',		
-		'views/dms_ccb_status_views.xml',		
+		'views/dms_ccb_type_of_land_views.xml',		
+		'views/dms_ccb_purpose_views.xml',		
 		'views/dms_ccb_branch_views.xml',		
 		'views/dms_ccb_attribute_views.xml',		
 		'views/dms_ccb_page_tag_views.xml',		
@@ -33,5 +33,7 @@
 		# 'views/file_list_template.xml',
 		'data/demo_data_record_type.xml',
 		'data/demo_data_colony.xml',
+		'data/demo_data_type_of_land.xml',
+		'data/demo_data_purpose.xml',
 	],
 }

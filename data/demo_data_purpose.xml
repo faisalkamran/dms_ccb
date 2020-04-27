@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+	<data>
+		<record id="1" model="dms_ccb.file_purpose">
+			<field name="file_purpose">Commercial</field>
+		</record>
+
+		<record id="2" model="dms_ccb.file_purpose">
+			<field name="file_purpose">Commercial / Residential</field>
+		</record>
+
+		<record id="3" model="dms_ccb.file_purpose">
+			<field name="file_purpose">Residential</field>
+		</record>
+	</data>
+</odoo>

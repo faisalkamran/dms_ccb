@@ -109,25 +109,25 @@
 
 	<!-- ****** -->
 
-	<!-- Category definition for Category object -->
-	<record id="dms_ccb_category_obj_category" model="ir.module.category">
-		<field name="name">CCB: Category</field>
+	<!-- Category definition for Type of Land object -->
+	<record id="dms_ccb_type_of_land_obj_category" model="ir.module.category">
+		<field name="name">CCB: Type of Land</field>
 	</record>
 
-	<!-- DMS CCB User Group definition here for Category object -->
-	<record id="dms_ccb_category_obj_user_group" model="res.groups">
+	<!-- DMS CCB User Group definition here for type_of_land object -->
+	<record id="dms_ccb_type_of_land_obj_user_group" model="res.groups">
 		<field name="name">User</field>
-		<field name="category_id" ref="dms_ccb_category_obj_category"></field>
+		<field name="category_id" ref="dms_ccb_type_of_land_obj_category"></field>
 		<field name="implied_ids"
 				eval="[(4, ref('base.group_user'))]"></field>
 	</record>
 
-	<!-- DMS CCB Manager Group definition here for Category object -->
-	<record id="dms_ccb_category_obj_manager_group" model="res.groups">
+	<!-- DMS CCB Manager Group definition here for type_of_land object -->
+	<record id="dms_ccb_type_of_land_obj_manager_group" model="res.groups">
 		<field name="name">Manager</field>
-		<field name="category_id" ref="dms_ccb_category_obj_category"></field>
+		<field name="category_id" ref="dms_ccb_type_of_land_obj_category"></field>
 		<field name="implied_ids"
-				eval="[(4, ref('dms_ccb_category_obj_user_group'))]"></field>
+				eval="[(4, ref('dms_ccb_type_of_land_obj_user_group'))]"></field>
 		<!-- <field name="users"
 				eval= "[(4,ref('base.user_root')),
 						(4,ref('base.user_admin'))]"></field> -->
@@ -187,25 +187,25 @@
 
 	<!-- ****** -->
 
-	<!-- Category definition for File Status object -->
-	<record id="dms_ccb_status_obj_category" model="ir.module.category">
-		<field name="name">CCB: Status</field>
+	<!-- Category definition for File Purpose object -->
+	<record id="dms_ccb_purpose_obj_category" model="ir.module.category">
+		<field name="name">CCB: Purpose</field>
 	</record>
 
-	<!-- DMS CCB User Group definition here for File Status object -->
-	<record id="dms_ccb_status_obj_user_group" model="res.groups">
+	<!-- DMS CCB User Group definition here for File Purpose object -->
+	<record id="dms_ccb_purpose_obj_user_group" model="res.groups">
 		<field name="name">User</field>
-		<field name="category_id" ref="dms_ccb_status_obj_category"></field>
+		<field name="category_id" ref="dms_ccb_purpose_obj_category"></field>
 		<field name="implied_ids"
 				eval="[(4, ref('base.group_user'))]"></field>
 	</record>
 
-	<!-- DMS CCB Manager Group definition here for File Status object -->
-	<record id="dms_ccb_status_obj_manager_group" model="res.groups">
+	<!-- DMS CCB Manager Group definition here for File Purpose object -->
+	<record id="dms_ccb_purpose_obj_manager_group" model="res.groups">
 		<field name="name">Manager</field>
-		<field name="category_id" ref="dms_ccb_status_obj_category"></field>
+		<field name="category_id" ref="dms_ccb_purpose_obj_category"></field>
 		<field name="implied_ids"
-				eval="[(4, ref('dms_ccb_status_obj_user_group'))]"></field>
+				eval="[(4, ref('dms_ccb_purpose_obj_user_group'))]"></field>
 		<!-- <field name="users"
 				eval= "[(4,ref('base.user_root')),
 						(4,ref('base.user_admin'))]"></field> -->

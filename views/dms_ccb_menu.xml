@@ -32,15 +32,15 @@
 				view_mode="tree,form">		
 	</act_window>
 
-	<act_window id="action_dms_ccb_file_status"
-				name="File Status"
-				res_model="dms_ccb.file_status"
+	<act_window id="action_dms_ccb_file_purpose"
+				name="File Purpose"
+				res_model="dms_ccb.file_purpose"
 				view_mode="tree,form">		
 	</act_window>
 
-	<act_window id="action_dms_ccb_file_category"
-				name="Category"
-				res_model="dms_ccb.file_category"
+	<act_window id="action_dms_ccb_file_type_of_land"
+				name="Type of Land"
+				res_model="dms_ccb.file_type_of_land"
 				view_mode="tree,form">		
 	</act_window>
 
@@ -120,11 +120,11 @@
 			  sequence="3"
 			  action="action_dms_ccb_file_branch">
 	</menuitem>
-	<menuitem id="dms_ccb_category_menu"
-			  name="Category"
+	<menuitem id="dms_ccb_type_of_land_menu"
+			  name="Type of Land"
 			  parent="dms_ccb_configuration_menu"
 			  sequence="4"
-			  action="action_dms_ccb_file_category">		
+			  action="action_dms_ccb_file_type_of_land">		
 	</menuitem>
 	<menuitem id="dms_ccb_page_tags"
 			  name="Document Tags"
@@ -138,11 +138,11 @@
 			  sequence="6"
 			  action="action_dms_ccb_record_type">		
 	</menuitem>
-	<menuitem id="dms_ccb_status_menu"
-			  name="Status"
+	<menuitem id="dms_ccb_purpose_menu"
+			  name="Purpose"
 			  parent="dms_ccb_configuration_menu"
 			  sequence="7"
-			  action="action_dms_ccb_file_status">		
+			  action="action_dms_ccb_file_purpose">		
 	</menuitem>
 	<menuitem id="dms_ccb_page_rej_reason_menu"
 			  name="Rejection Reasons"
