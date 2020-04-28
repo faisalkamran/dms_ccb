@@ -239,6 +239,21 @@
 
 	<!-- ****** -->
 
+	<!-- Category definition for QC workflow -->
+	<record id="dms_ccb_qc_workflow_category" model="ir.module.category">
+		<field name="name">CCB: QC Workflow</field>
+	</record>
+
+	<!-- DMS CCB Group definition here for integration with Smile Audit app -->
+	<record id="dms_ccb_qc_workflow_group" model="res.groups">
+		<field name="name">QC Workflow Access Enabled</field>
+		<field name="category_id" ref="dms_ccb_qc_workflow_category"></field>
+		<field name="implied_ids" eval="[(4, ref('base.group_user'))]"></field>
+		<!-- <field name="users" eval="[(4, ref('base.user_admin'))]"></field> -->
+	</record>
+
+	<!-- ****** -->
+
 	<!-- Category definition for integration with Smile Audit app -->
 	<record id="dms_ccb_audit_trail_category" model="ir.module.category">
 		<field name="name">CCB: Audit Trail</field>

@@ -35,5 +35,6 @@
 		'data/demo_data_colony.xml',
 		'data/demo_data_type_of_land.xml',
 		'data/demo_data_purpose.xml',
+		'data/demo_data_page_tags.xml',
 	],
 }

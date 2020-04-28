@@ -24,17 +24,24 @@
 					<button name="file_for_review_state"
 							type="object"
 							string="For QC Review"
-							states="draft,rejected"></button>
+							states="draft,rejected"
+							groups="dms_ccb.dms_ccb_qc_workflow_group"></button>
 
 					<button name="file_for_approved_state"
 							type="object"
 							string="QC Approved"
-							states="qc_review"></button>
+							states="qc_review"
+							groups="dms_ccb.dms_ccb_qc_workflow_group"></button>
 
 					<button name="file_for_rejected_state"
 							type="object"
 							string="QC Rejected"
-							states="qc_review"></button>
+							states="qc_review"
+							groups="dms_ccb.dms_ccb_qc_workflow_group"></button>
+							
+					<!-- <button name="mlc_erp_api_call"
+							type="object"
+							string="Lookup Record ID"></button> -->
 
 					<!-- File QC Review Workflow declaration -->
 					<field name="state"
@@ -49,16 +56,25 @@
 							<field name="file_barcode" readonly="1"></field>
 							<field name="file_no"></field>
 							<field name="file_subject"></field>
-							<field name="file_record_type"></field>
+							<field name="file_address"></field>
+							<field name="file_plot_khasra_cb_no"></field>
 						</group>
 
 						<group name="group_right" string="Metadata">
+							<field name="file_branch"></field>
 							<field name="file_colony"></field>
+							<field name="file_record_type"></field>
 							<field name="file_type_of_land"></field>
 							<field name="file_purpose"></field>
-							<field name="file_branch"></field>
+							<button name="mlc_erp_api_call"
+									type="object"
+									string="Lookup Record ID"
+									></button>
+							<field name="file_record_id"></field>
+							<!-- <button name="mlc_erp_api_call"
+									type="object"
+									string="Lookup Record ID"></button> -->
 						</group>
-
 					</group>
 					<!-- <group_2>
 						<field name="message_main_attachment_id" widget="many2many_kanban"></field>
@@ -96,9 +112,10 @@
 		<field name="model">dms_ccb.file</field>
 		<field name="arch" type="xml">
 			<tree>
+				<field name="id"></field>
 				<field name="file_no"></field>
 				<field name="file_subject"></field>
-				<field name="file_barcode"></field>
+				<!-- <field name="file_barcode"></field> -->
 				<field name="file_record_type"></field>
 				<field name="file_colony"></field>
 				<field name="file_type_of_land"></field>

@@ -76,6 +76,9 @@ class dms_ccb_file(models.Model):
 							string="QC Status",
 							readonly=True,default='draft')
 	is_public = fields.Boolean(default=False)
+	file_address = fields.Text('Address', track_visibility="always")
+	file_plot_khasra_cb_no = fields.Char('Plot No / CB No / Khasra No', track_visibility="always")
+	file_record_id = fields.Char('Record ID', track_visibility="always")
 	
 	# file_attachments = fields.Many2many('ir.attachment', string='File Attachments')
 	# message_attachment_count = fields.Integer(readonly=False, track_visibility="onchange")
@@ -91,6 +94,9 @@ class dms_ccb_file(models.Model):
 	def file_for_rejected_state(self):
 		for rec in self:
 			rec.state = 'rejected'
+
+	def mlc_erp_api_call(self):
+		return 0
 
 	@api.model
 	def create(self, vals):
@@ -128,8 +134,10 @@ class dms_ccb_page_rejection_reasons(models.Model):
 class Attachment_Extension(models.Model):
 	_inherit = ['ir.attachment']
 	# dms_page_tags = fields.Char('Page Tags')
-	dms_ccb_page_tags = fields.Many2many('dms_ccb.page_tags', string='Page Tag(s)')
-	dms_ccb_page_rej_reasons = fields.Many2many('dms_ccb.page_rej_reasons', string='Rejection Reason(s)')
+	dms_ccb_page_tags = fields.Many2many('dms_ccb.page_tags', string='Page Tags')
+	dms_ccb_page_rej_reasons = fields.Many2many('dms_ccb.page_rej_reasons', string='Rejection Reasons', readonly="True")
+	dms_ccb_page_date = fields.Date(string='Document Date')
+	dms_ccb_page_status = fields.Selection([('approved','Approved'),('rejected', 'Rejected')],string="Approval Status")
 	# attachment_image_preview = fields.Binary('Preview')
 	# attachment_image_preview = fields.Binary(string='Image Preview', default='thumbnail')
 	# attachment_image_preview = fields.Binary(string='Image Preview')

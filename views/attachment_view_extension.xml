@@ -22,11 +22,31 @@
 
 			<h1 position="after">
 				<group>
-					<field name="dms_ccb_page_tags" widget="many2many_tags"></field>
-					<field name="dms_ccb_page_rej_reasons" widget="many2many_tags"></field>
+					<group>
+						<field name="dms_ccb_page_tags" widget="many2many_tags"></field>
+						<field name="dms_ccb_page_status"></field>
+						<field name="dms_ccb_page_rej_reasons"
+							widget="many2many_tags"
+							attrs="{'readonly': [('dms_ccb_page_status','!=','rejected')]}">
+						</field>
+						<!-- <field name="dms_ccb_page_rej_reasons"
+							widget="many2many_tags"
+							attrs="{
+									'readonly': ['|',['dms_ccb_page_status','!=','rejected'],['dms_ccb_page_status','!=','approved']]
+									}">
+						</field> -->
+						<field name="dms_ccb_page_date"></field>
+					</group>
+					<group>					
+						<field name="datas"
+							filename="datas_fname"
+							widget="image"
+							readonly="1"
+							string="Page Content"
+							class="oe_top"
+							style="width: 145px; height: 150px;"></field>
+					</group>
 				</group>
-				<field name="datas" filename="datas_fname" widget="image">
-				</field>
 			</h1>	
 
 
@@ -38,8 +58,34 @@
 		<field name="model">ir.attachment</field>
 		<field name="inherit_id" ref="base.view_attachment_tree"></field>
 		<field name="arch" type="xml">
+
+			<field name="name" position="attributes">
+				<attribute name="invisible">1</attribute>
+			</field>
+			<field name="res_model" position="attributes">
+				<attribute name="invisible">1</attribute>
+			</field>
+			<field name="res_field" position="attributes">
+				<attribute name="invisible">1</attribute>
+			</field>
+			<field name="res_id" position="attributes">
+				<attribute name="invisible">1</attribute>
+			</field>
+			<field name="type" position="attributes">
+				<attribute name="invisible">1</attribute>
+			</field>
+			<field name="create_date" position="attributes">
+				<attribute name="invisible">1</attribute>
+			</field>
+
+			<!-- <field name="datas_fname" position="before">
+				<field name="store_fname" widget="many2many_tags"></field>
+			</field> -->
+
 			<field name="datas_fname" position="after">
 				<field name="dms_ccb_page_tags" widget="many2many_tags"></field>
+				<field name="dms_ccb_page_date" widget="many2many_tags"></field>
+				<field name="dms_ccb_page_status"></field>
 				<field name="dms_ccb_page_rej_reasons" widget="many2many_tags"></field>
 			</field>
 		</field>
