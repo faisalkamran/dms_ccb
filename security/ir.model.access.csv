@@ -1,6 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 dms_file_user,DMS CCB User,model_dms_ccb_file,dms_ccb_file_obj_user_group,1,0,0,0
-dms_file_manager,DMS CCB Manager,model_dms_ccb_file,dms_ccb_file_obj_manager_group,1,1,1,1
+dms_file_manager,DMS CCB Manager,model_dms_ccb_file,dms_ccb_file_obj_manager_group,0,1,1,0
+dms_file_admin,DMS CCB Admin,model_dms_ccb_file,dms_ccb_file_obj_admin_group,0,0,0,1
 dms_file_record_user,DMS CCB User,model_dms_ccb_file_record_type,dms_ccb_record_obj_user_group,1,0,0,0
 dms_file_record_manager,DMS CCB Manager,model_dms_ccb_file_record_type,dms_ccb_record_obj_manager_group,1,1,1,1
 dms_file_colony_user,DMS CCB User,model_dms_ccb_file_colony,dms_ccb_colony_obj_user_group,1,0,0,0
@@ -18,5 +19,6 @@ dms_page_tags_manager,DMS CCB Manager,model_dms_ccb_page_tags,dms_ccb_page_tag_o
 dms_page_rej_reasons_user,DMS CCB User,model_dms_ccb_page_rej_reasons,dms_ccb_rej_reasons_obj_user_group,1,0,0,0
 dms_page_rej_reasons_manager,DMS CCB Manager,model_dms_ccb_page_rej_reasons,dms_ccb_rej_reasons_obj_manager_group,1,1,1,1
 dms_page_attachment_user,DMS CCB User,model_ir_attachment,dms_ccb_attachment_obj_user_group,1,0,0,0
-dms_page_attachment_manager,DMS CCB Manager,model_ir_attachment,dms_ccb_attachment_obj_manager_group,1,1,1,1
+dms_page_attachment_manager,DMS CCB Manager,model_ir_attachment,dms_ccb_attachment_obj_manager_group,0,1,1,0
+dms_page_attachment_admin,DMS CCB Admin,model_ir_attachment,dms_ccb_attachment_obj_admin_group,0,0,0,1
 base.access_ir_attachment_group_user,ir_attachment group_user,model_ir_attachment,base.group_user,1,0,0,0

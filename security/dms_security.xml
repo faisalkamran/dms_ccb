@@ -29,6 +29,17 @@
 						(4,ref('base.user_admin'))]"></field> -->
 	</record>
 
+	<!-- DMS CCB Admin Group definition here for File object -->
+	<record id="dms_ccb_file_obj_admin_group" model="res.groups">
+		<field name="name">Admin</field>
+		<field name="category_id" ref="dms_ccb_file_obj_category"></field>
+		<field name="implied_ids"
+				eval="[(4, ref('dms_ccb_file_obj_manager_group'))]"></field>
+		<!-- <field name="users"
+				eval= "[(4,ref('base.user_root')),
+						(4,ref('base.user_admin'))]"></field> -->
+	</record>
+
 	<!-- ****** -->
 
 	<!-- Category definition for Attachment (scanned page) object -->
@@ -50,6 +61,17 @@
 		<field name="category_id" ref="dms_ccb_attachment_obj_category"></field>
 		<field name="implied_ids"
 				eval="[(4, ref('dms_ccb_attachment_obj_user_group'))]"></field>
+		<!-- <field name="users"
+				eval= "[(4,ref('base.user_root')),
+						(4,ref('base.user_admin'))]"></field> -->
+	</record>
+
+	<!-- DMS CCB Admin Group definition here for Attachment object -->
+	<record id="dms_ccb_attachment_obj_admin_group" model="res.groups">
+		<field name="name">Admin</field>
+		<field name="category_id" ref="dms_ccb_attachment_obj_category"></field>
+		<field name="implied_ids"
+				eval="[(4, ref('dms_ccb_attachment_obj_manager_group'))]"></field>
 		<!-- <field name="users"
 				eval= "[(4,ref('base.user_root')),
 						(4,ref('base.user_admin'))]"></field> -->
