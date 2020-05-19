@@ -22,7 +22,7 @@
 					<br></br>
 					<b>Record Type: </b><t t-esc="doc.file_record_type.display_name"></t>
 					<br></br>
-					<b>Area: </b><t t-esc="doc.file_area.display_name"></t>
+					<b>Colony: </b><t t-esc="doc.file_colony.display_name"></t>
 					<br></br>
 					<b>Category: </b><t t-esc="doc.file_category.display_name"></t>
 					<br></br>

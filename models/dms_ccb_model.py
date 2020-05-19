@@ -7,26 +7,33 @@ class dms_ccb_file_record_type(models.Model):
 	file_record_type = fields.Char('Name')
 	file_record_type_description = fields.Char('Description')
 
-class dms_ccb_file_area(models.Model):
-	_name = 'dms_ccb.file_area'
-	_description = 'DMS CCB File Area'
-	_rec_name = 'file_area'
-	file_area = fields.Char('Name')
-	file_area_description = fields.Char('Description')
+# class dms_ccb_file_area(models.Model):
+# 	_name = 'dms_ccb.file_area'
+# 	_description = 'DMS CCB File Area'
+# 	_rec_name = 'file_area'
+# 	file_area = fields.Char('Name')
+# 	file_area_description = fields.Char('Description')
 
-class dms_ccb_file_category(models.Model):
-	_name = 'dms_ccb.file_category'
-	_description = 'DMS CCB File Category'
-	_rec_name = 'file_category'
-	file_category = fields.Char('Name')
-	file_category_description = fields.Char('Description')
+class dms_ccb_file_colony(models.Model):
+	_name = 'dms_ccb.file_colony'
+	_description = 'DMS CCB File Colony'
+	_rec_name = 'file_colony'
+	file_colony = fields.Char('Name')
+	file_colony_description = fields.Char('Description')
 
-class dms_ccb_file_status(models.Model):
-	_name = 'dms_ccb.file_status'
-	_description = 'DMS CCB File Status'
-	_rec_name = 'file_status'
-	file_status = fields.Char('Name')
-	file_status_description = fields.Char('Description')
+class dms_ccb_file_type_of_land(models.Model):
+	_name = 'dms_ccb.file_type_of_land'
+	_description = 'DMS CCB File Type of Land'
+	_rec_name = 'file_type_of_land'
+	file_type_of_land = fields.Char('Name')
+	file_type_of_land_description = fields.Char('Description')
+
+class dms_ccb_file_purpose(models.Model):
+	_name = 'dms_ccb.file_purpose'
+	_description = 'DMS CCB File Purpose'
+	_rec_name = 'file_purpose'
+	file_purpose = fields.Char('Name')
+	file_purpose_description = fields.Char('Description')
 
 class dms_ccb_file_branch(models.Model):
 	_name = 'dms_ccb.file_branch'
@@ -55,9 +62,10 @@ class dms_ccb_file(models.Model):
 							readonly=True, index= True, default=lambda self: _('New'))
 
 	file_record_type = fields.Many2one('dms_ccb.file_record_type', string='Record Type', track_visibility="always")
-	file_area = fields.Many2one('dms_ccb.file_area', string='Area', track_visibility="always")
-	file_category = fields.Many2one('dms_ccb.file_category', string='Category', track_visibility="always")
-	file_status = fields.Many2one('dms_ccb.file_status', string='Status', track_visibility="always")
+	# file_area = fields.Many2one('dms_ccb.file_area', string='Area', track_visibility="always")
+	file_colony = fields.Many2one('dms_ccb.file_colony', string='Colony', track_visibility="always")
+	file_type_of_land = fields.Many2one('dms_ccb.file_type_of_land', string='Type of Land', track_visibility="always")
+	file_purpose = fields.Many2one('dms_ccb.file_purpose', string='Purpose', track_visibility="always")
 	file_branch = fields.Many2one('dms_ccb.file_branch', string='Branch', track_visibility="always")
 	file_remarks = fields.Text('Remarks')
 	file_attributes = fields.Many2many('dms_ccb.file_attribute', string='Attributes')
@@ -67,6 +75,10 @@ class dms_ccb_file(models.Model):
 							('approved', 'Approved'),],
 							string="QC Status",
 							readonly=True,default='draft')
+	is_public = fields.Boolean(default=False)
+	file_address = fields.Text('Address', track_visibility="always")
+	file_plot_khasra_cb_no = fields.Char('Plot No / CB No / Khasra No', track_visibility="always")
+	file_record_id = fields.Char('Record ID', track_visibility="always")
 	
 	# file_attachments = fields.Many2many('ir.attachment', string='File Attachments')
 	# message_attachment_count = fields.Integer(readonly=False, track_visibility="onchange")
@@ -82,6 +94,9 @@ class dms_ccb_file(models.Model):
 	def file_for_rejected_state(self):
 		for rec in self:
 			rec.state = 'rejected'
+
+	def mlc_erp_api_call(self):
+		return 0
 
 	@api.model
 	def create(self, vals):
@@ -119,8 +134,10 @@ class dms_ccb_page_rejection_reasons(models.Model):
 class Attachment_Extension(models.Model):
 	_inherit = ['ir.attachment']
 	# dms_page_tags = fields.Char('Page Tags')
-	dms_ccb_page_tags = fields.Many2many('dms_ccb.page_tags', string='Page Tag(s)')
-	dms_ccb_page_rej_reasons = fields.Many2many('dms_ccb.page_rej_reasons', string='Rejection Reason(s)')
+	dms_ccb_page_tags = fields.Many2many('dms_ccb.page_tags', string='Page Tags')
+	dms_ccb_page_rej_reasons = fields.Many2many('dms_ccb.page_rej_reasons', string='Rejection Reasons', readonly="True")
+	dms_ccb_page_date = fields.Date(string='Document Date')
+	dms_ccb_page_status = fields.Selection([('approved','Approved'),('rejected', 'Rejected')],string="Approval Status")
 	# attachment_image_preview = fields.Binary('Preview')
 	# attachment_image_preview = fields.Binary(string='Image Preview', default='thumbnail')
 	# attachment_image_preview = fields.Binary(string='Image Preview')

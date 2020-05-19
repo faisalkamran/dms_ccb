@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+	<data>
+		<record id="1" model="dms_ccb.file_type_of_land">
+			<field name="file_type_of_land">Leased Inside Bazaar</field>
+		</record>
+
+		<record id="2" model="dms_ccb.file_type_of_land">
+			<field name="file_type_of_land">Leased Outside Bazaar</field>
+		</record>
+
+		<record id="3" model="dms_ccb.file_type_of_land">
+			<field name="file_type_of_land">Old Grant</field>
+		</record>
+
+		<record id="4" model="dms_ccb.file_type_of_land">
+			<field name="file_type_of_land">Private</field>
+		</record>
+	</data>
+</odoo>

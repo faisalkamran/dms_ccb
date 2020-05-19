@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<odoo>
+	<record id="dms_ccb_colony_form_view" model="ir.ui.view">
+		<field name="name">Colony Form</field>
+		<field name="model">dms_ccb.file_colony</field>
+		<field name="arch" type="xml">
+			<form string="Colony">
+				<header>
+					<!-- Buttons will go here -->
+				</header>
+				<sheet>
+					<!-- Content will go here -->
+					<group name="top_group">
+						<group name="left_group">
+							<field name="file_colony"></field>
+						</group>
+						<group name="right_group">
+							<field name="file_colony_description"></field>
+						</group>
+					</group>
+				</sheet>
+			</form>			
+		</field>		
+	</record>
+
+	<record id="dms_ccb_colony_list_view" model="ir.ui.view">
+		<field name="name">Colony List</field>
+		<field name="model">dms_ccb.file_colony</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="file_colony"></field>
+				<field name="file_colony_description"></field>							
+			</tree>
+		</field>		
+	</record>
+
+</odoo>

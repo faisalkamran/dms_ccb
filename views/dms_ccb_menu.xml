@@ -32,21 +32,27 @@
 				view_mode="tree,form">		
 	</act_window>
 
-	<act_window id="action_dms_ccb_file_status"
-				name="File Status"
-				res_model="dms_ccb.file_status"
+	<act_window id="action_dms_ccb_file_purpose"
+				name="File Purpose"
+				res_model="dms_ccb.file_purpose"
 				view_mode="tree,form">		
 	</act_window>
 
-	<act_window id="action_dms_ccb_file_category"
-				name="Category"
-				res_model="dms_ccb.file_category"
+	<act_window id="action_dms_ccb_file_type_of_land"
+				name="Type of Land"
+				res_model="dms_ccb.file_type_of_land"
 				view_mode="tree,form">		
 	</act_window>
 
-	<act_window id="action_dms_ccb_file_area"
+	<!-- <act_window id="action_dms_ccb_file_area"
 				name="Area"
 				res_model="dms_ccb.file_area"
+				view_mode="tree,form">		
+	</act_window> -->
+
+	<act_window id="action_dms_ccb_file_colony"
+				name="Colony"
+				res_model="dms_ccb.file_colony"
 				view_mode="tree,form">		
 	</act_window>
 
@@ -90,11 +96,17 @@
 	</menuitem>
 
 	<!-- Child menu items of "configuration" menu here -->
-	<menuitem id="dms_ccb_area_menu"
+	<!-- <menuitem id="dms_ccb_area_menu"
 			  name="Area"
 			  parent="dms_ccb_configuration_menu"
 			  sequence="1"
 			  action="action_dms_ccb_file_area">		
+	</menuitem> -->
+	<menuitem id="dms_ccb_colony_menu"
+			  name="Colony"
+			  parent="dms_ccb_configuration_menu"
+			  sequence="1"
+			  action="action_dms_ccb_file_colony">		
 	</menuitem>
 	<!-- <menuitem id="dms_ccb_attribute_menu"
 			  name="Attributes"
@@ -108,11 +120,11 @@
 			  sequence="3"
 			  action="action_dms_ccb_file_branch">
 	</menuitem>
-	<menuitem id="dms_ccb_category_menu"
-			  name="Category"
+	<menuitem id="dms_ccb_type_of_land_menu"
+			  name="Type of Land"
 			  parent="dms_ccb_configuration_menu"
 			  sequence="4"
-			  action="action_dms_ccb_file_category">		
+			  action="action_dms_ccb_file_type_of_land">		
 	</menuitem>
 	<menuitem id="dms_ccb_page_tags"
 			  name="Document Tags"
@@ -126,11 +138,11 @@
 			  sequence="6"
 			  action="action_dms_ccb_record_type">		
 	</menuitem>
-	<menuitem id="dms_ccb_status_menu"
-			  name="Status"
+	<menuitem id="dms_ccb_purpose_menu"
+			  name="Purpose"
 			  parent="dms_ccb_configuration_menu"
 			  sequence="7"
-			  action="action_dms_ccb_file_status">		
+			  action="action_dms_ccb_file_purpose">		
 	</menuitem>
 	<menuitem id="dms_ccb_page_rej_reason_menu"
 			  name="Rejection Reasons"

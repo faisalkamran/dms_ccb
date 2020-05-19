@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<odoo>
+	<record id="dms_ccb_type_of_land_form_view" model="ir.ui.view">
+		<field name="name">Type of Land Form</field>
+		<field name="model">dms_ccb.file_type_of_land</field>
+		<field name="arch" type="xml">
+			<form string="Type of Land">
+				<header>
+					<!-- Buttons will go here -->
+				</header>
+				<sheet>
+					<!-- Content will go here -->
+					<group name="top_group">
+						<group name="left_group">
+							<field name="file_type_of_land"></field>
+						</group>
+						<group name="right_group">
+							<field name="file_type_of_land_description"></field>
+						</group>
+					</group>
+				</sheet>
+			</form>			
+		</field>		
+	</record>
+
+	<record id="dms_ccb_type_of_land_list_view" model="ir.ui.view">
+		<field name="name">Type of Land List</field>
+		<field name="model">dms_ccb.file_type_of_land</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="file_type_of_land"></field>
+				<field name="file_type_of_land_description"></field>							
+			</tree>
+		</field>		
+	</record>
+
+</odoo>

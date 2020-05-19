@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+	<data>
+		<record id="1" model="dms_ccb.page_tags">
+			<field name="tag_name">Form AB</field>
+		</record>
+		<record id="2" model="dms_ccb.page_tags">
+			<field name="tag_name">Faard (If Plot)</field>
+		</record>
+		<record id="3" model="dms_ccb.page_tags">
+			<field name="tag_name">Sale Deed (Attested Notary Public)</field>
+		</record>
+		<record id="4" model="dms_ccb.page_tags">
+			<field name="tag_name">Approved Map</field>
+		</record>
+		<record id="5" model="dms_ccb.page_tags">
+			<field name="tag_name">GLR Extract</field>
+		</record>
+		<record id="6" model="dms_ccb.page_tags">
+			<field name="tag_name">Lease Deed</field>
+		</record>
+		<record id="7" model="dms_ccb.page_tags">
+			<field name="tag_name">CNIC of Applicant(s)</field>
+		</record>
+		<record id="8" model="dms_ccb.page_tags">
+			<field name="tag_name">Paid Copy of Challan (House Tax and Water Charges)</field>
+		</record>
+		<record id="9" model="dms_ccb.page_tags">
+			<field name="tag_name">Paid Copy of TIP Tax Challan</field>
+		</record>
+		<record id="10" model="dms_ccb.page_tags">
+			<field name="tag_name">Security Clearance Proforma</field>
+		</record>
+		<record id="11" model="dms_ccb.page_tags">
+			<field name="tag_name">2x photographs</field>
+		</record>
+		<record id="12" model="dms_ccb.page_tags">
+			<field name="tag_name">Domicile Copy</field>
+		</record>
+		<record id="13" model="dms_ccb.page_tags">
+			<field name="tag_name">Home Town Police Verification</field>
+		</record>
+		<record id="14" model="dms_ccb.page_tags">
+			<field name="tag_name">Residential Certificate</field>
+		</record>
+		<record id="15" model="dms_ccb.page_tags">
+			<field name="tag_name">CD/DVD of Building Plan</field>
+		</record>
+		<record id="16" model="dms_ccb.page_tags">
+			<field name="tag_name">Building plan stamped by Architect</field>
+		</record>
+		<record id="17" model="dms_ccb.page_tags">
+			<field name="tag_name">Form D (Composition Case)</field>
+		</record>
+		<record id="18" model="dms_ccb.page_tags">
+			<field name="tag_name">Structure Stability Certificate (Commercial)</field>
+		</record>
+		<record id="19" model="dms_ccb.page_tags">
+			<field name="tag_name">Structure Design / Drawing (Commercial)</field>
+		</record>
+		<record id="20" model="dms_ccb.page_tags">
+			<field name="tag_name">Detail Drawings (Commercial)</field>
+		</record>
+		<record id="21" model="dms_ccb.page_tags">
+			<field name="tag_name">NOC from Neighbors (Basement / Lower Ground)</field>
+		</record>
+		<record id="22" model="dms_ccb.page_tags">
+			<field name="tag_name">Affidavit regarding no dispute / litigation against the property</field>
+		</record>
+		<record id="23" model="dms_ccb.page_tags">
+			<field name="tag_name">Update Color Google Image</field>
+		</record>
+		<record id="24" model="dms_ccb.page_tags">
+			<field name="tag_name">3 Snaps of the plot from different angles</field>
+		</record>
+		<record id="25" model="dms_ccb.page_tags">
+			<field name="tag_name">Aks Shajra Original</field>
+		</record>
+		<record id="26" model="dms_ccb.page_tags">
+			<field name="tag_name">Note Sheet</field>
+		</record>
+		<record id="27" model="dms_ccb.page_tags">
+			<field name="tag_name">Auction Notice</field>
+		</record>
+		<record id="28" model="dms_ccb.page_tags">
+			<field name="tag_name">Condition of sale</field>
+		</record>
+		<record id="29" model="dms_ccb.page_tags">
+			<field name="tag_name">Sale Register</field>
+		</record>
+		<record id="30" model="dms_ccb.page_tags">
+			<field name="tag_name">Auction Letter</field>
+		</record>
+		<record id="31" model="dms_ccb.page_tags">
+			<field name="tag_name">Public Auction Sale Register</field>
+		</record>
+		<record id="32" model="dms_ccb.page_tags">
+			<field name="tag_name">Acknowledgment</field>
+		</record>
+		<record id="33" model="dms_ccb.page_tags">
+			<field name="tag_name">Envelop</field>
+		</record>
+		<record id="34" model="dms_ccb.page_tags">
+			<field name="tag_name">Application</field>
+		</record>
+		<record id="35" model="dms_ccb.page_tags">
+			<field name="tag_name">Letter</field>
+		</record>
+		<record id="36" model="dms_ccb.page_tags">
+			<field name="tag_name">Report Form</field>
+		</record>
+		<record id="37" model="dms_ccb.page_tags">
+			<field name="tag_name">CBR</field>
+		</record>
+		<record id="38" model="dms_ccb.page_tags">
+			<field name="tag_name">Court Matter</field>
+		</record>
+		<record id="39" model="dms_ccb.page_tags">
+			<field name="tag_name">Mutation Form</field>
+		</record>
+		<record id="40" model="dms_ccb.page_tags">
+			<field name="tag_name">Affidavit for legal heirs</field>
+		</record>
+		<record id="41" model="dms_ccb.page_tags">
+			<field name="tag_name">Legal heir Certificate</field>
+		</record>
+		<record id="42" model="dms_ccb.page_tags">
+			<field name="tag_name">FRC</field>
+		</record>
+		<record id="43" model="dms_ccb.page_tags">
+			<field name="tag_name">Death Certificate</field>
+		</record>
+		<record id="44" model="dms_ccb.page_tags">
+			<field name="tag_name">Mutation Letter</field>
+		</record>
+		<record id="45" model="dms_ccb.page_tags">
+			<field name="tag_name">Order Sheet</field>
+		</record>
+		<record id="46" model="dms_ccb.page_tags">
+			<field name="tag_name">Legal Opinion</field>
+		</record>
+		<record id="47" model="dms_ccb.page_tags">
+			<field name="tag_name">Receipt of mutation fee</field>
+		</record>
+		<record id="48" model="dms_ccb.page_tags">
+			<field name="tag_name">Letter from Station Headquarter</field>
+		</record>
+		<record id="49" model="dms_ccb.page_tags">
+			<field name="tag_name">Env Cert</field>
+		</record>
+		<record id="50" model="dms_ccb.page_tags">
+			<field name="tag_name">Lease Deed Created in 2019</field>
+		</record>
+	</data>
+</odoo>
