@@ -13,7 +13,17 @@
 	# if installable is set to false module will be disabled
 	'installable': True,
 	'data': [
-		'security/dms_security.xml',
+		'security/dms_file_security.xml',
+		'security/dms_page_security.xml',
+		'security/dms_colony_obj_security.xml',
+		'security/dms_branch_obj_security.xml',
+		'security/dms_type_of_land_obj_security.xml',
+		'security/dms_page_tags_security.xml',
+		'security/dms_record_type_obj_security.xml',
+		'security/dms_purpose_object_security.xml',
+		'security/dms_rej_reasons_security.xml',
+		'security/dms_qc_audit_access_security.xml',
+		'security/dms_record_rules.xml',
 		'security/ir.model.access.csv',
 		'data/sequence.xml',
 		'views/dms_ccb_menu.xml',

@@ -1,0 +1,25 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+dms_file_read,DMS CCB Read,model_dms_ccb_file,dms_ccb_file_obj_read_group,1,0,0,0
+dms_file_write,DMS CCB Write,model_dms_ccb_file,dms_ccb_file_obj_write_group,0,1,0,0
+dms_file_create,DMS CCB Create,model_dms_ccb_file,dms_ccb_file_obj_create_group,0,0,1,0
+dms_file_unlink,DMS CCB Unlink,model_dms_ccb_file,dms_ccb_file_obj_unlink_group,0,0,0,1
+dms_file_record_user,DMS CCB User,model_dms_ccb_file_record_type,dms_ccb_record_obj_user_group,1,0,0,0
+dms_file_record_manager,DMS CCB Manager,model_dms_ccb_file_record_type,dms_ccb_record_obj_manager_group,1,1,1,1
+dms_file_colony_user,DMS CCB User,model_dms_ccb_file_colony,dms_ccb_colony_obj_user_group,1,0,0,0
+dms_file_colony_manager,DMS CCB Manager,model_dms_ccb_file_colony,dms_ccb_colony_obj_manager_group,1,1,1,1
+dms_file_type_of_land_user,DMS CCB User,model_dms_ccb_file_type_of_land,dms_ccb_type_of_land_obj_user_group,1,0,0,0
+dms_file_type_of_land_manager,DMS CCB Manager,model_dms_ccb_file_type_of_land,dms_ccb_type_of_land_obj_manager_group,1,1,1,1
+dms_file_purpose_user,DMS CCB User,model_dms_ccb_file_purpose,dms_ccb_purpose_obj_user_group,1,0,0,0
+dms_file_purpose_manager,DMS CCB Manager,model_dms_ccb_file_purpose,dms_ccb_purpose_obj_manager_group,1,1,1,1
+dms_file_branch_user,DMS CCB User,model_dms_ccb_file_branch,dms_ccb_branch_obj_user_group,1,0,0,0
+dms_file_branch_manager,DMS CCB Manager,model_dms_ccb_file_branch,dms_ccb_branch_obj_manager_group,1,1,1,1
+dms_file_attribute_user,DMS CCB User,model_dms_ccb_file_attribute,dms_ccb_file_obj_user_group,1,0,0,0
+dms_file_attribute_manager,DMS CCB Manager,model_dms_ccb_file_attribute,dms_ccb_file_obj_manager_group,1,1,1,1
+dms_page_tags_user,DMS CCB User,model_dms_ccb_page_tags,dms_ccb_page_tag_obj_user_group,1,0,0,0
+dms_page_tags_manager,DMS CCB Manager,model_dms_ccb_page_tags,dms_ccb_page_tag_obj_manager_group,1,1,1,1
+dms_page_rej_reasons_user,DMS CCB User,model_dms_ccb_page_rej_reasons,dms_ccb_rej_reasons_obj_user_group,1,0,0,0
+dms_page_rej_reasons_manager,DMS CCB Manager,model_dms_ccb_page_rej_reasons,dms_ccb_rej_reasons_obj_manager_group,1,1,1,1
+dms_page_attachment_user,DMS CCB User,model_ir_attachment,dms_ccb_attachment_obj_user_group,1,0,0,0
+dms_page_attachment_manager,DMS CCB Manager,model_ir_attachment,dms_ccb_attachment_obj_manager_group,0,1,1,0
+dms_page_attachment_admin,DMS CCB Admin,model_ir_attachment,dms_ccb_attachment_obj_admin_group,0,0,0,1
+base.access_ir_attachment_group_user,ir_attachment group_user,model_ir_attachment,base.group_user,1,0,0,0

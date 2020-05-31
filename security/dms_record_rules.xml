@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<odoo>
+
+	<!-- Add Record Rules definitions here -->
+
+	<!-- ****** -->
+
+	<!-- Definition for record rule that does NOT allow user with ERP Manager role to be created -->
+	<record model="ir.rule" id="dms_poc_disable_creation_of_user_with_admin_priv">
+		<field name="name">DMS: Disable Creation of User with Administration Priveleges</field>
+		<field name="model_id" ref="base.model_res_users"/>
+		<!-- <field name="groups" eval="[(4, ref('base.group_erp_manager'))]"/> -->
+		<field name="domain_force">[["groups_id","not in",["3"]]]</field>
+	</record>
+
+
+	<record model="ir.rule" id="dms_poc_admin_settings_no_access_rule">
+		<field name="name">DMS CCB: see no docs</field>
+		<field name="model_id" ref="model_dms_ccb_file"/>
+		<field name="groups" eval="[(4, ref('base.group_system'))]"/>
+		<field name="domain_force">[('is_public', '=', True)]</field>
+	</record>
+
+	<record model="ir.rule" id="dms_poc_admin_access_rights_no_access_rule">
+		<field name="name">DMS CCB: see no docs</field>
+		<field name="model_id" ref="model_dms_ccb_file"/>
+		<field name="groups" eval="[(4, ref('base.group_erp_manager'))]"/>
+		<field name="domain_force">[('is_public', '=', True)]</field>
+	</record>
+
+	<!-- ****** -->
+	
+</odoo>

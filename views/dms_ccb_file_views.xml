@@ -18,7 +18,9 @@
 							type="object"
 							string="Manage Pages"
 							class="oe_highlight"
-							groups="dms_ccb.dms_ccb_attachment_obj_manager_group"></button>
+							groups="dms_ccb.dms_ccb_attachment_obj_write_group,
+									dms_ccb.dms_ccb_attachment_obj_create_group,
+									dms_ccb.dms_ccb_attachment_obj_unlink_group"></button>
 
 					<!-- Workflow button declarations -->
 					<button name="file_for_review_state"

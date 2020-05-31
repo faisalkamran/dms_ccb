@@ -95,6 +95,13 @@
 		parent="dms_ccb_top_menu">
 	</menuitem>
 
+	<!-- Audit Trail menu definition here -->
+	<menuitem id="dms_ccb_audit_trail_menu"
+		name="Audit Trail"
+		parent="dms_ccb_top_menu"
+		groups="dms_ccb_audit_trail_group">
+	</menuitem>
+
 	<!-- Child menu items of "configuration" menu here -->
 	<!-- <menuitem id="dms_ccb_area_menu"
 			  name="Area"
