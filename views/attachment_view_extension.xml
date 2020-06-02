@@ -23,11 +23,13 @@
 			<h1 position="after">
 				<group>
 					<group>
-						<field name="dms_ccb_page_tags" widget="many2many_tags"></field>
-						<field name="dms_ccb_page_status"></field>
+						<field name="dms_ccb_page_tags" widget="many2many_tags"
+							attrs="{'invisible': [('res_model','!=','dms_ccb.file')]}"></field>
+						<field name="dms_ccb_page_status"
+							attrs="{'invisible': [('res_model','!=','dms_ccb.file')]}"></field>
 						<field name="dms_ccb_page_rej_reasons"
 							widget="many2many_tags"
-							attrs="{'readonly': [('dms_ccb_page_status','!=','rejected')]}">
+							attrs="{'readonly': [('dms_ccb_page_status','!=','rejected')],'invisible': [('res_model','!=','dms_ccb.file')]}">
 						</field>
 						<!-- <field name="dms_ccb_page_rej_reasons"
 							widget="many2many_tags"

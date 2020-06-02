@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+	<data>
+		<record id="1" model="dms_ccb.file_branch">
+			<field name="file_branch">Land Branch</field>
+		</record>
+		<record id="2" model="dms_ccb.file_branch">
+			<field name="file_branch">Revenue Branch</field>
+		</record>		
+	</data>
+</odoo>
