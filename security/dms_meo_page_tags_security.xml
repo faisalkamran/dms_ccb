@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<odoo>
+
+	<!-- Define category & user group declarations for our app here -->
+
+	<!-- ****** -->
+
+	<!-- Category definition for Page Tags object -->
+	<record id="dms_meo_page_tag_obj_category" model="ir.module.category">
+		<field name="name">MEO: Page Tags</field>
+	</record>
+
+	<!-- DMS MEO User Group definition here for Page Tags object -->
+	<record id="dms_meo_page_tag_obj_read_group" model="res.groups">
+		<field name="name">204 - Read</field>
+		<field name="category_id" ref="dms_meo_page_tag_obj_category"></field>
+		<field name="implied_ids"
+				eval="[(4, ref('base.group_user'))]"></field>
+	</record>
+
+	<!-- DMS MEO User Group definition here for Page Tags object -->
+	<record id="dms_meo_page_tag_obj_write_group" model="res.groups">
+		<field name="name">204 - Write</field>
+		<field name="category_id" ref="dms_meo_page_tag_obj_category"></field>
+		<field name="implied_ids"
+				eval="[(4, ref('dms_meo_page_tag_obj_read_group'))]"></field>
+	</record>
+
+	<!-- DMS MEO User Group definition here for Page Tags object -->
+	<record id="dms_meo_page_tag_obj_create_group" model="res.groups">
+		<field name="name">204 - Create</field>
+		<field name="category_id" ref="dms_meo_page_tag_obj_category"></field>
+		<field name="implied_ids"
+				eval="[(4, ref('dms_meo_page_tag_obj_read_group'))]"></field>
+	</record>
+
+	<!-- DMS MEO User Group definition here for Page Tags object -->
+	<record id="dms_meo_page_tag_obj_unlink_group" model="res.groups">
+		<field name="name">204 - Delete</field>
+		<field name="category_id" ref="dms_meo_page_tag_obj_category"></field>
+		<field name="implied_ids"
+				eval="[(4, ref('dms_meo_page_tag_obj_read_group')),(4, ref('dms_meo_page_tag_obj_write_group'))]"></field>
+	</record>
+
+	<!-- ****** -->
+
+</odoo>

@@ -155,7 +155,8 @@
 	<menuitem id="dms_ccb_audit_trail_menu"
 		name="Audit Trail"
 		parent="dms_mlc_top_menu"
-		groups="dms_ccb_audit_trail_group">
+		sequence="100"
+		groups="dms_ccb_audit_trail_group,dms_meo_audit_trail_group">
 	</menuitem>
 
 </odoo>

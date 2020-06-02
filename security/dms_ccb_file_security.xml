@@ -12,7 +12,7 @@
 
 	<!-- DMS CCB User Group definition here for File object -->
 	<record id="dms_ccb_file_obj_read_group" model="res.groups">
-		<field name="name">1. Read</field>
+		<field name="name">100 - Read</field>
 		<field name="category_id" ref="dms_ccb_file_obj_category"></field>
 		<field name="implied_ids"
 				eval="[(4, ref('base.group_user'))]"></field>
@@ -20,7 +20,7 @@
 
 	<!-- DMS CCB Manager Group definition here for File object -->
 	<record id="dms_ccb_file_obj_write_group" model="res.groups">
-		<field name="name">2. Write</field>
+		<field name="name">100 - Write</field>
 		<field name="category_id" ref="dms_ccb_file_obj_category"></field>
 		<field name="implied_ids"
 				eval="[(4, ref('dms_ccb_file_obj_read_group'))]"></field>
@@ -31,7 +31,7 @@
 
 	<!-- DMS CCB Admin Group definition here for File object -->
 	<record id="dms_ccb_file_obj_create_group" model="res.groups">
-		<field name="name">3. Create</field>
+		<field name="name">100 - Create</field>
 		<field name="category_id" ref="dms_ccb_file_obj_category"></field>
 		<field name="implied_ids"
 				eval="[(4, ref('dms_ccb_file_obj_read_group'))]"></field>
@@ -42,7 +42,7 @@
 
 	<!-- DMS CCB Admin Group definition here for File object -->
 	<record id="dms_ccb_file_obj_unlink_group" model="res.groups">
-		<field name="name">4. Delete</field>
+		<field name="name">100 - Delete</field>
 		<field name="category_id" ref="dms_ccb_file_obj_category"></field>
 		<field name="implied_ids"
 				eval="[(4, ref('dms_ccb_file_obj_read_group')),(4, ref('dms_ccb_file_obj_write_group'))]"></field>

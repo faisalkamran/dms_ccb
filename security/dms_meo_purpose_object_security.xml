@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<odoo>
+
+	<!-- Define category & user group declarations for our app here -->
+
+	<!-- ****** -->
+
+	<!-- Category definition for File Purpose object -->
+	<record id="dms_meo_purpose_obj_category" model="ir.module.category">
+		<field name="name">MEO: Purpose</field>
+	</record>
+
+	<!-- DMS MEO User Group definition here for File Purpose object -->
+	<record id="dms_meo_purpose_obj_read_group" model="res.groups">
+		<field name="name">205 - Read</field>
+		<field name="category_id" ref="dms_meo_purpose_obj_category"></field>
+		<field name="implied_ids"
+				eval="[(4, ref('base.group_user'))]"></field>
+	</record>
+
+	<!-- DMS MEO User Group definition here for File Purpose object -->
+	<record id="dms_meo_purpose_obj_write_group" model="res.groups">
+		<field name="name">205 - Write</field>
+		<field name="category_id" ref="dms_meo_purpose_obj_category"></field>
+		<field name="implied_ids"
+				eval="[(4, ref('dms_meo_purpose_obj_read_group'))]"></field>
+	</record>
+
+	<!-- DMS MEO User Group definition here for File Purpose object -->
+	<record id="dms_meo_purpose_obj_create_group" model="res.groups">
+		<field name="name">205 - Create</field>
+		<field name="category_id" ref="dms_meo_purpose_obj_category"></field>
+		<field name="implied_ids"
+				eval="[(4, ref('dms_meo_purpose_obj_read_group'))]"></field>
+	</record>
+
+	<!-- DMS MEO User Group definition here for File Purpose object -->
+	<record id="dms_meo_purpose_obj_unlink_group" model="res.groups">
+		<field name="name">205 - Delete</field>
+		<field name="category_id" ref="dms_meo_purpose_obj_category"></field>
+		<field name="implied_ids"
+				eval="[(4, ref('dms_meo_purpose_obj_read_group')),(4, ref('dms_meo_purpose_obj_write_group'))]"></field>
+	</record>
+
+	<!-- ****** -->
+
+</odoo>

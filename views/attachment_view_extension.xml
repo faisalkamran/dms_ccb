@@ -25,19 +25,31 @@
 					<group>
 						<field name="dms_ccb_page_tags" widget="many2many_tags"
 							attrs="{'invisible': [('res_model','!=','dms_ccb.file')]}"></field>
-						<field name="dms_ccb_page_status"
-							attrs="{'invisible': [('res_model','!=','dms_ccb.file')]}"></field>
+
+						<field name="dms_meo_page_tags" widget="many2many_tags"
+							attrs="{'invisible': [('res_model','!=','dms_meo.file')]}"></field>
+
+						<!-- <field name="dms_page_status"
+							attrs="{'invisible': [('res_model','!=','dms_ccb.file')]}"></field> -->
+						<field name="dms_page_status"></field>
+
 						<field name="dms_ccb_page_rej_reasons"
 							widget="many2many_tags"
-							attrs="{'readonly': [('dms_ccb_page_status','!=','rejected')],'invisible': [('res_model','!=','dms_ccb.file')]}">
+							attrs="{'readonly': [('dms_page_status','!=','rejected')],'invisible': [('res_model','!=','dms_ccb.file')]}">
 						</field>
+
+						<field name="dms_meo_page_rej_reasons"
+							widget="many2many_tags"
+							attrs="{'readonly': [('dms_page_status','!=','rejected')],'invisible': [('res_model','!=','dms_meo.file')]}">
+						</field>
+
 						<!-- <field name="dms_ccb_page_rej_reasons"
 							widget="many2many_tags"
 							attrs="{
-									'readonly': ['|',['dms_ccb_page_status','!=','rejected'],['dms_ccb_page_status','!=','approved']]
+									'readonly': ['|',['dms_page_status','!=','rejected'],['dms_page_status','!=','approved']]
 									}">
 						</field> -->
-						<field name="dms_ccb_page_date"></field>
+						<field name="dms_page_date"></field>
 					</group>
 					<group>					
 						<field name="datas"
@@ -85,11 +97,15 @@
 			</field> -->
 
 			<field name="datas_fname" position="after">
-				<field name="dms_ccb_page_tags" widget="many2many_tags"></field>
-				<!-- <field name="dms_ccb_page_date" widget="many2many_tags"></field> -->
-				<field name="dms_ccb_page_date"></field>
-				<field name="dms_ccb_page_status"></field>
-				<field name="dms_ccb_page_rej_reasons" widget="many2many_tags"></field>
+				<field name="dms_page_date"></field>
+
+				<field name="dms_ccb_page_tags" widget="many2many_tags" invisible="context.get('dms_ccb_key')"></field>
+				<field name="dms_meo_page_tags" widget="many2many_tags" invisible="context.get('dms_meo_key')"></field>
+
+				<field name="dms_page_status"></field>
+
+				<field name="dms_ccb_page_rej_reasons" widget="many2many_tags" invisible="context.get('dms_ccb_key')"></field>
+				<field name="dms_meo_page_rej_reasons" widget="many2many_tags" invisible="context.get('dms_meo_key')"></field>
 			</field>
 		</field>
 	</record>

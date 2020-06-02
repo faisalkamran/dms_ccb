@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<odoo>
+
+	<!-- Add Record Rules definitions here -->
+
+	<!-- ****** -->
+
+	<record model="ir.rule" id="dms_meo_admin_settings_no_access_rule">
+		<field name="name">DMS MEO: see no docs</field>
+		<field name="model_id" ref="model_dms_meo_file"/>
+		<field name="groups" eval="[(4, ref('base.group_system'))]"/>
+		<field name="domain_force">[('is_public', '=', True)]</field>
+	</record>
+
+	<record model="ir.rule" id="dms_meo_admin_access_rights_no_access_rule">
+		<field name="name">DMS MEO: see no docs</field>
+		<field name="model_id" ref="model_dms_meo_file"/>
+		<field name="groups" eval="[(4, ref('base.group_erp_manager'))]"/>
+		<field name="domain_force">[('is_public', '=', True)]</field>
+	</record>
+
+	<!-- ****** -->
+	
+</odoo>
