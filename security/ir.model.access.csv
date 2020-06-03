@@ -49,6 +49,11 @@ dms_ccb_page_attachment_write,DMS CCB Page Attachment Write,model_ir_attachment,
 dms_ccb_page_attachment_create,DMS CCB Page Attachment Create,model_ir_attachment,dms_ccb_attachment_obj_create_group,0,0,1,0
 dms_ccb_page_attachment_unlink,DMS CCB Page Attachment Unlink,model_ir_attachment,dms_ccb_attachment_obj_unlink_group,0,0,0,1
 ,,,,,,,
+dms_ccb_erp_integration_read,DMS CCB ERP Integration Read,model_dms_ccb_erp_integration_data,dms_ccb_erp_integration_read_group,1,0,0,0
+dms_ccb_erp_integration_write,DMS CCB ERP Integration Write,model_dms_ccb_erp_integration_data,dms_ccb_erp_integration_write_group,0,1,0,0
+dms_ccb_erp_integration_create,DMS CCB ERP Integration Create,model_dms_ccb_erp_integration_data,dms_ccb_erp_integration_create_group,0,0,1,0
+dms_ccb_erp_integration_unlink,DMS CCB ERP Integration Unlink,model_dms_ccb_erp_integration_data,dms_ccb_erp_integration_unlink_group,0,0,0,1
+,,,,,,,
 base.access_ir_attachment_group_user,ir_attachment group_user,model_ir_attachment,base.group_user,1,0,0,0
 ,,,,,,,
 ,,,,,,,

@@ -42,6 +42,11 @@
 				res_model="dms_ccb.file_type_of_land"
 				view_mode="tree,form">		
 	</act_window>
+	<act_window id="action_dms_ccb_erp_integration_data"
+				name="Chaklala Cantonment / Configuration / ML&amp;C ERP Integration Data"
+				res_model="dms_ccb.erp_integration_data"
+				view_mode="tree,form">		
+	</act_window>
 
 	<act_window id="action_dms_ccb_file_attribute"
 				name="File Attributes"
@@ -137,6 +142,12 @@
 			  parent="dms_ccb_configuration_menu"
 			  sequence="7"
 			  action="action_dms_ccb_file_type_of_land">		
+	</menuitem>
+	<menuitem id="dms_ccb_erp_integration_data_menu"
+			  name="CCB &amp; ML&amp;C Integration Data"
+			  parent="dms_ccb_configuration_menu"
+			  sequence="8"
+			  action="action_dms_ccb_erp_integration_data">		
 	</menuitem>
 	<!-- <menuitem id="dms_ccb_area_menu"
 			  name="Area"

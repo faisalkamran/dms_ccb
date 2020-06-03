@@ -24,6 +24,7 @@
 		'security/dms_ccb_rej_reasons_security.xml',
 		'security/dms_ccb_qc_audit_access_security.xml',
 		'security/dms_ccb_record_rules.xml',
+		'security/dms_ccb_erp_integ_security.xml',
 
 		'security/dms_meo_file_security.xml',
 		'security/dms_meo_page_security.xml',
@@ -52,6 +53,7 @@
 		'views/dms_ccb_file_views.xml',
 		'views/dms_ccb_page_rej_reasons_views.xml',
 		'views/attachment_view_extension.xml',
+		'views/dms_ccb_erp_integration_views.xml',		
 		# 'views/dashboard.xml',
 
 		'views/dms_meo_menu.xml',

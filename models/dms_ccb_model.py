@@ -79,7 +79,8 @@ class dms_ccb_file(models.Model):
 	is_public = fields.Boolean(default=False)
 	file_address = fields.Text('Address', track_visibility="always")
 	file_plot_khasra_cb_no = fields.Char('Plot No / CB No / Khasra No', track_visibility="always")
-	file_record_id = fields.Char('Record ID', track_visibility="always")
+	# file_record_id = fields.Char('Record ID', track_visibility="always")
+	file_record_id = fields.Many2one('dms_ccb.erp_integration_data', string='Record ID', track_visibility="always")
 	
 	# file_attachments = fields.Many2many('ir.attachment', string='File Attachments')
 	# message_attachment_count = fields.Integer(readonly=False, track_visibility="onchange")
@@ -132,6 +133,17 @@ class dms_ccb_page_rejection_reasons(models.Model):
 	_rec_name = 'rej_reason_name'
 	rej_reason_name = fields.Char('Rejection Reason')
 	rej_reason_description = fields.Char('Description')
+
+class dms_ccb_erp_integration_data(models.Model):
+	_name = 'dms_ccb.erp_integration_data'
+	_description = 'DMS CCB Integration Data with ML&C ERP'
+	_rec_name = 'ccb_erp_id'
+	ccb_erp_id = fields.Char('ID')
+	ccb_erp_type = fields.Char('Type')
+	ccb_erp_link_id = fields.Char('Link ID')
+	ccb_erp_office_id = fields.Char('Office ID')
+	ccb_erp_name = fields.Char('Name')
+	ccb_erp_address = fields.Char('Address')
 
 class Attachment_Extension(models.Model):
 	_inherit = ['ir.attachment']
