@@ -67,7 +67,8 @@ class dms_ccb_file(models.Model):
 	file_type_of_land = fields.Many2one('dms_ccb.file_type_of_land', string='Type of Land', track_visibility="always")
 	file_purpose = fields.Many2one('dms_ccb.file_purpose', string='Purpose', track_visibility="always")
 	file_branch = fields.Many2one('dms_ccb.file_branch', string='Branch', track_visibility="always")
-	file_remarks = fields.Text('Remarks')
+	# file_remarks = fields.Text('Remarks')
+	file_remarks = fields.Html('Remarks')
 	file_attributes = fields.Many2many('dms_ccb.file_attribute', string='Attributes')
 	state = fields.Selection([('draft','Draft'),
 							('qc_review', 'QC Review'),
