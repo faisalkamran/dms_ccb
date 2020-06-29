@@ -106,3 +106,8 @@ dms_meo_page_attachment_read,DMS MEO Read,model_ir_attachment,dms_meo_attachment
 dms_meo_page_attachment_write,DMS MEO Write,model_ir_attachment,dms_meo_attachment_obj_write_group,0,1,0,0
 dms_meo_page_attachment_create,DMS MEO Create,model_ir_attachment,dms_meo_attachment_obj_create_group,0,0,1,0
 dms_meo_page_attachment_unlink,DMS MEO Unlink,model_ir_attachment,dms_meo_attachment_obj_unlink_group,0,0,0,1
+,,,,,,,
+dms_meo_erp_integration_read,DMS MEO ERP Integration Read,model_dms_meo_erp_integration_data,dms_meo_erp_integration_read_group,1,0,0,0
+dms_meo_erp_integration_write,DMS MEO ERP Integration Write,model_dms_meo_erp_integration_data,dms_meo_erp_integration_write_group,0,1,0,0
+dms_meo_erp_integration_create,DMS MEO ERP Integration Create,model_dms_meo_erp_integration_data,dms_meo_erp_integration_create_group,0,0,1,0
+dms_meo_erp_integration_unlink,DMS MEO ERP Integration Unlink,model_dms_meo_erp_integration_data,dms_meo_erp_integration_unlink_group,0,0,0,1

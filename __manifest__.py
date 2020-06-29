@@ -37,6 +37,7 @@
 		'security/dms_meo_rej_reasons_security.xml',
 		'security/dms_meo_qc_audit_access_security.xml',
 		'security/dms_meo_record_rules.xml',
+		'security/dms_meo_erp_integ_security.xml',
 
 		'security/ir.model.access.csv',
 
@@ -66,6 +67,7 @@
 		'views/dms_meo_page_tag_views.xml',		
 		'views/dms_meo_file_views.xml',
 		'views/dms_meo_page_rej_reasons_views.xml',
+		'views/dms_meo_erp_integration_views.xml',		
 		# 'views/attachment_view_extension.xml',
 
 		'reports/report.xml',
