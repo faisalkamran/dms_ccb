@@ -7,6 +7,18 @@ class dms_ccb_file_record_type(models.Model):
 	file_record_type = fields.Char('Name')
 	file_record_type_description = fields.Char('Description')
 
+	def fields_get(self, allfields=None, attributes=None):
+		# selectable_fields_to_hide = ['create_uid', 'create_date', 'id', 'write_date', 'write_uid']
+		selectable_fields_to_hide = ['id']
+		sortable_fields_to_hide = ['file_record_type', 'file_record_type_description']
+		res = super(dms_ccb_file_record_type, self).fields_get(allfields=allfields, attributes=attributes)
+		for field in selectable_fields_to_hide:
+			res[field]['selectable'] = False
+			# res[field]['searchable'] = False
+		for field in sortable_fields_to_hide:
+			res[field]['sortable'] = False
+		return res
+
 # class dms_ccb_file_area(models.Model):
 # 	_name = 'dms_ccb.file_area'
 # 	_description = 'DMS CCB File Area'
@@ -21,12 +33,36 @@ class dms_ccb_file_colony(models.Model):
 	file_colony = fields.Char('Name')
 	file_colony_description = fields.Char('Description')
 
+	def fields_get(self, allfields=None, attributes=None):
+		# selectable_fields_to_hide = ['create_uid', 'create_date', 'id', 'write_date', 'write_uid']
+		selectable_fields_to_hide = ['id']
+		sortable_fields_to_hide = ['file_colony', 'file_colony_description']
+		res = super(dms_ccb_file_colony, self).fields_get(allfields=allfields, attributes=attributes)
+		for field in selectable_fields_to_hide:
+			res[field]['selectable'] = False
+			# res[field]['searchable'] = False
+		for field in sortable_fields_to_hide:
+			res[field]['sortable'] = False
+		return res
+
 class dms_ccb_file_type_of_land(models.Model):
 	_name = 'dms_ccb.file_type_of_land'
 	_description = 'DMS CCB File Type of Land'
 	_rec_name = 'file_type_of_land'
 	file_type_of_land = fields.Char('Name')
 	file_type_of_land_description = fields.Char('Description')
+
+	def fields_get(self, allfields=None, attributes=None):
+		# selectable_fields_to_hide = ['create_uid', 'create_date', 'id', 'write_date', 'write_uid']
+		selectable_fields_to_hide = ['id']
+		sortable_fields_to_hide = ['file_type_of_land', 'file_type_of_land_description']
+		res = super(dms_ccb_file_type_of_land, self).fields_get(allfields=allfields, attributes=attributes)
+		for field in selectable_fields_to_hide:
+			res[field]['selectable'] = False
+			# res[field]['searchable'] = False
+		for field in sortable_fields_to_hide:
+			res[field]['sortable'] = False
+		return res
 
 class dms_ccb_file_purpose(models.Model):
 	_name = 'dms_ccb.file_purpose'
@@ -35,12 +71,36 @@ class dms_ccb_file_purpose(models.Model):
 	file_purpose = fields.Char('Name')
 	file_purpose_description = fields.Char('Description')
 
+	def fields_get(self, allfields=None, attributes=None):
+		# selectable_fields_to_hide = ['create_uid', 'create_date', 'id', 'write_date', 'write_uid']
+		selectable_fields_to_hide = ['id']
+		sortable_fields_to_hide = ['file_purpose', 'file_purpose_description']
+		res = super(dms_ccb_file_purpose, self).fields_get(allfields=allfields, attributes=attributes)
+		for field in selectable_fields_to_hide:
+			res[field]['selectable'] = False
+			# res[field]['searchable'] = False
+		for field in sortable_fields_to_hide:
+			res[field]['sortable'] = False
+		return res
+
 class dms_ccb_file_branch(models.Model):
 	_name = 'dms_ccb.file_branch'
 	_description = 'DMS CCB File Branch'
 	_rec_name = 'file_branch'
 	file_branch = fields.Char('Name')
 	file_branch_description = fields.Char('Description')
+
+	def fields_get(self, allfields=None, attributes=None):
+		# selectable_fields_to_hide = ['create_uid', 'create_date', 'id', 'write_date', 'write_uid']
+		selectable_fields_to_hide = ['id']
+		sortable_fields_to_hide = ['file_branch', 'file_branch_description']
+		res = super(dms_ccb_file_branch, self).fields_get(allfields=allfields, attributes=attributes)
+		for field in selectable_fields_to_hide:
+			res[field]['selectable'] = False
+			# res[field]['searchable'] = False
+		for field in sortable_fields_to_hide:
+			res[field]['sortable'] = False
+		return res
 
 class dms_ccb_file_attribute(models.Model):
 	_name = 'dms_ccb.file_attribute'
@@ -127,6 +187,18 @@ class dms_ccb_page_tags(models.Model):
 	tag_name = fields.Char('Tag Name')
 	tag_description = fields.Char('Description')
 
+	def fields_get(self, allfields=None, attributes=None):
+		# selectable_fields_to_hide = ['create_uid', 'create_date', 'id', 'write_date', 'write_uid']
+		selectable_fields_to_hide = ['id']
+		sortable_fields_to_hide = ['tag_name', 'tag_description']
+		res = super(dms_ccb_page_tags, self).fields_get(allfields=allfields, attributes=attributes)
+		for field in selectable_fields_to_hide:
+			res[field]['selectable'] = False
+			# res[field]['searchable'] = False
+		for field in sortable_fields_to_hide:
+			res[field]['sortable'] = False
+		return res
+
 class dms_ccb_page_rejection_reasons(models.Model):
 	_name = 'dms_ccb.page_rej_reasons'
 	_description = 'DMS CCB Page Rejection Reasons'
@@ -134,16 +206,40 @@ class dms_ccb_page_rejection_reasons(models.Model):
 	rej_reason_name = fields.Char('Rejection Reason')
 	rej_reason_description = fields.Char('Description')
 
+	def fields_get(self, allfields=None, attributes=None):
+		# selectable_fields_to_hide = ['create_uid', 'create_date', 'id', 'write_date', 'write_uid']
+		selectable_fields_to_hide = ['id']
+		sortable_fields_to_hide = ['rej_reason_name', 'rej_reason_description']
+		res = super(dms_ccb_page_rejection_reasons, self).fields_get(allfields=allfields, attributes=attributes)
+		for field in selectable_fields_to_hide:
+			res[field]['selectable'] = False
+			# res[field]['searchable'] = False
+		for field in sortable_fields_to_hide:
+			res[field]['sortable'] = False
+		return res
+
 class dms_ccb_erp_integration_data(models.Model):
 	_name = 'dms_ccb.erp_integration_data'
 	_description = 'DMS CCB Integration Data with ML&C ERP'
 	_rec_name = 'ccb_erp_id'
-	ccb_erp_id = fields.Char('ID')
+	ccb_erp_id = fields.Char('ML&C ERP ID')
 	ccb_erp_type = fields.Char('Type')
 	ccb_erp_link_id = fields.Char('Link ID')
 	ccb_erp_office_id = fields.Char('Office ID')
 	ccb_erp_name = fields.Char('Name')
 	ccb_erp_address = fields.Char('Address')
+
+	def fields_get(self, allfields=None, attributes=None):
+		# selectable_fields_to_hide = ['create_uid', 'create_date', 'id', 'write_date', 'write_uid']
+		selectable_fields_to_hide = ['id']
+		sortable_fields_to_hide = ['ccb_erp_address', 'ccb_erp_name', 'ccb_erp_id']
+		res = super(dms_ccb_erp_integration_data, self).fields_get(allfields=allfields, attributes=attributes)
+		for field in selectable_fields_to_hide:
+			res[field]['selectable'] = False
+			# res[field]['searchable'] = False
+		for field in sortable_fields_to_hide:
+			res[field]['sortable'] = False
+		return res
 
 class Attachment_Extension(models.Model):
 	_inherit = ['ir.attachment']

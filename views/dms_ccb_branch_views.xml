@@ -35,4 +35,19 @@
 		</field>		
 	</record>
 
+	<record id="dms_ccb_branch_search_view" model="ir.ui.view">
+		<field name="name">Branch Search</field>
+		<field name="model">dms_ccb.file_branch</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="file_branch"></field>
+				<field name="file_branch_description"></field>
+				<!-- <filter string="Land Branch Only"
+						name="land_branch_only"
+						domain="[('file_branch','=','Land Branch')]">
+				</filter> -->
+			</search>
+		</field>		
+	</record>
+
 </odoo>
