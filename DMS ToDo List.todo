@@ -64,47 +64,31 @@ DMS (Chaklala Cantonment Board) Task List:
 To-Do List:
 
   ✔ Provide 2nd office location in DMS demo for testing purposes @done (20-07-01 12:16)
-
   ✔ DMS App and ML&C ERP integration. Create table structure and demo search capability in said table @done (20-07-01 12:18)
-
   ✔ Implement wizard in DMS app to change workflow state of multi-select files @done (20-07-07 01:59) (wizard not necessary.. done through server action)
-
-  ☐ Update workflow states in DMS app to incorporate scanning process
-
-  ☐ Add separate security group for scanning staff
-
-  ☐ Add faciity for user to edit and reject approved file (Approved file is supposed to be 'locked')
-
-  ☐ Add ability to lock (make read-only) 'Add Attachments' option when file is in 'locked' state
-
-  ☐ Tree (list) view export option in both PDF and Excel
-    ✔ Tree (list) view option in Excel (using the add-on module web_export_view) @done (20-07-01 13:01)
-    ☐ Tree (list) view option in PDF
-
-  ☐ Add 'My Dashboard' menus in the DMS app to support the following requirements:
-    ☐ Management Dashboard (Graphical & Card Base Reporting)
-    ☐ Admin can assign dashboard/reports to Users
-    ☐ Super Admin can assign Dashboard from multi offices to single CEO/ Dir / DG
-
-  ☐ Update file workflow states to accomodate the following requirements:
-    ☐ QC Review should have 2 rights, 1 person can send and other can approve
-    ☐ Need QC Status in this table as well (reference to File List 'Tree' view)
-    ☐ After QC Status approval user can view file/pages but cannot make any amendments in it
-
-  ☐ Rejection Reason heading should be hidden until status Rejected selected
-
-  ☐ As ACCESS RIGHTS user, create option should be hidden instead of opening new page and giving error while saving (this is with reference to creation of new file in DMS)
-
-  ☐ User Rights page is improved but complex as well, Kindly give some other option for selection Office like drop down or Accordion style
-
-  ☐ Kindly create 3 tabs for Rights after accordion or drop-down with Forms/Reports/Lookups so we can assign rights more efficiently.
-
-  ☐ What about Dashboard and 1 line tabular report
+  ✔ Remove "file subject" required condition @done (20-07-10 19:51)
+  ✔ Update file workflow states to accomodate the following requirements: @done (20-07-10 19:52)
+    ✔ QC Review should have 2 rights, 1 person can send and other can approve @done (20-07-10 01:14)
+    ✔ Need QC Status in this table as well (reference to File List 'Tree' view) @done (20-07-10 01:15)
+  ✔ Update workflow states in DMS app to incorporate scanning process @done (20-07-10 01:17)
+  ✔ Add faciity for user to edit and reject approved file (Approved file is supposed to be 'locked') @done (20-07-10 01:17)
+  ✔ Tree (list) view option in Excel (using the add-on module web_export_view) @done (20-07-01 13:01)
+  ✔ Add 'My Dashboard' menus in the DMS app to support the following requirements: @done (20-07-10 01:50)
+    ✔ Management Dashboard (Graphical & Card Base Reporting) @done (20-07-10 01:50)
+    ✔ Admin can assign dashboard/reports to Users @done (20-07-10 01:50)
+    ✔ Super Admin can assign Dashboard from multi offices to single CEO/ Dir / DG @done (20-07-10 01:50)
 
   ☐ Update barcode numbering sequence in the DMS app for both the CCB & MEO locations
+  ☐ Rejection Reason heading should be hidden until status Rejected selected
 
-  ☐ Remove "file subject" required condition
-
+  ☐ After QC Status approval user can view file/pages but cannot make any amendments in it
+  ☐ Add ability to lock (make read-only) 'Add Attachments' option when file is in 'locked' state
+  ☐ Add separate security group for scanning staff
+  ☐ Tree (list) view export option in PDF
+  ☐ User Rights page is improved but complex as well, Kindly give some other option for selection Office like drop down or Accordion style
+  ☐ Kindly create 3 tabs for Rights after accordion or drop-down with Forms/Reports/Lookups so we can assign rights more efficiently.
+  ☐ What about Dashboard and 1 line tabular report
+  ☐ As ACCESS RIGHTS user, create option should be hidden instead of opening new page and giving error while saving (this is with reference to creation of new file in DMS)
 
   Supporting modules to be added in DMS app:
     ☐ My Dashboard (built in app provided with Odoo CE)
@@ -115,4 +99,12 @@ To-Do List:
     ☐ web_tree_resize_column
     ☐ report_creator
 
-
+  List of things to do during installation & setup of DMS app:
+    ☐ Copy 'start-server' script to desktop of server
+    ☐ Download Odoo 12 branch from git and copy to portable hard drive
+    ☐ Copy wkhtmltox debian installation to portable hard drive
+    ☐ After installation of app change parent menu of 'My Dashboard' app in code and upgrade
+    ☐ Configure path for reports location in 'report_creator' general settings
+    ☐ Install 'pdfkit' using 'pip' command for 'report_creator' to work
+    ☐ Change the following to 'limit_time_real = 100000' in '.odoorc' configuration file
+    ☐ Add custom addons path into 'addons_path = ' in '.odoorc' configuration file

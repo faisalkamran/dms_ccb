@@ -1,4 +1,8 @@
 from odoo import models, fields, api, _
+from odoo.exceptions import UserError
+import os
+import base64
+import requests
 
 class dms_meo_file_record_type(models.Model):
 	_name = 'dms_meo.file_record_type'
@@ -115,7 +119,7 @@ class dms_meo_file(models.Model):
 	_description = 'DMS MEO File'
 	_rec_name = 'file_no'
 	file_no = fields.Char('File No.', required=True, track_visibility="always")
-	file_subject = fields.Text('File Subject',required=True, track_visibility="always") 
+	file_subject = fields.Text('File Subject', track_visibility="always") 
 
 	# file_barcode = fields.Char('Barcode')
 	file_barcode = fields.Char(string='Barcode', required=True, copy=False,
@@ -128,14 +132,19 @@ class dms_meo_file(models.Model):
 	file_purpose = fields.Many2one('dms_meo.file_purpose', string='Purpose', track_visibility="always")
 	file_branch = fields.Many2one('dms_meo.file_branch', string='Branch', track_visibility="always")
 	# file_remarks = fields.Text('Remarks')
-	file_remarks = fields.Html('Remarks')
+	file_remarks = fields.Html('Remarks') # track_visibility does not work on html fields
 	file_attributes = fields.Many2many('dms_meo.file_attribute', string='Attributes')
-	state = fields.Selection([('draft','Draft'),
+	state = fields.Selection([('file_received','File Received'),
+							('draft','Draft'),
+							('scan_complete','Scanning Complete'),
 							('qc_review', 'QC Review'),
+							('file_unlock','File Unlocked'),
+							('for_approval','For Approval'),
 							('rejected', 'Rejected'),
 							('approved', 'Approved'),],
 							string="QC Status",
-							readonly=True,default='draft')
+							readonly=True,default='file_received',
+							track_visibility='always')
 	is_public = fields.Boolean(default=False)
 	file_address = fields.Text('Address', track_visibility="always")
 	file_plot_khasra_cb_no = fields.Char('Plot No / CB No / Khasra No', track_visibility="always")
@@ -145,9 +154,9 @@ class dms_meo_file(models.Model):
 	# file_attachments = fields.Many2many('ir.attachment', string='File Attachments')
 	# message_attachment_count = fields.Integer(readonly=False, track_visibility="onchange")
 
-	def file_for_review_state(self):
+	def file_for_approval_state(self):
 		for rec in self:
-			rec.state = 'qc_review'
+			rec.state = 'for_approval'
 
 	def file_for_approved_state(self):
 		for rec in self:
@@ -157,8 +166,33 @@ class dms_meo_file(models.Model):
 		for rec in self:
 			rec.state = 'rejected'
 
+	def file_back_to_qc_review_state(self):
+		for rec in self:
+			rec.state = 'qc_review'
+
+	def file_to_unlock_state(self):
+		for rec in self:
+			rec.state = 'file_unlock'
+
 	def mlc_erp_api_call(self):
 		return 0
+
+	@api.multi
+	def dms_meo_change_workflow_state(self):
+		flag = self.env['res.users'].has_group('dms_ccb.dms_meo_qc_workflow_group')
+		if flag:
+			for rec in self:
+				if rec.state == 'file_received':
+					rec.state = 'draft'
+					break
+				if rec.state == 'draft':
+					rec.state = 'scan_complete'
+					break
+				if rec.state == 'scan_complete':
+					rec.state = 'qc_review'
+					break
+		else:
+			raise UserError('User is not a member of the QC Workflow Access Group.')
 
 	@api.model
 	def create(self, vals):

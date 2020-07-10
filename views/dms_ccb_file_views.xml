@@ -23,23 +23,35 @@
 									dms_ccb.dms_ccb_attachment_obj_unlink_group"></button>
 
 					<!-- Workflow button declarations -->
-					<button name="file_for_review_state"
+					<button name="file_for_approval_state"
 							type="object"
-							string="For QC Review"
-							states="draft,rejected"
+							string="For Approval"
+							states="qc_review,file_unlock"
 							groups="dms_ccb.dms_ccb_qc_workflow_group"></button>
 
 					<button name="file_for_approved_state"
 							type="object"
 							string="QC Approved"
-							states="qc_review"
-							groups="dms_ccb.dms_ccb_qc_workflow_group"></button>
+							states="for_approval"
+							groups="dms_ccb.dms_ccb_qc_workflow_approval_group"></button>
 
 					<button name="file_for_rejected_state"
 							type="object"
 							string="QC Rejected"
-							states="qc_review"
+							states="for_approval"
+							groups="dms_ccb.dms_ccb_qc_workflow_approval_group"></button>
+
+					<button name="file_back_to_qc_review_state"
+							type="object"
+							string="For QC Review"
+							states="rejected"
 							groups="dms_ccb.dms_ccb_qc_workflow_group"></button>
+
+					<button name="file_to_unlock_state"
+							type="object"
+							string="File Unlock"
+							states="approved"
+							groups="dms_ccb.dms_ccb_qc_workflow_approval_group"></button>
 							
 					<!-- <button name="mlc_erp_api_call"
 							type="object"
@@ -48,7 +60,7 @@
 					<!-- File QC Review Workflow declaration -->
 					<field name="state"
 						widget="statusbar"
-						statusbar_visible="draft,qc_review,approved"></field>
+						statusbar_visible="file_received,draft,scan_complete,qc_review,for_approval,rejected,approved"></field>
 				</header>
 
 				<sheet>
@@ -56,23 +68,23 @@
 					<group name="group_1">
 						<group name="group_left" string="Basic">
 							<field name="file_barcode" readonly="1"></field>
-							<field name="file_no"></field>
-							<field name="file_subject"></field>
-							<field name="file_address"></field>
-							<field name="file_plot_khasra_cb_no"></field>
+							<field name="file_no" attrs="{'readonly': [('state','==','approved')]}"></field>
+							<field name="file_subject" attrs="{'readonly': [('state','==','approved')]}"></field>
+							<field name="file_address" attrs="{'readonly': [('state','==','approved')]}"></field>
+							<field name="file_plot_khasra_cb_no" attrs="{'readonly': [('state','==','approved')]}"></field>
 						</group>
 
 						<group name="group_right" string="Metadata">
-							<field name="file_branch"></field>
-							<field name="file_colony"></field>
-							<field name="file_record_type"></field>
-							<field name="file_type_of_land"></field>
-							<field name="file_purpose"></field>
+							<field name="file_branch" attrs="{'readonly': [('state','==','approved')]}"></field>
+							<field name="file_colony" attrs="{'readonly': [('state','==','approved')]}"></field>
+							<field name="file_record_type" attrs="{'readonly': [('state','==','approved')]}"></field>
+							<field name="file_type_of_land" attrs="{'readonly': [('state','==','approved')]}"></field>
+							<field name="file_purpose" attrs="{'readonly': [('state','==','approved')]}"></field>
 							<button name="mlc_erp_api_call"
 									type="object"
 									string="Lookup Record ID"
 									></button>
-							<field name="file_record_id"></field>
+							<field name="file_record_id" attrs="{'readonly': [('state','==','approved')]}"></field>
 							<!-- <button name="mlc_erp_api_call"
 									type="object"
 									string="Lookup Record ID"></button> -->
@@ -89,7 +101,7 @@
 						</page>
 						<page string="Optional">
 							<group>
-								<field name="file_attributes"></field>
+								<field name="file_attributes" attrs="{'readonly': [('state','==','approved')]}"></field>
 								<!-- <field name="file_attachments" widget="many2many_binary"></field> -->
 								<!-- <field name="file_attachments"></field> -->
 								<!-- <field name="file_attachments" widget="many2many_kanban"></field> -->
@@ -123,6 +135,7 @@
 				<field name="file_type_of_land"></field>
 				<field name="file_purpose"></field>
 				<field name="file_branch"></field>
+				<field name="state" string="Workflow Status"></field>
 			</tree>
 		</field>		
 	</record>
@@ -136,8 +149,34 @@
 				<field name="file_record_type"></field>				
 			</graph>			
 		</field>
-		
 	</record>
+
+	<record id="dms_ccb_files_change_state" model="ir.actions.server">
+		<field name="name">Change Workflow State</field>
+		<field name="type">ir.actions.server</field>
+		<field name="model_id" ref="dms_ccb.model_dms_ccb_file"></field>
+		<field name="binding_model_id" ref="dms_ccb.model_dms_ccb_file"></field>
+
+		<!-- <field name="groups_id" eval="[(4,ref('dms_ccb.dms_ccb_attachment_obj_unlink_group'))]"></field> -->
+		<!-- <field name="groups">dms_ccb_attachment_obj_unlink_group</field> -->
+
+		<field name="state">code</field>
+		<field name="code">
+			if records:
+				for rec in records:
+					action = rec.dms_ccb_change_workflow_state()
+				<!-- action = records.dms_ccb_change_workflow_state() -->
+		</field>
+	</record>
+
+
+	<!-- <span t-if="t.domain=='ipi'"><t t-esc="t.amount" /></span> -->
+	<!-- <t t-if="state=='approved'">
+	<record id="dms_poc_disable_creation_of_user_with_admin_priv" model="ir.rule">
+			<field name="name">DMS: Disable Creation of User with Administration Priveleges</field>
+			<field name="active" eval="False"/>
+	</record>
+	</t> -->
 
 
 </odoo>
