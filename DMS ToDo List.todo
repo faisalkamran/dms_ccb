@@ -108,3 +108,4 @@ To-Do List:
     ☐ Install 'pdfkit' using 'pip' command for 'report_creator' to work
     ☐ Change the following to 'limit_time_real = 100000' in '.odoorc' configuration file
     ☐ Add custom addons path into 'addons_path = ' in '.odoorc' configuration file
+    ☐ Set master password in odoo to control 'backup' 'delete' & 'restore' database operations

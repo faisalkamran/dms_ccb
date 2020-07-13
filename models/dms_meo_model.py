@@ -1,8 +1,8 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError
-import os
-import base64
-import requests
+# import os
+# import base64
+# import requests
 
 class dms_meo_file_record_type(models.Model):
 	_name = 'dms_meo.file_record_type'

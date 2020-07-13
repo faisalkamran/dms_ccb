@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+<odoo>
+	<record id="dms_ccb_bulk_data_import_form_view" model="ir.ui.view">
+		<field name="name">Bulk Data Import Wizard</field>
+		<field name="model">dms_ccb.bulk_data_import</field>
+		<field name="arch" type="xml">
+			<form string="Bulk Data Import">
+				<header>
+					<!-- Buttons will go here -->
+				</header>
+				<sheet>
+					<!-- Content will go here -->
+					<group>
+						<group name="left_group">
+							<field name="start_barcode_number"></field>
+							<field name="end_barcode_number"></field>
+						</group>
+						<group name="right_group">
+							<field name="path_to_data_folder"></field>
+						</group>
+					</group>
+				</sheet>
+				<footer>
+					<button string='Check Files'
+						type='object'
+						name='check_files'
+						class='btn-primary'></button>
+					<button string='Start Import'
+						type='object'
+						name='bulk_data_import'
+						class='btn-primary'></button>
+					<button string='Cancel'
+						class='btn-default'
+						special='cancel'></button>
+				</footer>
+			</form>			
+		</field>		
+	</record>
+
+	<act_window id="action_bulk_data_import_wizard"
+				name="Bulk Data Import"
+				res_model="dms_ccb.bulk_data_import"
+				view_mode="form" target="new"></act_window>
+
+	<menuitem id="dms_ccb_bulk_data_import_wizard"
+			parent="dms_mlc_top_menu"
+			action="action_bulk_data_import_wizard"
+			sequence="50"></menuitem>
+</odoo>
