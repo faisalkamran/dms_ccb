@@ -22,6 +22,10 @@
 					</group>
 				</sheet>
 				<footer>
+					<button string='Check CSV File'
+						type='object'
+						name='check_csv_file'
+						class='btn-primary'></button>
 					<button string='Check Files'
 						type='object'
 						name='check_files'
