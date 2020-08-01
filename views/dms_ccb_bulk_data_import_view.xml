@@ -22,6 +22,10 @@
 					</group>
 				</sheet>
 				<footer>
+					<button string='Load Page Tags'
+						type='object'
+						name='load_page_tags'
+						class='btn-primary'></button>
 					<button string='Check CSV File'
 						type='object'
 						name='check_csv_file'
