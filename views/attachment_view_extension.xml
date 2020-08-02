@@ -26,6 +26,9 @@
 						<field name="dms_ccb_page_tags" widget="many2many_tags"
 							attrs="{'invisible': [('res_model','!=','dms_ccb.file')]}"></field>
 
+						<field name="dms_ccb_page_description"
+							attrs="{'invisible': [('res_model','!=','dms_ccb.file')]}"></field>
+
 						<field name="dms_meo_page_tags" widget="many2many_tags"
 							attrs="{'invisible': [('res_model','!=','dms_meo.file')]}"></field>
 
@@ -101,6 +104,7 @@
 
 				<field name="dms_ccb_page_tags" widget="many2many_tags" invisible="context.get('dms_ccb_key')"></field>
 				<field name="dms_meo_page_tags" widget="many2many_tags" invisible="context.get('dms_meo_key')"></field>
+				<field name="dms_ccb_page_description" invisible="context.get('dms_ccb_key')"></field>
 
 				<field name="dms_page_status"></field>
 

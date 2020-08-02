@@ -211,7 +211,7 @@ class dms_meo_file(models.Model):
 			'view_mode': 'list,kanban,form',
 			'type': 'ir.actions.act_window',
 			'target': 'current',
-			'context': "{'dms_meo_key': True, 'dms_meo_key': False}",
+			'context': "{'dms_ccb_key': True, 'dms_meo_key': False}",
 		}	
 
 class dms_meo_page_tags(models.Model):

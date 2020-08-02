@@ -315,6 +315,7 @@ class Attachment_Extension(models.Model):
 	# the following fields are dependent on office location therefore need re-declaration on opening of new office location
 	dms_ccb_page_tags = fields.Many2many('dms_ccb.page_tags', string='Page Tags')
 	dms_ccb_page_rej_reasons = fields.Many2many('dms_ccb.page_rej_reasons', string='Rejection Reasons', readonly="True")
+	dms_ccb_page_description = fields.Char('Page Description')
 	
 	# dms_page_tags = fields.Char('Page Tags')
 	# attachment_image_preview = fields.Binary('Preview')
