@@ -22,6 +22,10 @@
 					</group>
 				</sheet>
 				<footer>
+					<button string='Display Attachment Content'
+						type='object'
+						name='display_attachment_content'
+						class='btn-primary'></button>
 					<button string='Load Page Tags'
 						type='object'
 						name='load_page_tags'
