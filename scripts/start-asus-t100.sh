@@ -13,6 +13,10 @@ if [[ -z $1 ]]; then #if empty string
 	#run odoo 12 server on the Asus T100 tablet
 	source /home/faisal/odoo-dev/odoo12env/bin/activate
 	odoo -d $DATABASE_NAME
+	deactivate
+	echo "Odoo server successfully terminated."
+	echo "Press Enter key to exit."
+	read var2
 
 else
 	#set database name
@@ -21,4 +25,8 @@ else
 	#run odoo 12 server on the Asus T100 tablet
 	source /home/faisal/odoo-dev/odoo12env/bin/activate
 	odoo -d $DATABASE_NAME
+	deactivate
+	echo "Odoo server successfully terminated."
+	echo "Press Enter key to exit."
+	read var2
 fi
