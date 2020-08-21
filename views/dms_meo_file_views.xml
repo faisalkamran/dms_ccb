@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 
 <odoo>
-	<record id="dms_ccb_files_form_view" model="ir.ui.view">
+	<record id="dms_meo_files_form_view" model="ir.ui.view">
 		<field name="name">File Form</field>
-		<field name="model">dms_ccb.file</field>
+		<field name="model">dms_meo.file</field>
 		<field name="arch" type="xml">
 			<form string="File">
 				<header>
@@ -18,40 +18,40 @@
 							type="object"
 							string="Manage Pages"
 							class="oe_highlight"
-							groups="dms_ccb.dms_ccb_attachment_obj_write_group,
-									dms_ccb.dms_ccb_attachment_obj_create_group,
-									dms_ccb.dms_ccb_attachment_obj_unlink_group"></button>
+							groups="dms_ccb.dms_meo_attachment_obj_write_group,
+									dms_ccb.dms_meo_attachment_obj_create_group,
+									dms_ccb.dms_meo_attachment_obj_unlink_group"></button>
 
 					<!-- Workflow button declarations -->
 					<button name="file_for_approval_state"
 							type="object"
 							string="For Approval"
 							states="qc_review,file_unlock"
-							groups="dms_ccb.dms_ccb_qc_workflow_group"></button>
+							groups="dms_ccb.dms_meo_qc_workflow_group"></button>
 
 					<button name="file_for_approved_state"
 							type="object"
 							string="QC Approved"
 							states="for_approval"
-							groups="dms_ccb.dms_ccb_qc_workflow_approval_group"></button>
+							groups="dms_ccb.dms_meo_qc_workflow_approval_group"></button>
 
 					<button name="file_for_rejected_state"
 							type="object"
 							string="QC Rejected"
 							states="for_approval"
-							groups="dms_ccb.dms_ccb_qc_workflow_approval_group"></button>
+							groups="dms_ccb.dms_meo_qc_workflow_approval_group"></button>
 
 					<button name="file_back_to_qc_review_state"
 							type="object"
 							string="For QC Review"
 							states="rejected"
-							groups="dms_ccb.dms_ccb_qc_workflow_group"></button>
+							groups="dms_ccb.dms_meo_qc_workflow_group"></button>
 
 					<button name="file_to_unlock_state"
 							type="object"
 							string="File Unlock"
 							states="approved"
-							groups="dms_ccb.dms_ccb_qc_workflow_approval_group"></button>
+							groups="dms_ccb.dms_meo_qc_workflow_approval_group"></button>
 							
 					<!-- <button name="mlc_erp_api_call"
 							type="object"
@@ -121,9 +121,9 @@
 		</field>		
 	</record>
 
-	<record id="dms_ccb_files_list_view" model="ir.ui.view">
+	<record id="dms_meo_files_list_view" model="ir.ui.view">
 		<field name="name">File List</field>
-		<field name="model">dms_ccb.file</field>
+		<field name="model">dms_meo.file</field>
 		<field name="arch" type="xml">
 			<tree>
 				<field name="id"></field>
@@ -140,9 +140,9 @@
 		</field>		
 	</record>
 
-	<record id="dms_ccb_file_graph_view" model="ir.ui.view">
+	<record id="dms_meo_file_graph_view" model="ir.ui.view">
 		<field name="name">Files Graph View</field>
-		<field name="model">dms_ccb.file</field>
+		<field name="model">dms_meo.file</field>
 		<field name="arch" type="xml">
 			<graph string="Files by Colony">
 				<field name="file_colony"></field>				
@@ -151,32 +151,18 @@
 		</field>
 	</record>
 
-	<record id="dms_ccb_files_change_state" model="ir.actions.server">
+	<record id="dms_meo_files_change_state" model="ir.actions.server">
 		<field name="name">Change Workflow State</field>
 		<field name="type">ir.actions.server</field>
-		<field name="model_id" ref="dms_ccb.model_dms_ccb_file"></field>
-		<field name="binding_model_id" ref="dms_ccb.model_dms_ccb_file"></field>
-
-		<!-- <field name="groups_id" eval="[(4,ref('dms_ccb.dms_ccb_attachment_obj_unlink_group'))]"></field> -->
-		<!-- <field name="groups">dms_ccb_attachment_obj_unlink_group</field> -->
-
+		<field name="model_id" ref="dms_ccb.model_dms_meo_file"></field>
+		<field name="binding_model_id" ref="dms_ccb.model_dms_meo_file"></field>
 		<field name="state">code</field>
 		<field name="code">
 			if records:
 				for rec in records:
-					action = rec.dms_ccb_change_workflow_state()
-				<!-- action = records.dms_ccb_change_workflow_state() -->
+					action = rec.dms_meo_change_workflow_state()
 		</field>
 	</record>
-
-
-	<!-- <span t-if="t.domain=='ipi'"><t t-esc="t.amount" /></span> -->
-	<!-- <t t-if="state=='approved'">
-	<record id="dms_poc_disable_creation_of_user_with_admin_priv" model="ir.rule">
-			<field name="name">DMS: Disable Creation of User with Administration Priveleges</field>
-			<field name="active" eval="False"/>
-	</record>
-	</t> -->
 
 
 </odoo>

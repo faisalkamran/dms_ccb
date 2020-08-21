@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<odoo>
+	<record id="dms_ccb_erp_integration_form_view" model="ir.ui.view">
+		<field name="name">CCB ERP Integration Data Form</field>
+		<field name="model">dms_ccb.erp_integration_data</field>
+		<field name="arch" type="xml">
+			<form string="CCB ERP Integration">
+				<header>
+					<!-- Buttons will go here -->
+				</header>
+				<sheet>
+					<!-- Content will go here -->
+					<group name="top_group">
+						<group name="left_group">
+							<field name="ccb_erp_id"></field>
+							<field name="ccb_erp_type"></field>
+							<field name="ccb_erp_link_id"></field>
+						</group>
+						<group name="right_group">
+							<field name="ccb_erp_office_id"></field>
+							<field name="ccb_erp_name"></field>
+							<field name="ccb_erp_address"></field>
+						</group>
+					</group>
+				</sheet>
+			</form>			
+		</field>		
+	</record>
+
+	<record id="dms_ccb_erp_integration_list_view" model="ir.ui.view">
+		<field name="name">CCB ERP Integration List</field>
+		<field name="model">dms_ccb.erp_integration_data</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="ccb_erp_id"></field>
+				<field name="ccb_erp_type"></field>
+				<field name="ccb_erp_link_id"></field>
+				<field name="ccb_erp_office_id"></field>
+				<field name="ccb_erp_name"></field>
+				<field name="ccb_erp_address"></field>
+			</tree>
+		</field>		
+	</record>
+
+</odoo>

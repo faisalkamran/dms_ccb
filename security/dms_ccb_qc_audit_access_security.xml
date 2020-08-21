@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<odoo>
+
+	<!-- Define category & user group declarations for our app here -->
+
+	<!-- ****** -->
+
+	<!-- Category definition for QC workflow -->
+	<record id="dms_ccb_misc_category" model="ir.module.category">
+		<field name="name">CCB: Misc</field>
+	</record>
+
+	<!-- DMS CCB Group definition here for integration with Smile Audit app -->
+	<record id="dms_ccb_qc_workflow_group" model="res.groups">
+		<field name="name">109 - QC Workflow Access</field>
+		<field name="category_id" ref="dms_ccb_misc_category"></field>
+		<field name="implied_ids" eval="[(4, ref('base.group_user'))]"></field>
+		<!-- <field name="users" eval="[(4, ref('base.user_admin'))]"></field> -->
+	</record>
+
+	<!-- DMS CCB Group definition here for QC Workflow File approval access rights -->
+	<record id="dms_ccb_qc_workflow_approval_group" model="res.groups">
+		<field name="name">109 - QC Workflow Approval Access</field>
+		<field name="category_id" ref="dms_ccb_misc_category"></field>
+		<field name="implied_ids" eval="[(4, ref('base.group_user'))]"></field>
+		<!-- <field name="users" eval="[(4, ref('base.user_admin'))]"></field> -->
+	</record>
+
+	<!-- DMS CCB Group definition here for integration with Smile Audit app -->
+	<record id="dms_ccb_audit_trail_group" model="res.groups">
+		<field name="name">109 - DMS Audit Trail Access</field>
+		<field name="category_id" ref="dms_ccb_misc_category"></field>
+		<field name="implied_ids" eval="[(4, ref('base.group_user'))]"></field>
+		<field name="users" eval="[(4, ref('base.user_admin'))]"></field>
+	</record>
+
+	<!-- ****** -->
+
+</odoo>

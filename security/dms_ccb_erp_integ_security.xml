@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<odoo>
+
+	<!-- Define category & user group declarations for our app here -->
+
+	<!-- ****** -->
+
+	<!-- Category definition for Integration data between DMS CCB & ML&C ERP -->
+	<record id="dms_ccb_erp_integration_data_category" model="ir.module.category">
+		<field name="name">CCB - ERP Integration Data</field>
+	</record>
+
+	<!-- DMS CCB User Group definition here for Integration data between DMS CCB & ML&C ERP -->
+	<record id="dms_ccb_erp_integration_read_group" model="res.groups">
+		<field name="name">110 - Read</field>
+		<field name="category_id" ref="dms_ccb_erp_integration_data_category"></field>
+		<field name="implied_ids"
+				eval="[(4, ref('base.group_user'))]"></field>
+	</record>
+
+	<!-- DMS CCB User Group definition here for Integration data between DMS CCB & ML&C ERP -->
+	<record id="dms_ccb_erp_integration_write_group" model="res.groups">
+		<field name="name">110 - Write</field>
+		<field name="category_id" ref="dms_ccb_erp_integration_data_category"></field>
+		<field name="implied_ids"
+				eval="[(4, ref('dms_ccb_erp_integration_read_group'))]"></field>
+	</record>
+
+	<!-- DMS CCB User Group definition here for Integration data between DMS CCB & ML&C ERP -->
+	<record id="dms_ccb_erp_integration_create_group" model="res.groups">
+		<field name="name">110 - Create</field>
+		<field name="category_id" ref="dms_ccb_erp_integration_data_category"></field>
+		<field name="implied_ids"
+				eval="[(4, ref('dms_ccb_erp_integration_read_group'))]"></field>
+	</record>
+
+	<!-- DMS CCB User Group definition here for Integration data between DMS CCB & ML&C ERP -->
+	<record id="dms_ccb_erp_integration_unlink_group" model="res.groups">
+		<field name="name">110 - Delete</field>
+		<field name="category_id" ref="dms_ccb_erp_integration_data_category"></field>
+		<field name="implied_ids"
+				eval="[(4, ref('dms_ccb_erp_integration_read_group')),(4, ref('dms_ccb_erp_integration_write_group'))]"></field>
+	</record>
+
+	<!-- ****** -->
+
+</odoo>

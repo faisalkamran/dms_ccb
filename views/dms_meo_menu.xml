@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+
+<odoo>
+	<!-- All action definitions here -->
+	<act_window id="action_dms_meo_file"
+				name="Military Estate Office / Files"
+				res_model="dms_meo.file"
+				view_mode="tree,form,graph">		
+	</act_window>
+	<act_window id="action_dms_meo_file_branch"
+				name="Military Estate Office / Configuration / Branches"
+				res_model="dms_meo.file_branch"
+				view_mode="tree,form">		
+	</act_window>
+	<act_window id="action_dms_meo_file_colony"
+				name="Military Estate Office / Configuration / Colony"
+				res_model="dms_meo.file_colony"
+				view_mode="tree,form">		
+	</act_window>
+	<act_window id="action_dms_meo_page_tags"
+				name="Military Estate Office / Configuration / Document Tags"
+				res_model="dms_meo.page_tags"
+				view_mode="tree,form">		
+	</act_window>
+	<act_window id="action_dms_meo_file_purpose"
+				name="Military Estate Office / Configuration / Purpose"
+				res_model="dms_meo.file_purpose"
+				view_mode="tree,form">		
+	</act_window>
+	<act_window id="action_dms_meo_record_type"
+				name="Military Estate Office / Configuration / Record Type"
+				res_model="dms_meo.file_record_type"
+				view_mode="tree,form">		
+	</act_window>
+	<act_window id="action_dms_meo_page_rej_reason"
+				name="Military Estate Office / Configuration / Page Rejection Reasons"
+				res_model="dms_meo.page_rej_reasons"
+				view_mode="tree,form">		
+	</act_window>
+	<act_window id="action_dms_meo_file_type_of_land"
+				name="Military Estate Office / Configuration / Type of Land"
+				res_model="dms_meo.file_type_of_land"
+				view_mode="tree,form">		
+	</act_window>
+	<act_window id="action_dms_meo_erp_integration_data"
+				name="Military Estate Office / Configuration / ML&amp;C ERP Integration Data"
+				res_model="dms_meo.erp_integration_data"
+				view_mode="tree,form">		
+	</act_window>
+
+	<act_window id="action_dms_meo_file_attribute"
+				name="File Attributes"
+				res_model="dms_meo.file_attribute"
+				view_mode="tree,form">		
+	</act_window>
+
+	<!-- <act_window id="action_dms_meo_file_area"
+				name="Area"
+				res_model="dms_meo.file_area"
+				view_mode="tree,form">		
+	</act_window> -->
+
+	<!-- <record id="dms_meo_dashboard" model="ir.actions.act_window">
+		<field name="name">DMS MEO Dashboard</field>
+		<field name="res_model">board.board</field>
+		<field name="view_mode">form</field>
+		<field name="usage">menu</field>
+		<field name="view_id" ref="dms_meo_dashboard_form_view"></field>
+	</record> -->
+
+	<!-- All menu item definitions here -->
+
+	<!-- DMS ML&C top parent menu definition here -->
+	<menuitem id="dms_mlc_top_menu"
+			  name="DMS ML&amp;C" />
+
+	<!-- DMS MEO menu definition here -->
+	<menuitem id="dms_meo_top_menu"
+			  name="MEO"
+			  parent="dms_mlc_top_menu">
+	</menuitem>
+
+	<!-- <menuitem id="dms_meo_dashboard_menu"
+			  name="Dashboard"
+			  parent="dms_meo_top_menu"
+			  action="dms_meo_dashboard"
+			  sequence="1">		
+	</menuitem> -->
+
+	<!-- DMS MEO Files menu definition here -->
+	<menuitem id="dms_meo_files_menu"
+			  name="Files"
+			  parent="dms_meo_top_menu"
+			  action="action_dms_meo_file">		
+	</menuitem>
+
+	<!-- Configuration parent menu definition here -->
+	<menuitem id="dms_meo_configuration_menu"
+		name="Configuration"
+		parent="dms_meo_top_menu">
+	</menuitem>
+
+	<!-- Child menu items of "configuration" menu here -->
+	<menuitem id="dms_meo_branch_menu"
+			  name="Branches"
+			  parent="dms_meo_configuration_menu"
+			  sequence="1"
+			  action="action_dms_meo_file_branch">
+	</menuitem>
+	<menuitem id="dms_meo_colony_menu"
+			  name="Colony"
+			  parent="dms_meo_configuration_menu"
+			  sequence="2"
+			  action="action_dms_meo_file_colony">		
+	</menuitem>
+	<menuitem id="dms_meo_page_tags"
+			  name="Document Tags"
+			  parent="dms_meo_configuration_menu"
+			  sequence="3"
+			  action="action_dms_meo_page_tags">		
+	</menuitem>
+	<menuitem id="dms_meo_purpose_menu"
+			  name="Purpose"
+			  parent="dms_meo_configuration_menu"
+			  sequence="4"
+			  action="action_dms_meo_file_purpose">		
+	</menuitem>
+	<menuitem id="dms_meo_record_type_menu"
+			  name="Record Type"
+			  parent="dms_meo_configuration_menu"
+			  sequence="5"
+			  action="action_dms_meo_record_type">		
+	</menuitem>
+	<menuitem id="dms_meo_page_rej_reason_menu"
+			  name="Rejection Reasons"
+			  parent="dms_meo_configuration_menu"
+			  sequence="6"
+			  action="action_dms_meo_page_rej_reason">		
+	</menuitem>
+	<menuitem id="dms_meo_type_of_land_menu"
+			  name="Type of Land"
+			  parent="dms_meo_configuration_menu"
+			  sequence="7"
+			  action="action_dms_meo_file_type_of_land">		
+	</menuitem>
+	<menuitem id="dms_meo_erp_integration_data_menu"
+			  name="MEO &amp; ML&amp;C Integration Data"
+			  parent="dms_meo_configuration_menu"
+			  sequence="8"
+			  action="action_dms_meo_erp_integration_data">		
+	</menuitem>
+	<!-- <menuitem id="dms_meo_area_menu"
+			  name="Area"
+			  parent="dms_meo_configuration_menu"
+			  sequence="1"
+			  action="action_dms_meo_file_area">		
+	</menuitem> -->
+	<!-- <menuitem id="dms_meo_attribute_menu"
+			  name="Attributes"
+			  parent="dms_meo_configuration_menu"
+			  sequence="2"
+			  action="action_dms_meo_file_attribute">		
+	</menuitem> -->
+
+	<!-- DMS app Audit Trail menu definition here -->
+	<!-- <menuitem id="dms_meo_audit_trail_menu"
+		name="Audit Trail"
+		parent="dms_mlc_top_menu"
+		groups="dms_meo_audit_trail_group">
+	</menuitem> -->
+
+</odoo>

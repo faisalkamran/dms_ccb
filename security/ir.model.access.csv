@@ -1,24 +1,113 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-dms_file_user,DMS CCB User,model_dms_ccb_file,dms_ccb_file_obj_user_group,1,0,0,0
-dms_file_manager,DMS CCB Manager,model_dms_ccb_file,dms_ccb_file_obj_manager_group,0,1,1,0
-dms_file_admin,DMS CCB Admin,model_dms_ccb_file,dms_ccb_file_obj_admin_group,0,0,0,1
-dms_file_record_user,DMS CCB User,model_dms_ccb_file_record_type,dms_ccb_record_obj_user_group,1,0,0,0
-dms_file_record_manager,DMS CCB Manager,model_dms_ccb_file_record_type,dms_ccb_record_obj_manager_group,1,1,1,1
-dms_file_colony_user,DMS CCB User,model_dms_ccb_file_colony,dms_ccb_colony_obj_user_group,1,0,0,0
-dms_file_colony_manager,DMS CCB Manager,model_dms_ccb_file_colony,dms_ccb_colony_obj_manager_group,1,1,1,1
-dms_file_type_of_land_user,DMS CCB User,model_dms_ccb_file_type_of_land,dms_ccb_type_of_land_obj_user_group,1,0,0,0
-dms_file_type_of_land_manager,DMS CCB Manager,model_dms_ccb_file_type_of_land,dms_ccb_type_of_land_obj_manager_group,1,1,1,1
-dms_file_purpose_user,DMS CCB User,model_dms_ccb_file_purpose,dms_ccb_purpose_obj_user_group,1,0,0,0
-dms_file_purpose_manager,DMS CCB Manager,model_dms_ccb_file_purpose,dms_ccb_purpose_obj_manager_group,1,1,1,1
-dms_file_branch_user,DMS CCB User,model_dms_ccb_file_branch,dms_ccb_branch_obj_user_group,1,0,0,0
-dms_file_branch_manager,DMS CCB Manager,model_dms_ccb_file_branch,dms_ccb_branch_obj_manager_group,1,1,1,1
-dms_file_attribute_user,DMS CCB User,model_dms_ccb_file_attribute,dms_ccb_file_obj_user_group,1,0,0,0
-dms_file_attribute_manager,DMS CCB Manager,model_dms_ccb_file_attribute,dms_ccb_file_obj_manager_group,1,1,1,1
-dms_page_tags_user,DMS CCB User,model_dms_ccb_page_tags,dms_ccb_page_tag_obj_user_group,1,0,0,0
-dms_page_tags_manager,DMS CCB Manager,model_dms_ccb_page_tags,dms_ccb_page_tag_obj_manager_group,1,1,1,1
-dms_page_rej_reasons_user,DMS CCB User,model_dms_ccb_page_rej_reasons,dms_ccb_rej_reasons_obj_user_group,1,0,0,0
-dms_page_rej_reasons_manager,DMS CCB Manager,model_dms_ccb_page_rej_reasons,dms_ccb_rej_reasons_obj_manager_group,1,1,1,1
-dms_page_attachment_user,DMS CCB User,model_ir_attachment,dms_ccb_attachment_obj_user_group,1,0,0,0
-dms_page_attachment_manager,DMS CCB Manager,model_ir_attachment,dms_ccb_attachment_obj_manager_group,0,1,1,0
-dms_page_attachment_admin,DMS CCB Admin,model_ir_attachment,dms_ccb_attachment_obj_admin_group,0,0,0,1
+dms_ccb_file_read,DMS CCB File Read,model_dms_ccb_file,dms_ccb_file_obj_read_group,1,0,0,0
+dms_ccb_file_write,DMS CCB File Write,model_dms_ccb_file,dms_ccb_file_obj_write_group,0,1,0,0
+dms_ccb_file_create,DMS CCB File Create,model_dms_ccb_file,dms_ccb_file_obj_create_group,0,0,1,0
+dms_ccb_file_unlink,DMS CCB File Unlink,model_dms_ccb_file,dms_ccb_file_obj_unlink_group,0,0,0,1
+,,,,,,,
+dms_ccb_file_record_read,DMS CCB File Record Read,model_dms_ccb_file_record_type,dms_ccb_record_obj_read_group,1,0,0,0
+dms_ccb_file_record_write,DMS CCB File Record Write,model_dms_ccb_file_record_type,dms_ccb_record_obj_write_group,0,1,0,0
+dms_ccb_file_record_create,DMS CCB File Record Create,model_dms_ccb_file_record_type,dms_ccb_record_obj_create_group,0,0,1,0
+dms_ccb_file_record_unlink,DMS CCB File Record Unlink,model_dms_ccb_file_record_type,dms_ccb_record_obj_unlink_group,0,0,0,1
+,,,,,,,
+dms_ccb_file_colony_read,DMS CCB File Colony Read,model_dms_ccb_file_colony,dms_ccb_colony_obj_read_group,1,0,0,0
+dms_ccb_file_colony_write,DMS CCB File Colony Write,model_dms_ccb_file_colony,dms_ccb_colony_obj_write_group,0,1,0,0
+dms_ccb_file_colony_create,DMS CCB File Colony Create,model_dms_ccb_file_colony,dms_ccb_colony_obj_create_group,0,0,1,0
+dms_ccb_file_colony_unlink,DMS CCB File Colony Unlink,model_dms_ccb_file_colony,dms_ccb_colony_obj_unlink_group,0,0,0,1
+,,,,,,,
+dms_ccb_file_type_of_land_read,DMS CCB File Type of Land Read,model_dms_ccb_file_type_of_land,dms_ccb_type_of_land_obj_read_group,1,0,0,0
+dms_ccb_file_type_of_land_write,DMS CCB File Type of Land Write,model_dms_ccb_file_type_of_land,dms_ccb_type_of_land_obj_write_group,0,1,0,0
+dms_ccb_file_type_of_land_create,DMS CCB File Type of Land Create,model_dms_ccb_file_type_of_land,dms_ccb_type_of_land_obj_create_group,0,0,1,0
+dms_ccb_file_type_of_land_unlink,DMS CCB File Type of Land Unlink,model_dms_ccb_file_type_of_land,dms_ccb_type_of_land_obj_unlink_group,0,0,0,1
+,,,,,,,
+dms_ccb_file_purpose_read,DMS CCB File Purpose Read,model_dms_ccb_file_purpose,dms_ccb_purpose_obj_read_group,1,0,0,0
+dms_ccb_file_purpose_write,DMS CCB File Purpose Write,model_dms_ccb_file_purpose,dms_ccb_purpose_obj_write_group,0,1,0,0
+dms_ccb_file_purpose_create,DMS CCB File Purpose Create,model_dms_ccb_file_purpose,dms_ccb_purpose_obj_create_group,0,0,1,0
+dms_ccb_file_purpose_unlink,DMS CCB File Purpose Unlink,model_dms_ccb_file_purpose,dms_ccb_purpose_obj_unlink_group,0,0,0,1
+,,,,,,,
+dms_ccb_file_branch_read,DMS CCB File Branch Read,model_dms_ccb_file_branch,dms_ccb_branch_obj_read_group,1,0,0,0
+dms_ccb_file_branch_write,DMS CCB File Branch Write,model_dms_ccb_file_branch,dms_ccb_branch_obj_write_group,0,1,0,0
+dms_ccb_file_branch_create,DMS CCB File Branch Create,model_dms_ccb_file_branch,dms_ccb_branch_obj_create_group,0,0,1,0
+dms_ccb_file_branch_unlink,DMS CCB File Branch Unlink,model_dms_ccb_file_branch,dms_ccb_branch_obj_unlink_group,0,0,0,1
+,,,,,,,
+dms_ccb_file_attribute_read,DMS CCB File Attribute Read,model_dms_ccb_file_attribute,dms_ccb_file_obj_read_group,1,0,0,0
+dms_ccb_file_attribute_write,DMS CCB File Attribute Write,model_dms_ccb_file_attribute,dms_ccb_file_obj_write_group,0,1,0,0
+dms_ccb_file_attribute_create,DMS CCB File Attribute Create,model_dms_ccb_file_attribute,dms_ccb_file_obj_create_group,0,0,1,0
+dms_ccb_file_attribute_unlink,DMS CCB File Attribute Unlink,model_dms_ccb_file_attribute,dms_ccb_file_obj_unlink_group,0,0,0,1
+,,,,,,,
+dms_ccb_page_tags_read,DMS CCB Page Tags Read,model_dms_ccb_page_tags,dms_ccb_page_tag_obj_read_group,1,0,0,0
+dms_ccb_page_tags_write,DMS CCB Page Tags Write,model_dms_ccb_page_tags,dms_ccb_page_tag_obj_write_group,0,1,0,0
+dms_ccb_page_tags_create,DMS CCB Page Tags Create,model_dms_ccb_page_tags,dms_ccb_page_tag_obj_create_group,0,0,1,0
+dms_ccb_page_tags_unlink,DMS CCB Page Tags Unlink,model_dms_ccb_page_tags,dms_ccb_page_tag_obj_unlink_group,0,0,0,1
+,,,,,,,
+dms_ccb_page_rej_reasons_read,DMS CCB Page Rej Reasons Read,model_dms_ccb_page_rej_reasons,dms_ccb_rej_reasons_obj_read_group,1,0,0,0
+dms_ccb_page_rej_reasons_write,DMS CCB Page Rej Reasons Write,model_dms_ccb_page_rej_reasons,dms_ccb_rej_reasons_obj_write_group,0,1,0,0
+dms_ccb_page_rej_reasons_create,DMS CCB Page Rej Reasons Create,model_dms_ccb_page_rej_reasons,dms_ccb_rej_reasons_obj_create_group,0,0,1,0
+dms_ccb_page_rej_reasons_unlink,DMS CCB Page Rej Reasons Unlink,model_dms_ccb_page_rej_reasons,dms_ccb_rej_reasons_obj_unlink_group,0,0,0,1
+,,,,,,,
+dms_ccb_page_attachment_read,DMS CCB Page Attachment Read,model_ir_attachment,dms_ccb_attachment_obj_read_group,1,0,0,0
+dms_ccb_page_attachment_write,DMS CCB Page Attachment Write,model_ir_attachment,dms_ccb_attachment_obj_write_group,0,1,0,0
+dms_ccb_page_attachment_create,DMS CCB Page Attachment Create,model_ir_attachment,dms_ccb_attachment_obj_create_group,0,0,1,0
+dms_ccb_page_attachment_unlink,DMS CCB Page Attachment Unlink,model_ir_attachment,dms_ccb_attachment_obj_unlink_group,0,0,0,1
+,,,,,,,
+dms_ccb_erp_integration_read,DMS CCB ERP Integration Read,model_dms_ccb_erp_integration_data,dms_ccb_erp_integration_read_group,1,0,0,0
+dms_ccb_erp_integration_write,DMS CCB ERP Integration Write,model_dms_ccb_erp_integration_data,dms_ccb_erp_integration_write_group,0,1,0,0
+dms_ccb_erp_integration_create,DMS CCB ERP Integration Create,model_dms_ccb_erp_integration_data,dms_ccb_erp_integration_create_group,0,0,1,0
+dms_ccb_erp_integration_unlink,DMS CCB ERP Integration Unlink,model_dms_ccb_erp_integration_data,dms_ccb_erp_integration_unlink_group,0,0,0,1
+,,,,,,,
 base.access_ir_attachment_group_user,ir_attachment group_user,model_ir_attachment,base.group_user,1,0,0,0
+,,,,,,,
+,,,,,,,
+dms_meo_file_read,DMS MEO Read,model_dms_meo_file,dms_meo_file_obj_read_group,1,0,0,0
+dms_meo_file_write,DMS MEO Write,model_dms_meo_file,dms_meo_file_obj_write_group,0,1,0,0
+dms_meo_file_create,DMS MEO Create,model_dms_meo_file,dms_meo_file_obj_create_group,0,0,1,0
+dms_meo_file_unlink,DMS MEO Unlink,model_dms_meo_file,dms_meo_file_obj_unlink_group,0,0,0,1
+,,,,,,,
+dms_meo_file_record_read,DMS MEO Read,model_dms_meo_file_record_type,dms_meo_record_obj_read_group,1,0,0,0
+dms_meo_file_record_write,DMS MEO Write,model_dms_meo_file_record_type,dms_meo_record_obj_write_group,0,1,0,0
+dms_meo_file_record_create,DMS MEO Create,model_dms_meo_file_record_type,dms_meo_record_obj_create_group,0,0,1,0
+dms_meo_file_record_unlink,DMS MEO Unlink,model_dms_meo_file_record_type,dms_meo_record_obj_unlink_group,0,0,0,1
+,,,,,,,
+dms_meo_file_colony_read,DMS MEO Read,model_dms_meo_file_colony,dms_meo_colony_obj_read_group,1,0,0,0
+dms_meo_file_colony_write,DMS MEO Write,model_dms_meo_file_colony,dms_meo_colony_obj_write_group,0,1,0,0
+dms_meo_file_colony_create,DMS MEO Create,model_dms_meo_file_colony,dms_meo_colony_obj_create_group,0,0,1,0
+dms_meo_file_colony_unlink,DMS MEO Unlink,model_dms_meo_file_colony,dms_meo_colony_obj_unlink_group,0,0,0,1
+,,,,,,,
+dms_meo_file_type_of_land_read,DMS MEO Read,model_dms_meo_file_type_of_land,dms_meo_type_of_land_obj_read_group,1,0,0,0
+dms_meo_file_type_of_land_write,DMS MEO Write,model_dms_meo_file_type_of_land,dms_meo_type_of_land_obj_write_group,0,1,0,0
+dms_meo_file_type_of_land_create,DMS MEO Create,model_dms_meo_file_type_of_land,dms_meo_type_of_land_obj_create_group,0,0,1,0
+dms_meo_file_type_of_land_unlink,DMS MEO Unlink,model_dms_meo_file_type_of_land,dms_meo_type_of_land_obj_unlink_group,0,0,0,1
+,,,,,,,
+dms_meo_file_purpose_read,DMS MEO Read,model_dms_meo_file_purpose,dms_meo_purpose_obj_read_group,1,0,0,0
+dms_meo_file_purpose_write,DMS MEO Write,model_dms_meo_file_purpose,dms_meo_purpose_obj_write_group,0,1,0,0
+dms_meo_file_purpose_create,DMS MEO Create,model_dms_meo_file_purpose,dms_meo_purpose_obj_create_group,0,0,1,0
+dms_meo_file_purpose_unlink,DMS MEO Unlink,model_dms_meo_file_purpose,dms_meo_purpose_obj_unlink_group,0,0,0,1
+,,,,,,,
+dms_meo_file_branch_read,DMS MEO Read,model_dms_meo_file_branch,dms_meo_branch_obj_read_group,1,0,0,0
+dms_meo_file_branch_write,DMS MEO Write,model_dms_meo_file_branch,dms_meo_branch_obj_write_group,0,1,0,0
+dms_meo_file_branch_create,DMS MEO Create,model_dms_meo_file_branch,dms_meo_branch_obj_create_group,0,0,1,0
+dms_meo_file_branch_unlink,DMS MEO Unlink,model_dms_meo_file_branch,dms_meo_branch_obj_unlink_group,0,0,0,1
+,,,,,,,
+dms_meo_file_attribute_read,DMS MEO Read,model_dms_meo_file_attribute,dms_meo_file_obj_read_group,1,0,0,0
+dms_meo_file_attribute_write,DMS MEO Write,model_dms_meo_file_attribute,dms_meo_file_obj_write_group,0,1,0,0
+dms_meo_file_attribute_create,DMS MEO Create,model_dms_meo_file_attribute,dms_meo_file_obj_create_group,0,0,1,0
+dms_meo_file_attribute_unlink,DMS MEO Unlink,model_dms_meo_file_attribute,dms_meo_file_obj_unlink_group,0,0,0,1
+,,,,,,,
+dms_meo_page_tags_read,DMS MEO Read,model_dms_meo_page_tags,dms_meo_page_tag_obj_read_group,1,0,0,0
+dms_meo_page_tags_write,DMS MEO Write,model_dms_meo_page_tags,dms_meo_page_tag_obj_write_group,0,1,0,0
+dms_meo_page_tags_create,DMS MEO Create,model_dms_meo_page_tags,dms_meo_page_tag_obj_create_group,0,0,1,0
+dms_meo_page_tags_unlink,DMS MEO Unlink,model_dms_meo_page_tags,dms_meo_page_tag_obj_unlink_group,0,0,0,1
+,,,,,,,
+dms_meo_page_rej_reasons_read,DMS MEO Read,model_dms_meo_page_rej_reasons,dms_meo_rej_reasons_obj_read_group,1,0,0,0
+dms_meo_page_rej_reasons_write,DMS MEO Write,model_dms_meo_page_rej_reasons,dms_meo_rej_reasons_obj_write_group,0,1,0,0
+dms_meo_page_rej_reasons_create,DMS MEO Create,model_dms_meo_page_rej_reasons,dms_meo_rej_reasons_obj_create_group,0,0,1,0
+dms_meo_page_rej_reasons_unlink,DMS MEO Unlink,model_dms_meo_page_rej_reasons,dms_meo_rej_reasons_obj_unlink_group,0,0,0,1
+,,,,,,,
+dms_meo_page_attachment_read,DMS MEO Read,model_ir_attachment,dms_meo_attachment_obj_read_group,1,0,0,0
+dms_meo_page_attachment_write,DMS MEO Write,model_ir_attachment,dms_meo_attachment_obj_write_group,0,1,0,0
+dms_meo_page_attachment_create,DMS MEO Create,model_ir_attachment,dms_meo_attachment_obj_create_group,0,0,1,0
+dms_meo_page_attachment_unlink,DMS MEO Unlink,model_ir_attachment,dms_meo_attachment_obj_unlink_group,0,0,0,1
+,,,,,,,
+dms_meo_erp_integration_read,DMS MEO ERP Integration Read,model_dms_meo_erp_integration_data,dms_meo_erp_integration_read_group,1,0,0,0
+dms_meo_erp_integration_write,DMS MEO ERP Integration Write,model_dms_meo_erp_integration_data,dms_meo_erp_integration_write_group,0,1,0,0
+dms_meo_erp_integration_create,DMS MEO ERP Integration Create,model_dms_meo_erp_integration_data,dms_meo_erp_integration_create_group,0,0,1,0
+dms_meo_erp_integration_unlink,DMS MEO ERP Integration Unlink,model_dms_meo_erp_integration_data,dms_meo_erp_integration_unlink_group,0,0,0,1

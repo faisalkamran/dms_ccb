@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 
 <odoo>
-	<record id="dms_ccb_branch_form_view" model="ir.ui.view">
+	<record id="dms_meo_branch_form_view" model="ir.ui.view">
 		<field name="name">Branch Form</field>
-		<field name="model">dms_ccb.file_branch</field>
+		<field name="model">dms_meo.file_branch</field>
 		<field name="arch" type="xml">
 			<form string="Branch">
 				<header>
@@ -24,29 +24,14 @@
 		</field>		
 	</record>
 
-	<record id="dms_ccb_branch_list_view" model="ir.ui.view">
+	<record id="dms_meo_branch_list_view" model="ir.ui.view">
 		<field name="name">Branch List</field>
-		<field name="model">dms_ccb.file_branch</field>
+		<field name="model">dms_meo.file_branch</field>
 		<field name="arch" type="xml">
 			<tree>
 				<field name="file_branch"></field>
 				<field name="file_branch_description"></field>							
 			</tree>
-		</field>		
-	</record>
-
-	<record id="dms_ccb_branch_search_view" model="ir.ui.view">
-		<field name="name">Branch Search</field>
-		<field name="model">dms_ccb.file_branch</field>
-		<field name="arch" type="xml">
-			<search>
-				<field name="file_branch"></field>
-				<field name="file_branch_description"></field>
-				<!-- <filter string="Land Branch Only"
-						name="land_branch_only"
-						domain="[('file_branch','=','Land Branch')]">
-				</filter> -->
-			</search>
 		</field>		
 	</record>
 

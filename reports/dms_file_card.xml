@@ -24,7 +24,7 @@
 					<br></br>
 					<b>Colony: </b><t t-esc="doc.file_colony.display_name"></t>
 					<br></br>
-					<b>Category: </b><t t-esc="doc.file_category.display_name"></t>
+					<b>Category: </b><t t-esc="doc.file_type_of_land.display_name"></t>
 					<br></br>
 					<table>
 						<tr>

@@ -2,12 +2,20 @@
 
 <odoo>
 	<data noupdate="1">
-		<!-- Sequence for File Barcode field -->
+		<!-- Sequence for File Barcode field in the CCB model -->
 		<record id="seq_dms_ccb_file_barcode" model="ir.sequence">
 			<field name="name">DMS CCB File Barcode Sequence</field>
 			<field name="code">dms.ccb.file.barcode.sequence</field>
-			<field name="prefix">DMS.CCB.</field>
-			<field name="padding">6</field>
+			<!-- <field name="prefix">DMS.CCB.</field> -->
+			<field name="padding">8</field>
+			<!-- <field name="company_id" eval="False"></field> -->
+		</record>
+		<!-- Sequence for File Barcode field in the MEO model -->
+		<record id="seq_dms_meo_file_barcode" model="ir.sequence">
+			<field name="name">DMS MEO File Barcode Sequence</field>
+			<field name="code">dms.meo.file.barcode.sequence</field>
+			<field name="prefix">2</field>
+			<field name="padding">7</field>
 			<!-- <field name="company_id" eval="False"></field> -->
 		</record>
 	</data>
