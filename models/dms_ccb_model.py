@@ -3,6 +3,10 @@ from odoo.exceptions import UserError
 # import os
 # import base64
 # import requests
+# import subprocess
+import requests
+import json
+import pdb
 
 class dms_ccb_file_record_type(models.Model):
 	_name = 'dms_ccb.file_record_type'
@@ -151,6 +155,11 @@ class dms_ccb_file(models.Model):
 	file_plot_khasra_cb_no = fields.Char('Plot No / CB No / Khasra No', track_visibility="always")
 	# file_record_id = fields.Char('Record ID', track_visibility="always")
 	file_record_id = fields.Many2one('dms_ccb.erp_integration_data', string='Record ID', track_visibility="always")
+	file_revenue_id = fields.Char('Revenue ID', track_visibility="always")
+	file_search_results = fields.Text('Search Results', readonly=True)
+	file_cb_no = fields.Char('CB No', track_visibility="always", readonly=True)
+	file_colony_name = fields.Char('Colony Name', readonly=True)
+	file_payer_name = fields.Char('Payer Name', readonly=True)
 	
 	# file_attachments = fields.Many2many('ir.attachment', string='File Attachments')
 	# message_attachment_count = fields.Integer(readonly=False, track_visibility="onchange")
@@ -176,6 +185,30 @@ class dms_ccb_file(models.Model):
 			rec.state = 'file_unlock'
 
 	def mlc_erp_api_call(self):
+		# pdb.set_trace()
+		url = 'http://app.mlc.gov.pk/api/dms/property/details'
+		data = {
+			'office_id': '01',
+			'branch_name': 'revenue',
+			'revenue_id': self.file_revenue_id
+		}
+		response = requests.post(url,data)
+		converted_json_obj = json.loads(response.content)
+		if converted_json_obj["status"]["code"]=="601":
+			if converted_json_obj["status"]["messages"]["revenue_id"]:
+					self.file_search_results = "The revenue ID field is required."
+		if converted_json_obj["status"]["code"]=="200":
+			if converted_json_obj["status"]["messages"]=="No record found against this revenue_id.":
+				self.file_search_results = "No record found against this Revenue ID"
+				self.file_cb_no = ""
+				self.file_colony_name = ""
+				self.file_payer_name = ""
+			if converted_json_obj["status"]["messages"]=="Record found.":
+				self.file_search_results = "Record found."
+				# self.file_search_results = self.file_search_results + "\n" + "CB No. " + converted_json_obj["data"]["cb_no"] + "\n" + "Colony Name " + converted_json_obj["data"]["colony_name"] + "\n" + "Payer Name " + converted_json_obj["data"]["payer_name"]
+				self.file_cb_no = converted_json_obj["data"]["cb_no"]
+				self.file_colony_name = converted_json_obj["data"]["colony_name"]
+				self.file_payer_name = converted_json_obj["data"]["payer_name"]
 		return 0
 
 	@api.multi

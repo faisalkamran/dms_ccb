@@ -80,14 +80,23 @@
 							<field name="file_record_type" attrs="{'readonly': [('state','==','approved')]}"></field>
 							<field name="file_type_of_land" attrs="{'readonly': [('state','==','approved')]}"></field>
 							<field name="file_purpose" attrs="{'readonly': [('state','==','approved')]}"></field>
-							<button name="mlc_erp_api_call"
-									type="object"
-									string="Lookup Record ID"
-									></button>
-							<field name="file_record_id" attrs="{'readonly': [('state','==','approved')]}"></field>
+							<!-- <field name="file_record_id" attrs="{'readonly': [('state','==','approved')]}"></field> -->
 							<!-- <button name="mlc_erp_api_call"
 									type="object"
 									string="Lookup Record ID"></button> -->
+						</group>
+						<group string="CBCare Integration">
+							<field name="file_revenue_id"></field>
+							<button name="mlc_erp_api_call"
+									type="object"
+									string="Search CBCare"
+									></button>							
+						</group>
+						<group string="Search Results">
+							<field name="file_search_results" string="CBCare Response"></field>
+							<field name="file_cb_no" ></field>
+							<field name="file_colony_name" ></field>
+							<field name="file_payer_name" ></field>							
 						</group>
 					</group>
 					<!-- <group_2>
