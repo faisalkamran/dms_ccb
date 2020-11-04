@@ -85,7 +85,7 @@
 									type="object"
 									string="Lookup Record ID"></button> -->
 						</group>
-						<group string="CBCare Integration">
+						<group string="MLC MIS Integration">
 							<field name="file_revenue_id"></field>
 							<button name="mlc_erp_api_call"
 									type="object"
