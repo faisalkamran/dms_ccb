@@ -135,7 +135,7 @@ class dms_ccb_file(models.Model):
 	file_colony = fields.Many2one('dms_ccb.file_colony', string='Colony', track_visibility="always")
 	file_type_of_land = fields.Many2one('dms_ccb.file_type_of_land', string='Type of Land', track_visibility="always")
 	file_purpose = fields.Many2one('dms_ccb.file_purpose', string='Purpose', track_visibility="always")
-	file_branch = fields.Many2one('dms_ccb.file_branch', string='Branch', track_visibility="always")
+	file_branch = fields.Many2one('dms_ccb.file_branch', required=True, string='Branch', track_visibility="always")
 	# file_remarks = fields.Text('Remarks')
 	file_remarks = fields.Html('Remarks') # track_visibility does not work on html fields
 	file_attributes = fields.Many2many('dms_ccb.file_attribute', string='Attributes')
@@ -259,9 +259,15 @@ class dms_ccb_file(models.Model):
 
 	@api.model
 	def create(self, vals):
-		if vals.get('file_barcode', _('New')) == _('New'):
-			vals['file_barcode'] = self.env['ir.sequence'].next_by_code('dms.ccb.file.barcode.sequence') or _('New')
-		result = super(dms_ccb_file, self).create(vals)
+		# pdb.set_trace()
+		if vals.get('file_branch') == 1:
+			if vals.get('file_barcode', _('New')) == _('New'):
+				vals['file_barcode'] = self.env['ir.sequence'].next_by_code('dms.ccb.file.barcode.sequence') or _('New')
+				result = super(dms_ccb_file, self).create(vals)
+		if vals.get('file_branch') == 2:
+			if vals.get('file_barcode', _('New')) == _('New'):
+				vals['file_barcode'] = self.env['ir.sequence'].next_by_code('dms.ccb.rev.file.barcode.sequence') or _('New')
+				result = super(dms_ccb_file, self).create(vals)
 		return result
 
 	def dms_manage_pages(self):
