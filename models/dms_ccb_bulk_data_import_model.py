@@ -8,9 +8,9 @@ import csv
 
 class LibraryRentWizard(models.TransientModel):
     _name = 'dms_ccb.bulk_data_import'
-    start_barcode_number = fields.Char('Start Barcode Number', default='00000001')
-    end_barcode_number = fields.Char('End Barcode Number', default='00000001')
-    path_to_data_folder = fields.Char('Set Path to Bulk Data Folder', default='/home/odoo12dev/Desktop/DMS Related Material/Scanned Pages/Land Branch/')
+    start_barcode_number = fields.Char('Start Barcode Number', default='10000001')
+    end_barcode_number = fields.Char('End Barcode Number', default='10021069')
+    path_to_data_folder = fields.Char('Set Path to Bulk Data Folder', default='/media/odoo12dev/My Passport/CCB-Revenue/')
 
     def display_attachment_content(self):
         attachment_obj_search_domain = [('name', '=', '20002012_001.jpg'), ('res_id', '=', 3)]
@@ -36,7 +36,7 @@ class LibraryRentWizard(models.TransientModel):
         print("******************************************************************************")
 
     def bulk_data_import(self):
-        model.power_on()
+        # model.power_on()
         for wizard_model in self:
             start_barcode_number_int = int(wizard_model.start_barcode_number)
             end_barcode_number_int = int(wizard_model.end_barcode_number)
@@ -56,7 +56,8 @@ class LibraryRentWizard(models.TransientModel):
                     if filename != 'Thumbs.db':
                         current_barcode_int = int(root[-8:])
                         if current_barcode_int >= start_barcode_number_int and current_barcode_int <= end_barcode_number_int:
-                            meo_barcode_int = current_barcode_int - 20000000
+                            # meo_barcode_int = current_barcode_int - 20000000
+                            meo_barcode_int = current_barcode_int - 9987192
                             filename_full_path = root + "/" + filename
                             file = open(filename_full_path, "rb")
                             file_data = file.read()
@@ -73,8 +74,8 @@ class LibraryRentWizard(models.TransientModel):
                                     # 'datas': base64.encodestring(file_data),
                                     'datas': encoded_file_data,
                                     'res_model': 'dms_ccb.file',
-                                    # 'res_id': meo_barcode_int,
-                                    'res_id': current_barcode_int,
+                                    'res_id': meo_barcode_int,
+                                    # 'res_id': current_barcode_int,
                                 })
                             except:
                                 print("An unknown error occured")
@@ -88,7 +89,7 @@ class LibraryRentWizard(models.TransientModel):
             end_barcode_number_int = int(wizard_model.end_barcode_number)
             filename_extension_set = set(())
             dir_path_set = set(())
-            check_results_file = open("/home/odoo/Desktop/check_file_results.txt", "w")
+            check_results_file = open("/home/odoo12dev/Desktop/check_file_results.txt", "w")
             # count = 1
 
             for root, dirs, files in os.walk(wizard_model.path_to_data_folder):
@@ -103,9 +104,9 @@ class LibraryRentWizard(models.TransientModel):
                     # add unique path to set
                     dir_path_set.add(root)
                     current_barcode = root[-8:]
-                    # if not current_barcode.isdigit():
-                    # 	check_results_file.write("int conversion failed for... " + current_barcode + "\n")
-                    # 	check_results_file.write(root + " \n")
+                    if not current_barcode.isdigit():
+                    	check_results_file.write("int conversion failed for... " + current_barcode + "\n")
+                    	check_results_file.write(root + " \n")
                     if current_barcode.isdigit():
                         # this loop should run between start barcode number & end barcode number
                         current_barcode_int = int(current_barcode)
@@ -115,28 +116,28 @@ class LibraryRentWizard(models.TransientModel):
                             filename_extension_set.add(filename[-4:])
 
                             # check filenames for correct length... required length is 16
-                            filename_length = len(filename)
-                            filename_full_path = root + "/" + filename
-                            if filename != "Thumbs.db":
-                                if filename_length == 16: check_results_file.write(
-                                    filename_full_path + " file check passed\n")
-                                if filename_length < 16: check_results_file.write(
-                                    "check failed. shorter length. " + filename_full_path + "\n")
-                                if filename_length > 16: check_results_file.write(
-                                    "check failed. longer length. " + filename_full_path + "\n")
+                            # filename_length = len(filename)
+                            # filename_full_path = root + "/" + filename
+                            # if filename != "Thumbs.db":
+                            #     # if filename_length == 16: check_results_file.write(
+                            #     #     filename_full_path + " file check passed\n")
+                            #     if filename_length < 16: check_results_file.write(
+                            #         "check failed. shorter length. " + filename_full_path + "\n")
+                            #     if filename_length > 16: check_results_file.write(
+                            #         "check failed. longer length. " + filename_full_path + "\n")
 
                             # record all TIFF or TIF format images to the check results file
-                            if filename[-4:] == ".tif":    check_results_file.write(filename_full_path + "\n")
-                            if filename[-4:] == "tiff":    check_results_file.write(filename_full_path + "\n")
-                            if filename[-4:] == ".lnk":    check_results_file.write(filename_full_path + "\n")
+                            # if filename[-4:] == ".tif":    check_results_file.write(filename_full_path + "\n")
+                            # if filename[-4:] == "tiff":    check_results_file.write(filename_full_path + "\n")
+                            # if filename[-4:] == ".lnk":    check_results_file.write(filename_full_path + "\n")
 
             # write unique filename extensions to check results file
             for filename_extension in sorted(filename_extension_set):
                 check_results_file.write(filename_extension + "\n")
             # print(list(filename_extension))
         # write unique directory paths
-        # for directory_path in sorted(dir_path_set):
-        # 	check_results_file.write(directory_path + "\n")
+        for directory_path in sorted(dir_path_set):
+            check_results_file.write(directory_path + "\n")
 
     def load_page_tags(self):
         # open text file for recording error and status update messages
