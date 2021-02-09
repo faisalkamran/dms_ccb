@@ -1,12 +1,43 @@
 <?xml version="1.0"?>
 
 <odoo>
+	<!-- DMS ML&C top parent menu definition here -->
+	<menuitem id="dms_mlc_top_menu"
+			  name="DMS ML&amp;C" />
+
+	<!-- DMS Chaklala Cantt menu definition here -->
+	<menuitem id="dms_ccb_top_menu"
+			  name="Chaklala Cantt."
+			  parent="dms_mlc_top_menu">
+	</menuitem>
+	
 	<!-- All action definitions here -->
 	<act_window id="action_dms_ccb_file"
 				name="Chaklala Cantonment / Files"
 				res_model="dms_ccb.file"
 				view_mode="tree,form,graph">		
 	</act_window>
+	<!-- DMS Chaklala Cantt Files menu definition here -->
+	<menuitem id="dms_ccb_files_menu"
+			  name="Files"
+			  parent="dms_ccb_top_menu"
+			  sequence="1"
+			  action="action_dms_ccb_file">		
+	</menuitem>
+
+	<act_window id="action_dms_ccb_file_by_storage_location"
+				name="Chaklala Cantonment / Files (by Storage Location)"
+				res_model="dms_ccb.file"
+				view_id="dms_ccb_files_by_storage_location_list_view"
+				view_mode="tree,form,graph">		
+	</act_window>
+	<menuitem id="dms_ccb_files_by_storage_location_menu"
+			  name="Files (by Storage Location)"
+			  parent="dms_ccb_top_menu"
+			  sequence="2"
+			  action="action_dms_ccb_file_by_storage_location">		
+	</menuitem>
+
 	<act_window id="action_dms_ccb_file_branch"
 				name="Chaklala Cantonment / Configuration / Branches"
 				res_model="dms_ccb.file_branch"
@@ -70,15 +101,6 @@
 
 	<!-- All menu item definitions here -->
 
-	<!-- DMS ML&C top parent menu definition here -->
-	<menuitem id="dms_mlc_top_menu"
-			  name="DMS ML&amp;C" />
-
-	<!-- DMS Chaklala Cantt menu definition here -->
-	<menuitem id="dms_ccb_top_menu"
-			  name="Chaklala Cantt."
-			  parent="dms_mlc_top_menu">
-	</menuitem>
 
 	<!-- <menuitem id="dms_ccb_dashboard_menu"
 			  name="Dashboard"
@@ -87,17 +109,12 @@
 			  sequence="1">		
 	</menuitem> -->
 
-	<!-- DMS Chaklala Cantt Files menu definition here -->
-	<menuitem id="dms_ccb_files_menu"
-			  name="Files"
-			  parent="dms_ccb_top_menu"
-			  action="action_dms_ccb_file">		
-	</menuitem>
 
 	<!-- Configuration parent menu definition here -->
 	<menuitem id="dms_ccb_configuration_menu"
 		name="Configuration"
-		parent="dms_ccb_top_menu">
+		parent="dms_ccb_top_menu"
+		sequence="3">
 	</menuitem>
 
 	<!-- Child menu items of "configuration" menu here -->

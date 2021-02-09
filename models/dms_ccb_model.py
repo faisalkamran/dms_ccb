@@ -160,6 +160,15 @@ class dms_ccb_file(models.Model):
 	file_cb_no = fields.Char('CB No', track_visibility="always", readonly=True)
 	file_colony_name = fields.Char('Colony Name', readonly=True)
 	file_payer_name = fields.Char('Payer Name', readonly=True)
+
+	# file storage location information fields
+	file_storage_building = fields.Char('Building', track_visibility="always")
+	file_storage_floor = fields.Char('Floor', track_visibility="always")
+	file_storage_room_name = fields.Char('Room #', track_visibility="always")
+	file_storage_room_rack = fields.Char('Rack', track_visibility="always")
+	file_storage_room_shelf = fields.Char('Shelf', track_visibility="always")
+	file_storage_room_row = fields.Char('Row', track_visibility="always")
+	file_storage_room_box = fields.Char('Box (optional)', track_visibility="always")
 	
 	# file_attachments = fields.Many2many('ir.attachment', string='File Attachments')
 	# message_attachment_count = fields.Integer(readonly=False, track_visibility="onchange")
