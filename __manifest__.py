@@ -43,7 +43,7 @@
 
 		'data/sequence.xml',
 
-		'views/dms_ccb_menu.xml',
+		'wizards/dms_file_checkout_popup.xml',
 		'views/dms_ccb_record_type_views.xml',
 		'views/dms_ccb_colony_views.xml',
 		'views/dms_ccb_type_of_land_views.xml',		
@@ -55,6 +55,7 @@
 		'views/dms_ccb_page_rej_reasons_views.xml',
 		'views/attachment_view_extension.xml',
 		'views/dms_ccb_erp_integration_views.xml',
+		'views/dms_ccb_menu.xml',
 		'views/dms_ccb_bulk_data_import_view.xml',
 		# 'views/dashboard.xml',
 

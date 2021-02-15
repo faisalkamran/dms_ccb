@@ -8,7 +8,8 @@
 	<!-- DMS Chaklala Cantt menu definition here -->
 	<menuitem id="dms_ccb_top_menu"
 			  name="Chaklala Cantt."
-			  parent="dms_mlc_top_menu">
+			  parent="dms_mlc_top_menu"
+			  sequence="1">
 	</menuitem>
 	
 	<!-- All action definitions here -->
@@ -113,7 +114,7 @@
 	<!-- Configuration parent menu definition here -->
 	<menuitem id="dms_ccb_configuration_menu"
 		name="Configuration"
-		parent="dms_ccb_top_menu"
+		parent="dms_mlc_top_menu"
 		sequence="3">
 	</menuitem>
 

@@ -169,7 +169,10 @@ class dms_ccb_file(models.Model):
 	file_storage_room_shelf = fields.Char('Shelf', track_visibility="always")
 	file_storage_room_row = fields.Char('Row', track_visibility="always")
 	file_storage_room_box = fields.Char('Box (optional)', track_visibility="always")
-	
+
+	file_assigned_to = fields.Many2one('hr.employee', string='Employee Name', track_visibility="always")
+	file_checkout_status = fields.Boolean(default=False, string='Checkout Status')
+
 	# file_attachments = fields.Many2many('ir.attachment', string='File Attachments')
 	# message_attachment_count = fields.Integer(readonly=False, track_visibility="onchange")
 
@@ -290,7 +293,21 @@ class dms_ccb_file(models.Model):
 			'type': 'ir.actions.act_window',
 			'target': 'current',
 			'context': "{'dms_ccb_key': False, 'dms_meo_key': True}",
-		}	
+		}
+
+	def checkout_file_popup(self):
+		print("checkout file button working!!!")
+		return {
+            'name': 'Checkout File?',
+            # 'domain': ['&',('res_id','=',self.id),('res_model','=','dms_ccb.file')],            
+            'view_type': 'form',
+            'res_model': 'dms_ccb.file_checkout_popup',
+            'view_id': False,
+            'view_mode': 'form',
+            'type': 'ir.actions.act_window',
+            'target': 'new',
+            # 'context': {'parent_proposal_id': parent_proposal_id},
+        }
 
 class dms_ccb_page_tags(models.Model):
 	_name = 'dms_ccb.page_tags'

@@ -17,10 +17,14 @@
 					<button name="dms_manage_pages"
 							type="object"
 							string="Manage Pages"
-							class="oe_highlight"
 							groups="dms_ccb.dms_ccb_attachment_obj_write_group,
 									dms_ccb.dms_ccb_attachment_obj_create_group,
 									dms_ccb.dms_ccb_attachment_obj_unlink_group"></button>
+
+					<button name="checkout_file_popup" 
+						string="Checkout File" 
+						type="object" 
+						class="oe_highlight"></button>
 
 					<!-- Workflow button declarations -->
 					<button name="file_for_approval_state"
@@ -95,6 +99,12 @@
 							<field name="file_storage_room_shelf"></field>
 							<field name="file_storage_room_row"></field>
 							<field name="file_storage_room_box"></field>								
+						</group>
+						<group string="File Status">
+							<field name="file_checkout_status"></field>
+						</group>
+						<group string="File Assigned To">
+							<field name="file_assigned_to"></field>
 						</group>
 					</group>
 
