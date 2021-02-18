@@ -2,16 +2,102 @@
 
 <odoo>
 
+	<template id="my_custom_assets" name="My Custom Assets">
+		<!-- <link rel="stylesheet" type="text/scss" href="/dms_ccb/static/src/scss/my_scss.scss"/> -->
+		<link rel="stylesheet" type="text/css" href="/dms_ccb/static/src/scss/w3.css"/>
+		<script type="text/JavaScript" src="/dms_ccb/static/src/js/widgets/my_JavaScript.js"/>
+	</template>
+
 	<template id="file_list_template" name="DMS File List">
-		<div id="wrap" class="container">
+		<head>
+			<t t-call-assets="dms_ccb.my_custom_assets" t-css="true"/>
+		</head>
+
+		<t t-foreach="dms_files" t-as="dms_file">
+			<div class="w3-container">
+				<h2>Basic Information</h2>
+				<table class="w3-table-all w3-centered w3-card-4">
+					<tr class="w3-blue-gray">
+						<th>File Barcode</th>
+						<th>File No.</th>
+						<th>File Subject</th>
+						<th>File Address</th>
+						<th>File Plot No. / CB No. / Khasra No.</th>
+					</tr>
+					<tr>
+						<td><span t-field="dms_file.file_barcode"></span></td>
+						<td><span t-field="dms_file.file_no"></span></td>
+						<td><span t-field="dms_file.file_subject"></span></td>
+						<td><span t-field="dms_file.file_address"></span></td>
+						<td><span t-field="dms_file.file_plot_khasra_cb_no"></span></td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="w3-container">
+				<h2>Metadata</h2>
+				<table class="w3-table-all w3-centered w3-card-4">
+					<tr class="w3-blue-gray">
+						<th>Branch</th>
+						<th>Colony</th>
+						<th>Record Type</th>
+						<th>Type of Land</th>
+						<th>Purpose</th>
+					</tr>
+					<tr>
+						<td><span t-field="dms_file.file_branch"></span></td>
+						<td><span t-field="dms_file.file_colony"></span></td>
+						<td><span t-field="dms_file.file_record_type"></span></td>
+						<td><span t-field="dms_file.file_type_of_land"></span></td>
+						<td><span t-field="dms_file.file_purpose"></span></td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="w3-container">
+				<h2>MLC MIS Information</h2>
+				<table class="w3-table-all w3-centered w3-card-4">
+					<tr class="w3-blue-gray">
+						<th>Revenue ID</th>
+						<th>CB No.</th>
+						<th>Colony Name</th>
+						<th>Payer Name</th>
+					</tr>
+					<tr>
+						<td><span t-field="dms_file.file_revenue_id"></span></td>
+						<td><span t-field="dms_file.file_cb_no"></span></td>
+						<td><span t-field="dms_file.file_colony_name"></span></td>
+						<td><span t-field="dms_file.file_payer_name"></span></td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="w3-container">
+				<h2>Scanned Pages</h2>
+			</div>
+
+			<t t-foreach="all_pages" t-as="page_list">
+				<t t-foreach="page_list" t-as="scanned_page">
+					<div class="w3-container" t-if="dms_file.id == scanned_page.res_id">
+						<span t-field="scanned_page.datas_fname"></span><br></br>
+						<img t-attf-src="data:image/jpg;base64,{{scanned_page.datas}}" style="width:100%"/>
+					</div>
+				</t>
+			</t>
+		</t>
+
+
+		<!-- <div id="wrap" class="container">
 			<h1>DMS Files</h1>
 
 			<t t-foreach="dms_files" t-as="dms_file">
-				<div class="row">
-					<table>
-						<tr>
-							<th>File No.</th>
-							<th>File Subject</th>
+				<div class="row"> -->
+					<!-- <table class="w3-table w3-striped w3-bordered w3-border"> -->
+					<!-- <table class="w3-table-all w3-centered w3-card-4">
+						<tr class="w3-blue-gray">
+							<th>File No.</th> -->
+							<!-- <th></th> -->
+							<!-- <th>File Subject</th>
 						</tr>
 						<tr>
 							<td>
@@ -21,7 +107,7 @@
 								<span t-field="dms_file.file_subject"></span>								
 							</td>
 						</tr>
-					</table>
+					</table> -->
 					<!-- <span t-field="dms_file.file_no"></span>
 					<span t-field="dms_file.file_subject"></span> -->
 					<!-- <span t-field="file.file_type"></span>
@@ -29,9 +115,9 @@
 					<span t-field="file.pharma_company"></span> -->
 					<!-- <span t-field=""></span>
 					<span t-field=""></span> -->
-				</div>
+				<!-- </div>
 			</t>
-		</div>
+		</div> -->
 	</template>
 	
 
