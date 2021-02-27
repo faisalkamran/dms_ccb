@@ -1,58 +1,150 @@
 <?xml version="1.0"?>
 
 <odoo>
-	<!-- All action definitions here -->
+	<menuitem id="dms_mlc_top_menu"
+			  name="DMS ML&amp;C" />
+
+	<menuitem id="dms_ccb_top_menu"
+			  name="Chaklala Cantt."
+			  parent="dms_mlc_top_menu">
+	</menuitem>
+
 	<act_window id="action_dms_ccb_file"
 				name="Chaklala Cantonment / Files"
 				res_model="dms_ccb.file"
 				view_mode="tree,form,graph">		
 	</act_window>
+	<menuitem id="dms_ccb_files_menu"
+			  name="Files"
+			  parent="dms_ccb_top_menu"
+			  action="action_dms_ccb_file">		
+	</menuitem>
+
+	<menuitem id="dms_ccb_configuration_menu"
+		name="Configuration"
+		parent="dms_ccb_top_menu">
+	</menuitem>
+
 	<act_window id="action_dms_ccb_file_branch"
 				name="Chaklala Cantonment / Configuration / Branches"
 				res_model="dms_ccb.file_branch"
 				view_mode="tree,form">		
 	</act_window>
+	<menuitem id="dms_ccb_branch_menu"
+			  name="Branches"
+			  parent="dms_ccb_configuration_menu"
+			  sequence="1"
+			  action="action_dms_ccb_file_branch">
+	</menuitem>
+
 	<act_window id="action_dms_ccb_file_colony"
 				name="Chaklala Cantonment / Configuration / Colony"
 				res_model="dms_ccb.file_colony"
 				view_mode="tree,form">		
 	</act_window>
+	<menuitem id="dms_ccb_colony_menu"
+			  name="Colony"
+			  parent="dms_ccb_configuration_menu"
+			  sequence="2"
+			  action="action_dms_ccb_file_colony">		
+	</menuitem>
+
 	<act_window id="action_dms_ccb_page_tags"
 				name="Chaklala Cantonment / Configuration / Document Tags"
 				res_model="dms_ccb.page_tags"
 				view_mode="tree,form">		
 	</act_window>
+	<menuitem id="dms_ccb_page_tags"
+			  name="Document Tags"
+			  parent="dms_ccb_configuration_menu"
+			  sequence="3"
+			  action="action_dms_ccb_page_tags">		
+	</menuitem>
+
 	<act_window id="action_dms_ccb_file_purpose"
 				name="Chaklala Cantonment / Configuration / Purpose"
 				res_model="dms_ccb.file_purpose"
 				view_mode="tree,form">		
 	</act_window>
+	<menuitem id="dms_ccb_purpose_menu"
+			  name="Purpose"
+			  parent="dms_ccb_configuration_menu"
+			  sequence="4"
+			  action="action_dms_ccb_file_purpose">		
+	</menuitem>
+
 	<act_window id="action_dms_ccb_record_type"
 				name="Chaklala Cantonment / Configuration / Record Type"
 				res_model="dms_ccb.file_record_type"
 				view_mode="tree,form">		
 	</act_window>
+	<menuitem id="dms_ccb_record_type_menu"
+			  name="Record Type"
+			  parent="dms_ccb_configuration_menu"
+			  sequence="5"
+			  action="action_dms_ccb_record_type">		
+	</menuitem>
+
 	<act_window id="action_dms_ccb_page_rej_reason"
 				name="Chaklala Cantonment / Configuration / Page Rejection Reasons"
 				res_model="dms_ccb.page_rej_reasons"
 				view_mode="tree,form">		
 	</act_window>
+	<menuitem id="dms_ccb_page_rej_reason_menu"
+			  name="Rejection Reasons"
+			  parent="dms_ccb_configuration_menu"
+			  sequence="6"
+			  action="action_dms_ccb_page_rej_reason">		
+	</menuitem>
+
 	<act_window id="action_dms_ccb_file_type_of_land"
 				name="Chaklala Cantonment / Configuration / Type of Land"
 				res_model="dms_ccb.file_type_of_land"
 				view_mode="tree,form">		
 	</act_window>
+	<menuitem id="dms_ccb_type_of_land_menu"
+			  name="Type of Land"
+			  parent="dms_ccb_configuration_menu"
+			  sequence="7"
+			  action="action_dms_ccb_file_type_of_land">		
+	</menuitem>
+
 	<act_window id="action_dms_ccb_erp_integration_data"
 				name="Chaklala Cantonment / Configuration / ML&amp;C ERP Integration Data"
 				res_model="dms_ccb.erp_integration_data"
 				view_mode="tree,form">		
 	</act_window>
+	<menuitem id="dms_ccb_erp_integration_data_menu"
+			  name="CCB &amp; ML&amp;C Integration Data"
+			  parent="dms_ccb_configuration_menu"
+			  sequence="8"
+			  action="action_dms_ccb_erp_integration_data">		
+	</menuitem>
 
 	<act_window id="action_dms_ccb_file_attribute"
 				name="File Attributes"
 				res_model="dms_ccb.file_attribute"
 				view_mode="tree,form">		
 	</act_window>
+
+	<menuitem id="dms_ccb_audit_trail_menu"
+		name="Audit Trail"
+		parent="dms_mlc_top_menu"
+		sequence="100"
+		groups="dms_ccb_audit_trail_group,dms_meo_audit_trail_group">
+	</menuitem>
+
+	<act_window id="action_dms_ccb_user_configuration"
+				name="User Configuration"
+				res_model="res.users"
+				view_mode="tree,form">		
+	</act_window>
+	<menuitem id="dms_ccb_user_config_menu"
+		name="Users Configuration"
+		parent="dms_mlc_top_menu"
+		sequence="150"
+		action="action_dms_ccb_user_configuration">
+	</menuitem>
 
 	<!-- <act_window id="action_dms_ccb_file_area"
 				name="Area"
@@ -70,85 +162,15 @@
 
 	<!-- All menu item definitions here -->
 
-	<!-- DMS ML&C top parent menu definition here -->
-	<menuitem id="dms_mlc_top_menu"
-			  name="DMS ML&amp;C" />
-
-	<!-- DMS Chaklala Cantt menu definition here -->
-	<menuitem id="dms_ccb_top_menu"
-			  name="Chaklala Cantt."
-			  parent="dms_mlc_top_menu">
-	</menuitem>
+	
 
 	<!-- <menuitem id="dms_ccb_dashboard_menu"
 			  name="Dashboard"
 			  parent="dms_ccb_top_menu"
 			  action="dms_ccb_dashboard"
 			  sequence="1">		
-	</menuitem> -->
-
-	<!-- DMS Chaklala Cantt Files menu definition here -->
-	<menuitem id="dms_ccb_files_menu"
-			  name="Files"
-			  parent="dms_ccb_top_menu"
-			  action="action_dms_ccb_file">		
-	</menuitem>
-
-	<!-- Configuration parent menu definition here -->
-	<menuitem id="dms_ccb_configuration_menu"
-		name="Configuration"
-		parent="dms_ccb_top_menu">
-	</menuitem>
-
-	<!-- Child menu items of "configuration" menu here -->
-	<menuitem id="dms_ccb_branch_menu"
-			  name="Branches"
-			  parent="dms_ccb_configuration_menu"
-			  sequence="1"
-			  action="action_dms_ccb_file_branch">
-	</menuitem>
-	<menuitem id="dms_ccb_colony_menu"
-			  name="Colony"
-			  parent="dms_ccb_configuration_menu"
-			  sequence="2"
-			  action="action_dms_ccb_file_colony">		
-	</menuitem>
-	<menuitem id="dms_ccb_page_tags"
-			  name="Document Tags"
-			  parent="dms_ccb_configuration_menu"
-			  sequence="3"
-			  action="action_dms_ccb_page_tags">		
-	</menuitem>
-	<menuitem id="dms_ccb_purpose_menu"
-			  name="Purpose"
-			  parent="dms_ccb_configuration_menu"
-			  sequence="4"
-			  action="action_dms_ccb_file_purpose">		
-	</menuitem>
-	<menuitem id="dms_ccb_record_type_menu"
-			  name="Record Type"
-			  parent="dms_ccb_configuration_menu"
-			  sequence="5"
-			  action="action_dms_ccb_record_type">		
-	</menuitem>
-	<menuitem id="dms_ccb_page_rej_reason_menu"
-			  name="Rejection Reasons"
-			  parent="dms_ccb_configuration_menu"
-			  sequence="6"
-			  action="action_dms_ccb_page_rej_reason">		
-	</menuitem>
-	<menuitem id="dms_ccb_type_of_land_menu"
-			  name="Type of Land"
-			  parent="dms_ccb_configuration_menu"
-			  sequence="7"
-			  action="action_dms_ccb_file_type_of_land">		
-	</menuitem>
-	<menuitem id="dms_ccb_erp_integration_data_menu"
-			  name="CCB &amp; ML&amp;C Integration Data"
-			  parent="dms_ccb_configuration_menu"
-			  sequence="8"
-			  action="action_dms_ccb_erp_integration_data">		
-	</menuitem>
+	</menuitem> -->	
+	
 	<!-- <menuitem id="dms_ccb_area_menu"
 			  name="Area"
 			  parent="dms_ccb_configuration_menu"
@@ -163,11 +185,5 @@
 	</menuitem> -->
 
 	<!-- DMS app Audit Trail menu definition here -->
-	<menuitem id="dms_ccb_audit_trail_menu"
-		name="Audit Trail"
-		parent="dms_mlc_top_menu"
-		sequence="100"
-		groups="dms_ccb_audit_trail_group,dms_meo_audit_trail_group">
-	</menuitem>
-
+	
 </odoo>

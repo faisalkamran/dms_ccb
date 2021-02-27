@@ -355,7 +355,19 @@ class Attachment_Extension(models.Model):
 	dms_ccb_page_tags = fields.Many2many('dms_ccb.page_tags', string='Page Tags')
 	dms_ccb_page_rej_reasons = fields.Many2many('dms_ccb.page_rej_reasons', string='Rejection Reasons', readonly="True")
 	dms_ccb_page_description = fields.Char('Page Description')
-	
+
+	@api.multi
+	def write(self, vals):
+		print('Over writing write function successful')
+		# res = super(Attachment_Extension, self).sudo().write(vals)
+		# res = super(Attachment_Extension, self).sudo().write(vals)
+		# res = super(IrAttachment, self).write(vals)
+		# return res
+		res = super(Attachment_Extension, self).sudo().write(vals)
+		return 1
+
+
+
 	# dms_page_tags = fields.Char('Page Tags')
 	# attachment_image_preview = fields.Binary('Preview')
 	# attachment_image_preview = fields.Binary(string='Image Preview', default='thumbnail')
