@@ -136,7 +136,7 @@
 
 	<act_window id="action_dms_ccb_user_configuration"
 				name="User Configuration"
-				res_model="res.users"
+				res_model="dms.ccb.user"
 				view_mode="tree,form">		
 	</act_window>
 	<menuitem id="dms_ccb_user_config_menu"

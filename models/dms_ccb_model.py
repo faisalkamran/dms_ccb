@@ -356,15 +356,15 @@ class Attachment_Extension(models.Model):
 	dms_ccb_page_rej_reasons = fields.Many2many('dms_ccb.page_rej_reasons', string='Rejection Reasons', readonly="True")
 	dms_ccb_page_description = fields.Char('Page Description')
 
-	@api.multi
-	def write(self, vals):
-		print('Over writing write function successful')
-		# res = super(Attachment_Extension, self).sudo().write(vals)
-		# res = super(Attachment_Extension, self).sudo().write(vals)
-		# res = super(IrAttachment, self).write(vals)
-		# return res
-		res = super(Attachment_Extension, self).sudo().write(vals)
-		return 1
+	# @api.multi
+	# def write(self, vals):
+	# 	print('Over writing write function successful')
+	# 	# res = super(Attachment_Extension, self).sudo().write(vals)
+	# 	# res = super(Attachment_Extension, self).sudo().write(vals)
+	# 	# res = super(IrAttachment, self).write(vals)
+	# 	# return res
+	# 	res = super(Attachment_Extension, self).sudo().write(vals)
+	# 	return 1
 
 
 
@@ -372,3 +372,15 @@ class Attachment_Extension(models.Model):
 	# attachment_image_preview = fields.Binary('Preview')
 	# attachment_image_preview = fields.Binary(string='Image Preview', default='thumbnail')
 	# attachment_image_preview = fields.Binary(string='Image Preview')
+
+class MLC_User(models.Model):
+	_name = 'dms.ccb.user'
+	# _inherits = {'res.users': 'partner_id'}
+
+	test_field_1 = fields.Char('Test Field 1')
+
+	partner_id = fields.Many2one('res.partner',
+								delegate=True,
+								ondelete='cascade',
+								required=True)
+	
